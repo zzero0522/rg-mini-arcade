@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剪刀石頭布 - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/rps.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">✊ 剪刀石頭布</span>
+                <span class="ide-title">// rockPaperScissors.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">連勝</span>
+                        <span class="ide-title">streak:</span>
+                    </span>
+                    <span id="streak" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高連勝</span>
+                        <span class="ide-title">best:</span>
+                    </span>
+                    <span id="best-streak" class="stat-value">0</span>
+                </div>
+                <div class="stat win-stat">
+                    <span class="stat-label">
+                        <span class="normal-title">勝</span>
+                        <span class="ide-title">win:</span>
+                    </span>
+                    <span id="wins" class="stat-value">0</span>
+                </div>
+                <div class="stat draw-stat">
+                    <span class="stat-label">
+                        <span class="normal-title">平</span>
+                        <span class="ide-title">draw:</span>
+                    </span>
+                    <span id="draws" class="stat-value">0</span>
+                </div>
+                <div class="stat lose-stat">
+                    <span class="stat-label">
+                        <span class="normal-title">負</span>
+                        <span class="ide-title">lose:</span>
+                    </span>
+                    <span id="losses" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲內容 -->
+            <div id="game-content" class="game-content">
+                <!-- 對戰區域 -->
+                <div class="battle-area">
+                    <div class="player-side">
+                        <div class="side-label">
+                            <span class="normal-title">你</span>
+                            <span class="ide-title">player</span>
+                        </div>
+                        <div id="player-choice" class="choice-display">❓</div>
+                    </div>
+
+                    <div class="vs-area">
+                        <div id="result-text" class="result-text"></div>
+                        <div class="vs">VS</div>
+                    </div>
+
+                    <div class="computer-side">
+                        <div class="side-label">
+                            <span class="normal-title">電腦</span>
+                            <span class="ide-title">computer</span>
+                        </div>
+                        <div id="computer-choice" class="choice-display">❓</div>
+                    </div>
+                </div>
+
+                <!-- 選擇按鈕 -->
+                <div class="choice-buttons">
+                    <button class="choice-btn" data-choice="rock">
+                        <span class="choice-emoji">✊</span>
+                        <span class="choice-name">
+                            <span class="normal-title">石頭</span>
+                            <span class="ide-title">rock</span>
+                        </span>
+                    </button>
+                    <button class="choice-btn" data-choice="paper">
+                        <span class="choice-emoji">✋</span>
+                        <span class="choice-name">
+                            <span class="normal-title">布</span>
+                            <span class="ide-title">paper</span>
+                        </span>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors">
+                        <span class="choice-emoji">✌️</span>
+                        <span class="choice-name">
+                            <span class="normal-title">剪刀</span>
+                            <span class="ide-title">scissors</span>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- 提示文字 -->
+                <div id="hint" class="hint">
+                    <span class="normal-title">選擇你的出拳！</span>
+                    <span class="ide-title">// Select your move</span>
+                </div>
+
+                <!-- 歷史紀錄 -->
+                <div class="history-section">
+                    <h3>
+                        <span class="normal-title">對戰紀錄</span>
+                        <span class="ide-title">// History</span>
+                    </h3>
+                    <div id="history" class="history"></div>
+                </div>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen hidden">
+                <h2>
+                    <span class="normal-title">✊ 剪刀石頭布</span>
+                    <span class="ide-title">// rockPaperScissors()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        挑戰 AI，創造最高連勝紀錄！<br>
+                        經典規則：石頭贏剪刀，剪刀贏布，布贏石頭
+                    </span>
+                    <span class="ide-title">
+                        /* Challenge AI for best streak!<br>
+                        rock > scissors > paper > rock */
+                    </span>
+                </p>
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始挑戰</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/rps.js"></script>
+</body>
+</html>

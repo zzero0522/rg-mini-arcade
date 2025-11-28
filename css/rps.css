@@ -1,0 +1,381 @@
+/* ===== 遊戲統計區 ===== */
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background-color: var(--bg-secondary);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    margin-right: 5px;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.win-stat .stat-value {
+    color: #38a169;
+}
+
+.draw-stat .stat-value {
+    color: #d69e2e;
+}
+
+.lose-stat .stat-value {
+    color: #e53e3e;
+}
+
+body.ide-mode .win-stat .stat-value {
+    color: #4ec9b0;
+}
+
+body.ide-mode .lose-stat .stat-value {
+    color: #f14c4c;
+}
+
+/* ===== 遊戲區域 ===== */
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.game-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 對戰區域 ===== */
+.battle-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+}
+
+.player-side,
+.computer-side {
+    text-align: center;
+    flex: 1;
+}
+
+.side-label {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.choice-display {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.choice-display.win {
+    box-shadow: 0 0 20px rgba(56, 161, 105, 0.5);
+    border: 3px solid #38a169;
+}
+
+.choice-display.lose {
+    box-shadow: 0 0 20px rgba(229, 62, 62, 0.5);
+    border: 3px solid #e53e3e;
+}
+
+.choice-display.draw {
+    box-shadow: 0 0 20px rgba(214, 158, 46, 0.5);
+    border: 3px solid #d69e2e;
+}
+
+.vs-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-height: 30px;
+}
+
+.result-text.win {
+    color: #38a169;
+}
+
+.result-text.lose {
+    color: #e53e3e;
+}
+
+.result-text.draw {
+    color: #d69e2e;
+}
+
+/* ===== 選擇按鈕 ===== */
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.choice-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice-btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.choice-btn:hover .choice-name {
+    color: white;
+}
+
+.choice-btn:active {
+    transform: translateY(-2px);
+}
+
+.choice-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.choice-name {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.choice-btn.selected {
+    background-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.choice-btn.selected .choice-name {
+    color: white;
+}
+
+/* ===== 提示文字 ===== */
+.hint {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* ===== 歷史紀錄 ===== */
+.history-section {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.history-section h3 {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.history-item.win {
+    border-left: 3px solid #38a169;
+}
+
+.history-item.lose {
+    border-left: 3px solid #e53e3e;
+}
+
+.history-item.draw {
+    border-left: 3px solid #d69e2e;
+}
+
+.history-vs {
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+}
+
+/* ===== 開始畫面 ===== */
+.start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.start-screen h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.game-desc {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.start-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+/* ===== 隱藏類別 ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 600px) {
+    .game-stats {
+        gap: 8px;
+    }
+
+    .stat {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .battle-area {
+        padding: 20px 10px;
+    }
+
+    .choice-display {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+    .choice-btn {
+        padding: 15px 20px;
+    }
+
+    .choice-emoji {
+        font-size: 2rem;
+    }
+
+    .vs {
+        font-size: 1rem;
+    }
+
+    .start-screen {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+/* ===== IDE 模式特效 ===== */
+body.ide-mode .battle-area {
+    border: 1px solid #3c3c3c;
+}
+
+body.ide-mode .start-screen {
+    border: 1px solid var(--accent);
+}
+
+body.ide-mode .result-text.win {
+    color: #4ec9b0;
+}
+
+body.ide-mode .result-text.lose {
+    color: #f14c4c;
+}
+
+/* ===== 動畫 ===== */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.choice-display.shaking {
+    animation: shake 0.3s ease infinite;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.choice-display.revealed {
+    animation: pop 0.3s ease;
+}

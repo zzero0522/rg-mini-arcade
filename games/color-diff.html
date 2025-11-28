@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找不同顏色 - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/color-diff.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🎨 找不同顏色</span>
+                <span class="ide-title">// colorDiff.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">關卡</span>
+                        <span class="ide-title">level:</span>
+                    </span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">分數</span>
+                        <span class="ide-title">score:</span>
+                    </span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高分</span>
+                        <span class="ide-title">highScore:</span>
+                    </span>
+                    <span id="high-score" class="stat-value">0</span>
+                </div>
+                <div class="stat" id="timer-stat">
+                    <span class="stat-label">
+                        <span class="normal-title" id="timer-label">時間</span>
+                        <span class="ide-title" id="timer-label-ide">time:</span>
+                    </span>
+                    <span id="timer" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div id="game-board" class="game-board"></div>
+
+            <div id="game-over" class="game-over hidden">
+                <h2>
+                    <span class="normal-title">遊戲結束！</span>
+                    <span class="ide-title">// Game Over</span>
+                </h2>
+                <p class="final-stats">
+                    <span class="normal-title">
+                        最終關卡：<span id="final-level">0</span><br>
+                        總分：<span id="final-score">0</span>
+                    </span>
+                    <span class="ide-title">
+                        level: <span id="final-level-ide">0</span>;<br>
+                        return score: <span id="final-score-ide">0</span>;
+                    </span>
+                </p>
+                <button id="restart-btn" class="restart-btn">
+                    <span class="normal-title">🔄 再玩一次</span>
+                    <span class="ide-title">restart()</span>
+                </button>
+                <button id="back-to-menu-btn" class="back-menu-btn">
+                    <span class="normal-title">📋 選擇模式</span>
+                    <span class="ide-title">selectMode()</span>
+                </button>
+            </div>
+
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🎨 找不同顏色</span>
+                    <span class="ide-title">// colorDiff()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">在格子中找出顏色不同的那一個！<br>隨著關卡提升，顏色會越來越接近。</span>
+                    <span class="ide-title">/* Find the block with different color.<br>Difficulty increases each level. */</span>
+                </p>
+
+                <div class="mode-selection">
+                    <h3>
+                        <span class="normal-title">選擇遊戲模式</span>
+                        <span class="ide-title">// Select Mode</span>
+                    </h3>
+                    <div class="mode-buttons">
+                        <button id="zen-mode-btn" class="mode-btn">
+                            <div class="mode-icon">🧘</div>
+                            <div class="mode-info">
+                                <span class="normal-title">
+                                    <strong>禪模式</strong><br>
+                                    <small>無時間限制，答錯即結束</small>
+                                </span>
+                                <span class="ide-title">
+                                    <strong>zenMode()</strong><br>
+                                    <small>// No time limit</small>
+                                </span>
+                            </div>
+                        </button>
+                        <button id="timed-mode-btn" class="mode-btn">
+                            <div class="mode-icon">⏱️</div>
+                            <div class="mode-info">
+                                <span class="normal-title">
+                                    <strong>限時挑戰</strong><br>
+                                    <small>60秒內挑戰最高關卡</small>
+                                </span>
+                                <span class="ide-title">
+                                    <strong>timedMode()</strong><br>
+                                    <small>// 60s challenge</small>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/color-diff.js"></script>
+</body>
+</html>

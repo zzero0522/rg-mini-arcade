@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/typing-test.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">⌨️ Typing Test</span>
+                <span class="ide-title">// typingTest.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">剩餘時間</span>
+                        <span class="ide-title">time:</span>
+                    </span>
+                    <span id="timer" class="stat-value">60</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">WPM</span>
+                        <span class="ide-title">wpm:</span>
+                    </span>
+                    <span id="wpm" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">準確率</span>
+                        <span class="ide-title">accuracy:</span>
+                    </span>
+                    <span id="accuracy" class="stat-value">100%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高 WPM</span>
+                        <span class="ide-title">bestWPM:</span>
+                    </span>
+                    <span id="best-wpm" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲內容 -->
+            <div id="game-content" class="game-content hidden">
+                <div class="text-display" id="text-display"></div>
+                <textarea id="typing-input" class="typing-input" placeholder="在這裡開始打字..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                <div class="live-stats">
+                    <span>
+                        <span class="normal-title">正確字數：</span>
+                        <span class="ide-title">correct:</span>
+                        <strong id="correct-chars">0</strong>
+                    </span>
+                    <span>
+                        <span class="normal-title">錯誤字數：</span>
+                        <span class="ide-title">errors:</span>
+                        <strong id="error-chars">0</strong>
+                    </span>
+                </div>
+            </div>
+
+            <!-- 結果畫面 -->
+            <div id="result-screen" class="result-screen hidden">
+                <h2>
+                    <span class="normal-title">⏱️ 時間到！</span>
+                    <span class="ide-title">// Time's Up!</span>
+                </h2>
+                <div class="result-stats">
+                    <div class="result-item main-result">
+                        <span class="result-label">
+                            <span class="normal-title">打字速度</span>
+                            <span class="ide-title">WPM</span>
+                        </span>
+                        <span class="result-value" id="final-wpm">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">
+                            <span class="normal-title">準確率</span>
+                            <span class="ide-title">accuracy</span>
+                        </span>
+                        <span class="result-value" id="final-accuracy">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">
+                            <span class="normal-title">正確字數</span>
+                            <span class="ide-title">correct</span>
+                        </span>
+                        <span class="result-value" id="final-correct">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">
+                            <span class="normal-title">錯誤字數</span>
+                            <span class="ide-title">errors</span>
+                        </span>
+                        <span class="result-value" id="final-errors">0</span>
+                    </div>
+                </div>
+                <div class="result-buttons">
+                    <button id="play-again-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">restart()</span>
+                    </button>
+                    <button id="change-time-btn" class="back-menu-btn">
+                        <span class="normal-title">⚙️ 更換時間</span>
+                        <span class="ide-title">setTime()</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">⌨️ Typing Test</span>
+                    <span class="ide-title">// typingTest()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        測試你的打字速度！<br>
+                        盡可能快速且準確地輸入顯示的文字。
+                    </span>
+                    <span class="ide-title">
+                        /* Test your typing speed!<br>
+                        Type as fast and accurate as you can. */
+                    </span>
+                </p>
+
+                <div class="time-selection">
+                    <h3>
+                        <span class="normal-title">選擇時間</span>
+                        <span class="ide-title">// Duration</span>
+                    </h3>
+                    <div class="time-buttons">
+                        <button class="time-btn" data-time="15">
+                            <span class="normal-title">15 秒</span>
+                            <span class="ide-title">15s</span>
+                        </button>
+                        <button class="time-btn" data-time="30">
+                            <span class="normal-title">30 秒</span>
+                            <span class="ide-title">30s</span>
+                        </button>
+                        <button class="time-btn active" data-time="60">
+                            <span class="normal-title">60 秒</span>
+                            <span class="ide-title">60s</span>
+                        </button>
+                        <button class="time-btn" data-time="120">
+                            <span class="normal-title">120 秒</span>
+                            <span class="ide-title">120s</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始測試</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/typing-test.js"></script>
+</body>
+</html>

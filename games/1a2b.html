@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1A2B 猜數字 - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/1a2b.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🔢 1A2B 猜數字</span>
+                <span class="ide-title">// guessNumber.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">猜測次數</span>
+                        <span class="ide-title">attempts:</span>
+                    </span>
+                    <span id="attempts" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最佳紀錄</span>
+                        <span class="ide-title">bestRecord:</span>
+                    </span>
+                    <span id="best-record" class="stat-value">-</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">難度</span>
+                        <span class="ide-title">digits:</span>
+                    </span>
+                    <span id="difficulty" class="stat-value">4</span>
+                </div>
+            </div>
+
+            <div id="game-content" class="game-content hidden">
+                <!-- 輸入區 -->
+                <div class="input-section">
+                    <div class="digit-inputs" id="digit-inputs">
+                        <!-- 輸入框由 JS 動態生成 -->
+                    </div>
+                    <button id="guess-btn" class="guess-btn">
+                        <span class="normal-title">🎯 猜！</span>
+                        <span class="ide-title">guess()</span>
+                    </button>
+                </div>
+
+                <!-- 提示訊息 -->
+                <div id="message" class="message"></div>
+
+                <!-- 歷史紀錄 -->
+                <div class="history-section">
+                    <h3>
+                        <span class="normal-title">猜測紀錄</span>
+                        <span class="ide-title">// History Log</span>
+                    </h3>
+                    <div id="history" class="history"></div>
+                </div>
+            </div>
+
+            <!-- 勝利畫面 -->
+            <div id="win-screen" class="win-screen hidden">
+                <h2>
+                    <span class="normal-title">🎉 恭喜答對！</span>
+                    <span class="ide-title">// SUCCESS!</span>
+                </h2>
+                <p class="win-stats">
+                    <span class="normal-title">
+                        答案是：<span id="answer-display">1234</span><br>
+                        共猜了 <span id="final-attempts">0</span> 次
+                    </span>
+                    <span class="ide-title">
+                        answer = "<span id="answer-display-ide">1234</span>";<br>
+                        attempts = <span id="final-attempts-ide">0</span>;
+                    </span>
+                </p>
+                <div class="win-buttons">
+                    <button id="play-again-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">restart()</span>
+                    </button>
+                    <button id="change-difficulty-btn" class="back-menu-btn">
+                        <span class="normal-title">⚙️ 更換難度</span>
+                        <span class="ide-title">setDifficulty()</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🔢 1A2B 猜數字</span>
+                    <span class="ide-title">// guessNumber()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        猜一組不重複的數字！<br>
+                        <strong>A</strong> = 數字和位置都對<br>
+                        <strong>B</strong> = 數字對但位置錯
+                    </span>
+                    <span class="ide-title">
+                        /* Guess the secret number!<br>
+                        A = correct digit & position<br>
+                        B = correct digit, wrong position */
+                    </span>
+                </p>
+
+                <div class="difficulty-selection">
+                    <h3>
+                        <span class="normal-title">選擇難度</span>
+                        <span class="ide-title">// Difficulty</span>
+                    </h3>
+                    <div class="difficulty-buttons">
+                        <button class="diff-btn" data-digits="3">
+                            <span class="normal-title">簡單<br><small>3 位數</small></span>
+                            <span class="ide-title">easy(3)</span>
+                        </button>
+                        <button class="diff-btn active" data-digits="4">
+                            <span class="normal-title">普通<br><small>4 位數</small></span>
+                            <span class="ide-title">normal(4)</span>
+                        </button>
+                        <button class="diff-btn" data-digits="5">
+                            <span class="normal-title">困難<br><small>5 位數</small></span>
+                            <span class="ide-title">hard(5)</span>
+                        </button>
+                        <button class="diff-btn" data-digits="6">
+                            <span class="normal-title">極難<br><small>6 位數</small></span>
+                            <span class="ide-title">extreme(6)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始遊戲</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/1a2b.js"></script>
+</body>
+</html>

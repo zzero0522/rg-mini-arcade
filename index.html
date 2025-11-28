@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RG's Mini Arcade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🎮 RG's Mini Arcade</span>
+                <span class="ide-title">// RG_MiniArcade.exe</span>
+            </h1>
+            <button id="theme-toggle" class="theme-btn">
+                <span class="normal-mode">💻 IDE 模式</span>
+                <span class="ide-mode">🎮 一般模式</span>
+            </button>
+        </header>
+
+        <main class="game-menu">
+            <h2 class="menu-title">
+                <span class="normal-title">選擇遊戲</span>
+                <span class="ide-title">/* Select Game */</span>
+            </h2>
+
+            <div class="game-grid">
+                <a href="games/color-diff.html" class="game-card">
+                    <div class="game-icon">🎨</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">找不同顏色</h3>
+                        <h3 class="ide-title">colorDiff()</h3>
+                        <p class="normal-title">找出顏色不同的方塊</p>
+                        <p class="ide-title">// Find the different color block</p>
+                    </div>
+                </a>
+
+                <a href="games/1a2b.html" class="game-card">
+                    <div class="game-icon">🔢</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">1A2B</h3>
+                        <h3 class="ide-title">guessNumber()</h3>
+                        <p class="normal-title">猜數字遊戲</p>
+                        <p class="ide-title">// Guess the secret number</p>
+                    </div>
+                </a>
+
+                <a href="games/typing-test.html" class="game-card">
+                    <div class="game-icon">⌨️</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">Typing Test</h3>
+                        <h3 class="ide-title">typingTest()</h3>
+                        <p class="normal-title">限時打字測試</p>
+                        <p class="ide-title">// Test your typing speed</p>
+                    </div>
+                </a>
+
+                <a href="games/memory-cards.html" class="game-card">
+                    <div class="game-icon">🃏</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">記憶翻牌</h3>
+                        <h3 class="ide-title">memoryCards()</h3>
+                        <p class="normal-title">配對記憶遊戲</p>
+                        <p class="ide-title">// Match the pairs</p>
+                    </div>
+                </a>
+
+                <a href="games/rps.html" class="game-card">
+                    <div class="game-icon">✊</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">剪刀石頭布</h3>
+                        <h3 class="ide-title">rockPaperScissors()</h3>
+                        <p class="normal-title">挑戰 AI 連勝</p>
+                        <p class="ide-title">// Beat the AI</p>
+                    </div>
+                </a>
+
+                <div class="game-card disabled">
+                    <div class="game-icon">🐍</div>
+                    <div class="game-info">
+                        <h3 class="normal-title">迷你貪吃蛇</h3>
+                        <h3 class="ide-title">snake()</h3>
+                        <p class="normal-title">經典貪吃蛇</p>
+                        <p class="ide-title">// Coming soon...</p>
+                    </div>
+                    <span class="coming-soon">即將推出</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>
