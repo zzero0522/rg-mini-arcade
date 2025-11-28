@@ -1,0 +1,442 @@
+/* ===== 遊戲統計區 ===== */
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background-color: var(--bg-secondary);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    margin-right: 5px;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* ===== 遊戲區域 ===== */
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* ===== 遊戲板 ===== */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 25px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+/* ===== 地洞 ===== */
+.hole {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(180deg, #8B4513 0%, #654321 50%, #3d2817 100%);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease;
+    overflow: hidden;
+}
+
+.hole:active {
+    transform: scale(0.95);
+}
+
+/* 地洞頂部遮罩（遮住地鼠上半部）*/
+.hole::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    right: -5px;
+    height: 35px;
+    background: linear-gradient(180deg, #654321 0%, #5a3a1d 50%, transparent 100%);
+    border-radius: 50% 50% 0 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* ===== 地鼠 ===== */
+.mole {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(180deg, #D4A574 0%, #C4956A 50%, #A67B5B 100%);
+    border-radius: 50% 50% 45% 45%;
+    transition: bottom 0.15s ease-out;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 地鼠臉部 */
+.mole::before {
+    content: '👀';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+}
+
+/* 地鼠鼻子 */
+.mole::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
+
+/* 地鼠出現 */
+.hole.active .mole {
+    bottom: 20px;
+}
+
+/* 地鼠被打中 */
+.hole.hit .mole {
+    bottom: 20px;
+}
+
+.hole.hit .mole::before {
+    content: '💫';
+}
+
+/* ===== IDE 模式地鼠 ===== */
+body.ide-mode .hole {
+    background: linear-gradient(180deg, #2d333b 0%, #22272e 50%, #1c2128 100%);
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+body.ide-mode .hole::before {
+    background: linear-gradient(180deg, #22272e 0%, #1c2128 50%, transparent 100%);
+}
+
+body.ide-mode .mole {
+    background: linear-gradient(180deg, #4ec9b0 0%, #3ba58b 100%);
+    box-shadow: 0 5px 15px rgba(78, 201, 176, 0.4);
+}
+
+body.ide-mode .mole::before {
+    content: '{ }';
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Consolas', monospace;
+    color: #1e1e1e;
+}
+
+body.ide-mode .mole::after {
+    background: #569cd6;
+}
+
+body.ide-mode .hole.hit .mole::before {
+    content: 'ERR';
+    color: #f14c4c;
+    font-weight: bold;
+}
+
+/* ===== 連擊顯示 ===== */
+.combo-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 1000;
+    animation: comboPopup 0.5s ease-out forwards;
+}
+
+@keyframes comboPopup {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80%) scale(1);
+    }
+}
+
+body.ide-mode .combo-display {
+    font-family: 'Consolas', monospace;
+    color: #4ec9b0;
+}
+
+/* ===== 時間選擇 ===== */
+.time-selection {
+    margin: 25px 0;
+}
+
+.time-selection h3 {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.time-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-btn {
+    padding: 12px 25px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--text-secondary);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    font-size: 1rem;
+}
+
+.time-btn:hover {
+    border-color: var(--accent);
+}
+
+.time-btn.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: white;
+}
+
+/* ===== 開始畫面 ===== */
+.start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    min-width: 320px;
+}
+
+.start-screen h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.game-desc {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* ===== 按鈕 ===== */
+.start-btn,
+.restart-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover,
+.restart-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+.back-menu-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-menu-btn:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* ===== 遊戲結束畫面 ===== */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    min-width: 300px;
+}
+
+.game-over h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.game-over-stats {
+    margin: 20px 0;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+.game-over-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 隱藏類別 ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 600px) {
+    .game-stats {
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .game-board {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .hole {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mole {
+        width: 55px;
+        height: 55px;
+    }
+
+    .mole::before {
+        font-size: 16px;
+        top: 10px;
+    }
+
+    .mole::after {
+        width: 12px;
+        height: 10px;
+        bottom: 12px;
+    }
+
+    .hole.active .mole,
+    .hole.hit .mole {
+        bottom: 15px;
+    }
+
+    .hole::before {
+        height: 28px;
+    }
+
+    .start-screen,
+    .game-over {
+        width: 90%;
+        min-width: auto;
+        padding: 25px;
+    }
+
+    .combo-display {
+        font-size: 2rem;
+    }
+}
+
+/* ===== IDE 模式特效 ===== */
+body.ide-mode .start-screen,
+body.ide-mode .game-over {
+    border: 1px solid var(--accent);
+}
+
+body.ide-mode .game-board {
+    border: 1px solid #30363d;
+}
+
+/* ===== 打擊動畫 ===== */
+@keyframes whack {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+}
+
+.hole.hit {
+    animation: whack 0.1s ease;
+}
+
+/* ===== 分數飄動 ===== */
+.score-popup {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #38a169;
+    pointer-events: none;
+    animation: scoreFloat 0.8s ease-out forwards;
+    z-index: 100;
+}
+
+@keyframes scoreFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+body.ide-mode .score-popup {
+    color: #4ec9b0;
+    font-family: 'Consolas', monospace;
+}

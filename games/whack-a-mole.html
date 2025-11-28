@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打地鼠 - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/whack-a-mole.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🔨 打地鼠</span>
+                <span class="ide-title">// whackAMole.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">分數</span>
+                        <span class="ide-title">score:</span>
+                    </span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高分</span>
+                        <span class="ide-title">best:</span>
+                    </span>
+                    <span id="best-score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">時間</span>
+                        <span class="ide-title">time:</span>
+                    </span>
+                    <span id="timer" class="stat-value">30</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">連擊</span>
+                        <span class="ide-title">combo:</span>
+                    </span>
+                    <span id="combo" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲板 -->
+            <div id="game-board" class="game-board hidden">
+                <div class="hole" data-index="0"><div class="mole"></div></div>
+                <div class="hole" data-index="1"><div class="mole"></div></div>
+                <div class="hole" data-index="2"><div class="mole"></div></div>
+                <div class="hole" data-index="3"><div class="mole"></div></div>
+                <div class="hole" data-index="4"><div class="mole"></div></div>
+                <div class="hole" data-index="5"><div class="mole"></div></div>
+                <div class="hole" data-index="6"><div class="mole"></div></div>
+                <div class="hole" data-index="7"><div class="mole"></div></div>
+                <div class="hole" data-index="8"><div class="mole"></div></div>
+            </div>
+
+            <!-- 連擊顯示 -->
+            <div id="combo-display" class="combo-display hidden"></div>
+
+            <!-- 遊戲結束畫面 -->
+            <div id="game-over" class="game-over hidden">
+                <h2>
+                    <span class="normal-title">⏱️ 時間到！</span>
+                    <span class="ide-title">// Time's Up!</span>
+                </h2>
+                <div class="game-over-stats">
+                    <p>
+                        <span class="normal-title">
+                            最終分數：<strong id="final-score">0</strong><br>
+                            命中次數：<strong id="final-hits">0</strong><br>
+                            最高連擊：<strong id="final-combo">0</strong>
+                        </span>
+                        <span class="ide-title">
+                            score: <strong id="final-score-ide">0</strong>;<br>
+                            hits: <strong id="final-hits-ide">0</strong>;<br>
+                            maxCombo: <strong id="final-combo-ide">0</strong>;
+                        </span>
+                    </p>
+                </div>
+                <div class="game-over-buttons">
+                    <button id="restart-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">restart()</span>
+                    </button>
+                    <button id="change-time-btn" class="back-menu-btn">
+                        <span class="normal-title">⚙️ 更換時間</span>
+                        <span class="ide-title">setTime()</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🔨 打地鼠</span>
+                    <span class="ide-title">// whackAMole()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        快速點擊冒出來的地鼠！<br>
+                        連續命中可獲得連擊加分！
+                    </span>
+                    <span class="ide-title">
+                        /* Click the moles quickly!<br>
+                        Combo hits = bonus points! */
+                    </span>
+                </p>
+
+                <div class="time-selection">
+                    <h3>
+                        <span class="normal-title">選擇時間</span>
+                        <span class="ide-title">// Duration</span>
+                    </h3>
+                    <div class="time-buttons">
+                        <button class="time-btn" data-time="15">
+                            <span class="normal-title">15 秒</span>
+                            <span class="ide-title">15s</span>
+                        </button>
+                        <button class="time-btn active" data-time="30">
+                            <span class="normal-title">30 秒</span>
+                            <span class="ide-title">30s</span>
+                        </button>
+                        <button class="time-btn" data-time="60">
+                            <span class="normal-title">60 秒</span>
+                            <span class="ide-title">60s</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始遊戲</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/whack-a-mole.js"></script>
+</body>
+</html>
