@@ -1,11 +1,4 @@
-/* ===== 遊戲區域 ===== */
-.game-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+/* ===== 2048 專屬樣式 ===== */
 
 /* ===== 遊戲標題區 ===== */
 .game-header {
@@ -256,11 +249,6 @@ body.ide-mode .game-message {
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-/* ===== 隱藏類別 ===== */
-.hidden {
-    display: none !important;
 }
 
 /* ===== 響應式設計 ===== */

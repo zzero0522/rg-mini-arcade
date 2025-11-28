@@ -1,34 +1,11 @@
-/* ===== 遊戲區域 ===== */
-.game-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
+/* ===== 終極密碼專屬樣式 ===== */
 
-/* ===== 開始畫面 ===== */
+/* 開始畫面覆蓋調整 */
 .start-screen {
-    background-color: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--card-shadow);
     max-width: 450px;
     width: 90%;
-}
-
-.start-screen h2 {
-    color: var(--accent);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.game-desc {
-    color: var(--text-secondary);
-    margin-bottom: 25px;
-    line-height: 1.6;
+    position: relative;
+    transform: none;
 }
 
 /* ===== 範圍選擇 ===== */
@@ -67,23 +44,6 @@
     border-color: var(--accent);
     background-color: var(--accent);
     color: white;
-}
-
-/* ===== 開始按鈕 ===== */
-.start-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
 }
 
 /* ===== 遊戲區 ===== */
@@ -226,23 +186,6 @@ body.ide-mode .hint.correct {
     border-radius: var(--border-radius);
 }
 
-.stat {
-    text-align: center;
-}
-
-.stat-label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 5px;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent);
-}
-
 /* ===== 歷史紀錄 ===== */
 .history {
     margin-top: 20px;
@@ -292,16 +235,6 @@ body.ide-mode .history-item.high {
 
 /* ===== 遊戲結束畫面 ===== */
 .game-over {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 100;
     min-width: 300px;
 }
 
@@ -341,51 +274,8 @@ body.ide-mode .new-record {
     margin-top: 20px;
 }
 
-.restart-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.restart-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-}
-
-.back-menu-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.back-menu-btn:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
-/* ===== 隱藏類別 ===== */
-.hidden {
-    display: none !important;
-}
-
 /* ===== 響應式設計 ===== */
 @media (max-width: 500px) {
-    .start-screen,
-    .game-board,
-    .game-over {
-        padding: 25px;
-    }
-
     .range-display {
         gap: 15px;
         padding: 15px;
@@ -410,11 +300,6 @@ body.ide-mode .new-record {
         max-width: 200px;
     }
 
-    .game-over {
-        width: 90%;
-        min-width: auto;
-    }
-
     .range-buttons {
         gap: 8px;
     }
@@ -422,6 +307,17 @@ body.ide-mode .new-record {
     .range-btn {
         padding: 10px 15px;
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .range-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .bound-value {
+        font-size: 1.6rem;
     }
 }
 

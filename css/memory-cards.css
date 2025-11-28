@@ -1,39 +1,6 @@
-/* ===== 遊戲統計區 ===== */
-.game-stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
+/* ===== Memory Cards 專屬樣式 ===== */
 
-.stat {
-    background-color: var(--bg-secondary);
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-}
-
-.stat-label {
-    color: var(--text-secondary);
-    margin-right: 5px;
-}
-
-.stat-value {
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.2rem;
-}
-
-/* ===== 遊戲區域 ===== */
-.game-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
+/* 遊戲內容區 */
 .game-content {
     width: 100%;
     max-width: 600px;
@@ -51,16 +18,20 @@
     justify-content: center;
 }
 
+/* 使用 auto-fit 讓網格自適應 */
 .card-grid.size-4 {
-    grid-template-columns: repeat(4, 70px);
+    grid-template-columns: repeat(4, minmax(60px, 80px));
+    max-width: 400px;
 }
 
 .card-grid.size-6 {
-    grid-template-columns: repeat(6, 60px);
+    grid-template-columns: repeat(6, minmax(50px, 65px));
+    max-width: 500px;
 }
 
 .card-grid.size-8 {
-    grid-template-columns: repeat(8, 50px);
+    grid-template-columns: repeat(8, minmax(40px, 55px));
+    max-width: 550px;
 }
 
 /* ===== 卡片樣式 ===== */
@@ -130,34 +101,7 @@ body.ide-mode .card.matched .card-back {
     border-color: #4ec9b0;
 }
 
-/* ===== 開始/勝利畫面 ===== */
-.start-screen,
-.win-screen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-}
-
-.start-screen h2,
-.win-screen h2 {
-    color: var(--accent);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.game-desc {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
+/* ===== 勝利畫面專屬 ===== */
 .win-stats {
     margin: 20px 0;
     line-height: 2;
@@ -182,113 +126,51 @@ body.ide-mode .card.matched .card-back {
     text-align: center;
 }
 
-.size-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.size-btn {
-    padding: 12px 25px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--text-secondary);
-    border-radius: var(--border-radius);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 90px;
-    font-size: 1rem;
-}
-
-.size-btn:hover {
-    border-color: var(--accent);
-}
-
-.size-btn.active {
-    border-color: var(--accent);
-    background-color: var(--accent);
-    color: white;
-}
-
 .size-btn small {
     display: block;
     margin-top: 3px;
     opacity: 0.8;
 }
 
-/* ===== 按鈕樣式 ===== */
-.start-btn,
-.restart-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-btn:hover,
-.restart-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-}
-
-.back-menu-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.back-menu-btn:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
-/* ===== 隱藏類別 ===== */
-.hidden {
-    display: none !important;
-}
-
 /* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
-    .game-stats {
-        gap: 10px;
-    }
-
-    .stat {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-
     .card-grid {
         gap: 6px;
         padding: 15px;
     }
 
+    /* 小螢幕時調整欄數 */
     .card-grid.size-4 {
-        grid-template-columns: repeat(4, 60px);
+        grid-template-columns: repeat(4, minmax(55px, 70px));
     }
 
     .card-grid.size-6 {
-        grid-template-columns: repeat(4, 55px);
+        grid-template-columns: repeat(4, minmax(50px, 60px));
     }
 
     .card-grid.size-8 {
+        grid-template-columns: repeat(4, minmax(45px, 55px));
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .card-grid.size-4 {
         grid-template-columns: repeat(4, 50px);
     }
 
-    .start-screen,
-    .win-screen {
-        width: 90%;
-        padding: 25px;
+    .card-grid.size-6,
+    .card-grid.size-8 {
+        grid-template-columns: repeat(4, 42px);
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 1.1rem;
     }
 }
 
@@ -299,11 +181,6 @@ body.ide-mode .card-front {
 
 body.ide-mode .card-back {
     font-family: 'Consolas', 'Courier New', monospace;
-}
-
-body.ide-mode .start-screen,
-body.ide-mode .win-screen {
-    border: 1px solid var(--accent);
 }
 
 body.ide-mode .card-grid {

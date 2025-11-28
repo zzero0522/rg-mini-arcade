@@ -1,39 +1,6 @@
-/* ===== 遊戲統計區 ===== */
-.game-stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
+/* ===== Color Diff 專屬樣式 ===== */
 
-.stat {
-    background-color: var(--bg-secondary);
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-}
-
-.stat-label {
-    color: var(--text-secondary);
-    margin-right: 5px;
-}
-
-.stat-value {
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.2rem;
-}
-
-/* ===== 遊戲區域 ===== */
-.game-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
+/* 遊戲板 */
 .game-board {
     display: grid;
     gap: 8px;
@@ -48,9 +15,10 @@
     display: none;
 }
 
+/* 色塊 - 使用 clamp 自適應大小 */
 .color-block {
-    width: 60px;
-    height: 60px;
+    width: clamp(40px, 10vw, 60px);
+    height: clamp(40px, 10vw, 60px);
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.1s ease;
@@ -64,69 +32,6 @@
     transform: scale(0.95);
 }
 
-/* ===== 開始畫面 ===== */
-.start-screen,
-.game-over {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-}
-
-.start-screen h2,
-.game-over h2 {
-    color: var(--accent);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.game-desc {
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.start-btn,
-.restart-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-btn:hover,
-.restart-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-}
-
-.back-menu-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-.back-menu-btn:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
 /* ===== 模式選擇 ===== */
 .mode-selection {
     margin-top: 25px;
@@ -135,13 +40,6 @@
 .mode-selection h3 {
     color: var(--text-secondary);
     margin-bottom: 15px;
-}
-
-.mode-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .mode-btn {
@@ -155,8 +53,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    width: 220px;
-    flex: 0 0 220px;
+    width: 100%;
+    max-width: 220px;
+    flex: 1 1 auto;
 }
 
 .mode-btn:hover {
@@ -195,58 +94,18 @@
     line-height: 1.8;
 }
 
-.hidden {
-    display: none !important;
-}
-
-/* ===== Header 按鈕區 ===== */
-.header-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.back-btn {
-    padding: 10px 20px;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 2px solid var(--accent);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.back-btn:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
 /* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
-    .game-stats {
-        gap: 10px;
+    .mode-btn {
+        width: 100%;
+        max-width: none;
     }
+}
 
-    .stat {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
+@media (max-width: 360px) {
     .color-block {
-        width: 45px;
-        height: 45px;
-    }
-
-    .start-screen,
-    .game-over {
-        padding: 25px;
-        width: 90%;
-    }
-
-    .header-buttons {
-        flex-direction: column;
-        gap: 5px;
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -257,11 +116,6 @@ body.ide-mode .game-board {
 
 body.ide-mode .color-block {
     border-radius: 2px;
-}
-
-body.ide-mode .start-screen,
-body.ide-mode .game-over {
-    border: 1px solid var(--accent);
 }
 
 /* ===== 動畫效果 ===== */

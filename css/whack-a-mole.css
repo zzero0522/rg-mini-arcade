@@ -1,40 +1,6 @@
-/* ===== 遊戲統計區 ===== */
-.game-stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
+/* ===== Whack-a-Mole 專屬樣式 ===== */
 
-.stat {
-    background-color: var(--bg-secondary);
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-}
-
-.stat-label {
-    color: var(--text-secondary);
-    margin-right: 5px;
-}
-
-.stat-value {
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.2rem;
-}
-
-/* ===== 遊戲區域 ===== */
-.game-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-/* ===== 遊戲板 ===== */
+/* 遊戲板 */
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -235,66 +201,11 @@ body.ide-mode .combo-display {
     color: white;
 }
 
-/* ===== 開始畫面 ===== */
-.start-screen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    min-width: 320px;
-}
-
+/* 開始畫面標題專屬樣式 */
 .start-screen h2 {
     color: var(--accent);
     margin-bottom: 20px;
     font-size: 1.8rem;
-}
-
-.game-desc {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-/* ===== 按鈕 ===== */
-.start-btn,
-.restart-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-btn:hover,
-.restart-btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-}
-
-.back-menu-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.back-menu-btn:hover {
-    background-color: var(--accent);
-    color: white;
 }
 
 /* ===== 遊戲結束畫面 ===== */
@@ -331,22 +242,8 @@ body.ide-mode .combo-display {
     flex-wrap: wrap;
 }
 
-/* ===== 隱藏類別 ===== */
-.hidden {
-    display: none !important;
-}
-
 /* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
-    .game-stats {
-        gap: 10px;
-    }
-
-    .stat {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-
     .game-board {
         gap: 10px;
         padding: 15px;
@@ -382,7 +279,6 @@ body.ide-mode .combo-display {
         height: 28px;
     }
 
-    .start-screen,
     .game-over {
         width: 90%;
         min-width: auto;
@@ -394,7 +290,37 @@ body.ide-mode .combo-display {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
+@media (max-width: 320px) {
+    .hole {
+        width: 65px;
+        height: 65px;
+    }
+
+    .mole {
+        width: 45px;
+        height: 45px;
+    }
+
+    .mole::before {
+        font-size: 14px;
+        top: 8px;
+    }
+
+    .mole::after {
+        width: 10px;
+        height: 8px;
+        bottom: 10px;
+    }
+
+    .hole::before {
+        height: 22px;
+    }
+
+    .time-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
 body.ide-mode .start-screen,
 body.ide-mode .game-over {
     border: 1px solid var(--accent);
