@@ -187,24 +187,28 @@ body.ide-mode .typing-input {
 }
 
 /* ===== 時間選擇 ===== */
-.time-selection {
+.time-selection,
+.mode-selection {
     margin: 25px 0;
 }
 
-.time-selection h3 {
+.time-selection h3,
+.mode-selection h3 {
     color: var(--text-secondary);
     margin-bottom: 15px;
     text-align: center;
 }
 
-.time-buttons {
+.time-buttons,
+.mode-buttons {
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.time-btn {
+.time-btn,
+.mode-btn {
     padding: 12px 25px;
     background-color: var(--bg-primary);
     border: 2px solid var(--text-secondary);
@@ -216,14 +220,147 @@ body.ide-mode .typing-input {
     font-size: 1rem;
 }
 
-.time-btn:hover {
+.time-btn:hover,
+.mode-btn:hover {
     border-color: var(--accent);
 }
 
-.time-btn.active {
+.time-btn.active,
+.mode-btn.active {
     border-color: var(--accent);
     background-color: var(--accent);
     color: white;
+}
+
+/* ===== 自訂文章區 ===== */
+.custom-text-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+}
+
+.custom-text-section h3 {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.custom-text-input {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid var(--text-secondary);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+.custom-text-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.custom-text-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.custom-text-hint {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+body.ide-mode .custom-text-input {
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* ===== 精選文章區 ===== */
+.article-section {
+    margin: 20px 0;
+}
+
+.article-section h3 {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.article-btn {
+    padding: 12px 15px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--text-secondary);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.article-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.article-btn.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: white;
+}
+
+.article-btn .article-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.article-btn .article-length {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* 文章列表滾動條 */
+.article-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.article-list::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-radius: 3px;
+}
+
+.article-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    .article-list {
+        grid-template-columns: 1fr;
+        max-height: 200px;
+    }
+
+    .article-btn {
+        padding: 10px 12px;
+    }
 }
 
 /* ===== 響應式設計 ===== */

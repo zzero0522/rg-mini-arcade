@@ -67,6 +67,58 @@
         'structure', 'survival', 'symbol', 'symptom', 'tendency', 'tension', 'threat', 'transition', 'trend', 'welfare'
     ];
 
+    // 預設文章庫
+    const ARTICLES = [
+        {
+            id: 'tech-ai',
+            title: '🤖 AI 與未來',
+            titleIDE: 'ai_future',
+            text: 'Artificial intelligence is transforming the way we live and work. From virtual assistants to self-driving cars, AI technology is becoming an integral part of our daily lives. Machine learning algorithms can now recognize images, understand speech, and even generate creative content. As these systems become more sophisticated, they raise important questions about privacy, employment, and the future of human creativity. The key challenge is to develop AI that benefits humanity while minimizing potential risks.'
+        },
+        {
+            id: 'tech-programming',
+            title: '💻 程式設計',
+            titleIDE: 'programming',
+            text: 'Learning to code is one of the most valuable skills in the modern world. Programming teaches logical thinking, problem-solving, and creativity. Whether you want to build websites, create mobile apps, or analyze data, coding opens doors to countless opportunities. The best way to learn is by doing. Start with simple projects, make mistakes, and learn from them. Remember that every expert programmer was once a beginner who refused to give up.'
+        },
+        {
+            id: 'science-space',
+            title: '🚀 太空探索',
+            titleIDE: 'space_exploration',
+            text: 'Space exploration has always captured human imagination. From the first moon landing to the latest Mars rovers, we continue to push the boundaries of what is possible. Scientists are now planning missions to establish permanent bases on the Moon and eventually send humans to Mars. These ambitious goals require international cooperation, advanced technology, and tremendous resources. The search for life beyond Earth remains one of the most exciting frontiers in science.'
+        },
+        {
+            id: 'life-success',
+            title: '🎯 成功心態',
+            titleIDE: 'success_mindset',
+            text: 'Success is not just about talent or luck. It requires dedication, persistence, and the willingness to learn from failure. The most successful people share common habits: they set clear goals, manage their time effectively, and continuously improve their skills. They also understand the importance of maintaining good relationships and helping others succeed. Remember that success is a journey, not a destination. Enjoy the process and celebrate small victories along the way.'
+        },
+        {
+            id: 'nature-environment',
+            title: '🌍 環境保護',
+            titleIDE: 'environment',
+            text: 'Climate change is one of the greatest challenges facing our planet. Rising temperatures, extreme weather events, and melting ice caps are affecting ecosystems worldwide. However, there is still hope. By reducing carbon emissions, protecting forests, and developing renewable energy sources, we can slow down global warming. Every individual can make a difference by making sustainable choices in daily life. Together, we can create a healthier planet for future generations.'
+        },
+        {
+            id: 'culture-travel',
+            title: '✈️ 旅行體驗',
+            titleIDE: 'travel',
+            text: 'Traveling opens our minds to new cultures, ideas, and perspectives. When we explore different countries, we discover unique traditions, taste exotic foods, and meet people from all walks of life. These experiences help us appreciate diversity and understand our place in the global community. Whether you prefer adventure travel, cultural immersion, or relaxing beach vacations, every journey teaches us something valuable about ourselves and the world around us.'
+        },
+        {
+            id: 'health-wellness',
+            title: '💪 健康生活',
+            titleIDE: 'health',
+            text: 'A healthy lifestyle is the foundation of a happy life. Regular exercise, balanced nutrition, and adequate sleep are essential for physical and mental well-being. Studies show that people who maintain healthy habits have more energy, better focus, and longer lifespans. It is never too late to start making positive changes. Begin with small steps like taking daily walks, eating more vegetables, and reducing screen time before bed. Your future self will thank you.'
+        },
+        {
+            id: 'business-startup',
+            title: '💼 創業精神',
+            titleIDE: 'startup',
+            text: 'Starting a business requires courage, creativity, and careful planning. Successful entrepreneurs identify problems and create innovative solutions. They build strong teams, manage finances wisely, and adapt quickly to changing markets. Failure is often part of the journey, but it provides valuable lessons. The most important qualities are resilience and the ability to learn from mistakes. If you have a great idea and the determination to pursue it, entrepreneurship might be your path to success.'
+        }
+    ];
+
     // 遊戲狀態
     let duration = 60;
     let timeLeft = 60;
@@ -78,6 +130,9 @@
     let incorrectChars = 0;
     let totalTyped = 0;
     let bestWPM = 0;
+    let gameMode = 'random'; // 'random', 'custom', or 'article'
+    let selectedArticle = null;
+    let customText = '';
 
     // DOM 元素
     const startScreen = document.getElementById('start-screen');
@@ -95,10 +150,49 @@
     const playAgainBtn = document.getElementById('play-again-btn');
     const changeTimeBtn = document.getElementById('change-time-btn');
     const timeButtons = document.querySelectorAll('.time-btn');
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    const customTextSection = document.getElementById('custom-text-section');
+    const customTextInput = document.getElementById('custom-text-input');
+    const articleSection = document.getElementById('article-section');
+    const articleList = document.getElementById('article-list');
     const finalWpm = document.getElementById('final-wpm');
     const finalAccuracy = document.getElementById('final-accuracy');
     const finalCorrect = document.getElementById('final-correct');
     const finalErrors = document.getElementById('final-errors');
+
+    // 初始化文章列表
+    function initArticleList() {
+        articleList.innerHTML = '';
+        ARTICLES.forEach((article, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'article-btn' + (index === 0 ? ' active' : '');
+            btn.dataset.id = article.id;
+            btn.innerHTML = `
+                <span class="article-title">
+                    <span class="normal-title">${article.title}</span>
+                    <span class="ide-title">${article.titleIDE}</span>
+                </span>
+                <span class="article-length">
+                    <span class="normal-title">${article.text.length} 字元</span>
+                    <span class="ide-title">${article.text.length} chars</span>
+                </span>
+            `;
+            btn.addEventListener('click', () => selectArticle(article.id));
+            articleList.appendChild(btn);
+        });
+        selectedArticle = ARTICLES[0];
+    }
+
+    // 選擇文章
+    function selectArticle(id) {
+        const article = ARTICLES.find(a => a.id === id);
+        if (!article) return;
+
+        selectedArticle = article;
+        articleList.querySelectorAll('.article-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.id === id);
+        });
+    }
 
     // 生成隨機文字
     function generateText(wordCount = 100) {
@@ -110,6 +204,35 @@
         }
 
         return selected.join(' ');
+    }
+
+    // 處理自訂文章
+    function processCustomText(text) {
+        // 清理文章：移除多餘空白、換行符轉空格
+        return text
+            .replace(/[\r\n]+/g, ' ')  // 換行轉空格
+            .replace(/\s+/g, ' ')       // 多個空格合併
+            .trim();
+    }
+
+    // 選擇模式
+    function selectMode(e) {
+        const btn = e.target.closest('.mode-btn');
+        if (!btn) return;
+
+        modeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        gameMode = btn.dataset.mode;
+
+        // 顯示/隱藏對應區域
+        customTextSection.classList.add('hidden');
+        articleSection.classList.add('hidden');
+
+        if (gameMode === 'custom') {
+            customTextSection.classList.remove('hidden');
+        } else if (gameMode === 'article') {
+            articleSection.classList.remove('hidden');
+        }
     }
 
     // 渲染文字顯示
@@ -207,10 +330,16 @@
         updateStats();
         renderText();
 
-        // 如果打完所有文字，生成更多
+        // 如果打完所有文字
         if (typedText.length >= currentText.length - 20) {
-            currentText += ' ' + generateText(50);
-            renderText();
+            if (gameMode === 'random') {
+                // 隨機模式：生成更多單字
+                currentText += ' ' + generateText(50);
+                renderText();
+            } else if (typedText.length >= currentText.length) {
+                // 文章模式（精選或自訂）：打完就結束
+                endGame();
+            }
         }
     }
 
@@ -260,7 +389,24 @@
 
     // 開始遊戲
     function startGame() {
-        currentText = generateText(100);
+        // 根據模式設定文字
+        if (gameMode === 'custom') {
+            const rawText = customTextInput.value.trim();
+            if (!rawText || rawText.length < 10) {
+                alert('請輸入至少 10 個字元的文章！');
+                return;
+            }
+            currentText = processCustomText(rawText);
+        } else if (gameMode === 'article') {
+            if (!selectedArticle) {
+                alert('請選擇一篇文章！');
+                return;
+            }
+            currentText = selectedArticle.text;
+        } else {
+            currentText = generateText(100);
+        }
+
         typedText = '';
         correctChars = 0;
         incorrectChars = 0;
@@ -333,6 +479,7 @@
         gameContent.classList.add('hidden');
         resultScreen.classList.add('hidden');
         startScreen.classList.remove('hidden');
+        initArticleList();
         loadBestWPM();
     }
 
@@ -341,6 +488,7 @@
     playAgainBtn.addEventListener('click', startGame);
     changeTimeBtn.addEventListener('click', backToMenu);
     timeButtons.forEach(btn => btn.addEventListener('click', selectTime));
+    modeButtons.forEach(btn => btn.addEventListener('click', selectMode));
     typingInput.addEventListener('input', handleInput);
 
     // 防止輸入框失焦

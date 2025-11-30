@@ -141,6 +141,51 @@
                     </span>
                 </p>
 
+                <div class="mode-selection">
+                    <h3>
+                        <span class="normal-title">選擇模式</span>
+                        <span class="ide-title">// Mode</span>
+                    </h3>
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-mode="random">
+                            <span class="normal-title">🎲 隨機單字</span>
+                            <span class="ide-title">random()</span>
+                        </button>
+                        <button class="mode-btn" data-mode="article">
+                            <span class="normal-title">📖 精選文章</span>
+                            <span class="ide-title">article()</span>
+                        </button>
+                        <button class="mode-btn" data-mode="custom">
+                            <span class="normal-title">📝 自訂文章</span>
+                            <span class="ide-title">custom()</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 精選文章選擇區 -->
+                <div id="article-section" class="article-section hidden">
+                    <h3>
+                        <span class="normal-title">選擇文章</span>
+                        <span class="ide-title">// Select Article</span>
+                    </h3>
+                    <div id="article-list" class="article-list">
+                        <!-- 由 JS 動態生成 -->
+                    </div>
+                </div>
+
+                <!-- 自訂文章輸入區 -->
+                <div id="custom-text-section" class="custom-text-section hidden">
+                    <h3>
+                        <span class="normal-title">貼上你的文章</span>
+                        <span class="ide-title">// Paste your text</span>
+                    </h3>
+                    <textarea id="custom-text-input" class="custom-text-input" placeholder="在這裡貼上想練習的文章..."></textarea>
+                    <p class="custom-text-hint">
+                        <span class="normal-title">💡 建議貼上 100-500 字的英文文章</span>
+                        <span class="ide-title">// Recommended: 100-500 characters</span>
+                    </p>
+                </div>
+
                 <div class="time-selection">
                     <h3>
                         <span class="normal-title">選擇時間</span>
