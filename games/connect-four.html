@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四子棋 - RG's Mini Arcade</title>
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/connect-four.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🔴 四子棋</span>
+                <span class="ide-title">// connectFour.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <!-- 遊戲統計 -->
+            <div id="game-stats" class="game-stats hidden">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🔴 你</span>
+                        <span class="ide-title">you</span>
+                    </span>
+                    <span id="player-score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🟡 AI</span>
+                        <span class="ide-title">ai</span>
+                    </span>
+                    <span id="ai-score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🤝 平手</span>
+                        <span class="ide-title">draw</span>
+                    </span>
+                    <span id="draw-score" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲狀態提示 -->
+            <div id="game-status" class="game-status hidden">
+                <span class="normal-title">輪到你了！</span>
+                <span class="ide-title">// Your turn</span>
+            </div>
+
+            <!-- 遊戲板 -->
+            <div id="game-board" class="c4-board hidden"></div>
+
+            <!-- 遊戲按鈕 -->
+            <div id="game-controls" class="game-controls hidden">
+                <button id="restart-btn" class="restart-btn">
+                    <span class="normal-title">🔄 重新開始</span>
+                    <span class="ide-title">restart()</span>
+                </button>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🔴 四子棋</span>
+                    <span class="ide-title">// connectFour()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        經典四子棋！<br>
+                        橫、直、斜連成四子即獲勝<br>
+                        你是 🔴，AI 是 🟡
+                    </span>
+                    <span class="ide-title">
+                        // Classic Connect Four<br>
+                        // Get 4 in a row to win<br>
+                        // You: Red, AI: Yellow
+                    </span>
+                </p>
+                <p class="select-label">
+                    <span class="normal-title">選擇難度</span>
+                    <span class="ide-title">// difficulty</span>
+                </p>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn" data-difficulty="easy">
+                        <span class="normal-title">簡單</span>
+                        <span class="ide-title">easy</span>
+                    </button>
+                    <button class="difficulty-btn active" data-difficulty="medium">
+                        <span class="normal-title">普通</span>
+                        <span class="ide-title">medium</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="hard">
+                        <span class="normal-title">困難</span>
+                        <span class="ide-title">hard</span>
+                    </button>
+                </div>
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始遊戲</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+
+            <!-- 結果畫面 -->
+            <div id="result-screen" class="game-over hidden">
+                <h2 id="result-title"></h2>
+                <p id="result-msg" class="result-msg"></p>
+                <div class="button-group">
+                    <button id="play-again-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">playAgain()</span>
+                    </button>
+                    <button id="back-btn" class="back-menu-btn">
+                        <span class="normal-title">🏠 返回選單</span>
+                        <span class="ide-title">← return;</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/connect-four.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* ===== Hangman 猜單字遊戲樣式 ===== */
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== 吊人圖 ===== */
+.hangman-drawing {
+    width: 200px;
+    height: 250px;
+}
+
+.hangman-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hangman-svg .scaffold {
+    stroke: var(--text-secondary);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.hangman-svg .body-part {
+    stroke: var(--accent);
+    stroke-width: 4;
+    stroke-linecap: round;
+    fill: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hangman-svg .body-part.visible {
+    opacity: 1;
+}
+
+/* ===== 單字顯示 ===== */
+.word-display {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.letter-box {
+    width: 40px;
+    height: 50px;
+    border-bottom: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+/* ===== 提示 ===== */
+.hint {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* ===== 虛擬鍵盤 ===== */
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 500px;
+}
+
+.key-btn {
+    width: 40px;
+    height: 45px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.key-btn:hover:not(:disabled) {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.key-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.key-btn.correct {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+.key-btn.wrong {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+/* ===== 結果訊息 ===== */
+.result-msg {
+    color: var(--text-secondary);
+    margin: 15px 0 25px;
+    font-size: 1.1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== IDE 模式 ===== */
+body.ide-mode .hangman-svg .scaffold {
+    stroke: #4a4a4a;
+}
+
+body.ide-mode .hangman-svg .body-part {
+    stroke: #4ec9b0;
+}
+
+body.ide-mode .key-btn {
+    border-color: #4ec9b0;
+    font-family: 'Consolas', monospace;
+}
+
+body.ide-mode .letter-box {
+    border-color: #4ec9b0;
+    font-family: 'Consolas', monospace;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 500px) {
+    .key-btn {
+        width: 32px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+
+    .keyboard {
+        gap: 5px;
+    }
+
+    .letter-box {
+        width: 30px;
+        height: 40px;
+        font-size: 1.4rem;
+    }
+
+    .word-display {
+        gap: 6px;
+    }
+
+    .hangman-drawing {
+        width: 160px;
+        height: 200px;
+    }
+}

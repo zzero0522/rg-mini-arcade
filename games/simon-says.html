@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>順序記憶 - RG's Mini Arcade</title>
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simon-says.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🧠 順序記憶</span>
+                <span class="ide-title">// simonSays.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <!-- 遊戲統計 -->
+            <div id="game-stats" class="game-stats hidden">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🎯 關卡</span>
+                        <span class="ide-title">level</span>
+                    </span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🏆 最高</span>
+                        <span class="ide-title">best</span>
+                    </span>
+                    <span id="best-score" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲訊息 -->
+            <div id="game-message" class="game-hint hidden">
+                <span class="normal-title">請記住順序...</span>
+                <span class="ide-title">// Memorizing...</span>
+            </div>
+
+            <!-- 遊戲板 -->
+            <div id="simon-board" class="simon-board hidden">
+                <button class="simon-btn" data-color="0"></button>
+                <button class="simon-btn" data-color="1"></button>
+                <button class="simon-btn" data-color="2"></button>
+                <button class="simon-btn" data-color="3"></button>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🧠 順序記憶</span>
+                    <span class="ide-title">// simonSays()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        記住閃爍的顏色順序！<br>
+                        每過一關會增加一個顏色<br>
+                        看看你能記住多長的序列
+                    </span>
+                    <span class="ide-title">
+                        // Remember the flashing sequence<br>
+                        // Each level adds one more<br>
+                        // How far can you go?
+                    </span>
+                </p>
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始遊戲</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+
+            <!-- 遊戲結束畫面 -->
+            <div id="game-over" class="game-over hidden">
+                <h2>
+                    <span class="normal-title">😢 遊戲結束</span>
+                    <span class="ide-title">// Game Over</span>
+                </h2>
+                <p id="game-over-msg" class="result-msg"></p>
+                <div class="button-group">
+                    <button id="retry-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再試一次</span>
+                        <span class="ide-title">retry()</span>
+                    </button>
+                    <button id="back-btn" class="back-menu-btn">
+                        <span class="normal-title">🏠 返回選單</span>
+                        <span class="ide-title">← return;</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/simon-says.js"></script>
+</body>
+</html>

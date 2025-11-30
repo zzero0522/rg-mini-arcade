@@ -1,0 +1,108 @@
+/* ===== 井字遊戲樣式 ===== */
+
+.select-label {
+    color: var(--text-secondary);
+    margin: 20px 0 10px;
+    font-size: 1rem;
+}
+
+/* ===== 遊戲狀態提示 ===== */
+.game-status {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+
+/* ===== 遊戲板 ===== */
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.ttt-cell {
+    width: 90px;
+    height: 90px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ttt-cell:hover:not(:disabled) {
+    background-color: var(--bg-primary);
+    transform: scale(1.05);
+}
+
+.ttt-cell:disabled {
+    cursor: not-allowed;
+}
+
+.ttt-cell.winner {
+    background-color: var(--accent);
+    animation: pulse-win 0.5s ease;
+}
+
+@keyframes pulse-win {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== 遊戲控制 ===== */
+.game-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== 結果訊息 ===== */
+.result-msg {
+    color: var(--text-secondary);
+    margin: 15px 0 25px;
+    font-size: 1.1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 難度按鈕 ===== */
+.difficulty-buttons {
+    margin-bottom: 20px;
+}
+
+/* ===== IDE 模式 ===== */
+body.ide-mode .ttt-cell {
+    border-color: #4ec9b0;
+    font-family: 'Consolas', monospace;
+}
+
+body.ide-mode .ttt-cell.winner {
+    background-color: #4ec9b0;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 400px) {
+    .ttt-board {
+        gap: 8px;
+        max-width: 260px;
+    }
+
+    .ttt-cell {
+        width: 75px;
+        height: 75px;
+        font-size: 2rem;
+    }
+}

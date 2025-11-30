@@ -1,0 +1,172 @@
+/* ===== 四子棋遊戲樣式 ===== */
+
+.select-label {
+    color: var(--text-secondary);
+    margin: 20px 0 10px;
+    font-size: 1rem;
+}
+
+/* ===== 遊戲狀態提示 ===== */
+.game-status {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+
+/* ===== 遊戲板 ===== */
+.c4-board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    background-color: #2980b9;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 420px;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.c4-cell {
+    width: 50px;
+    height: 50px;
+    background-color: #ecf0f1;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.c4-cell:hover:not(.filled) {
+    background-color: #bdc3c7;
+    transform: scale(1.05);
+}
+
+.c4-cell.player {
+    background-color: #e74c3c;
+    box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.c4-cell.ai {
+    background-color: #f1c40f;
+    box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.c4-cell.winner {
+    animation: pulse-win 0.5s ease infinite;
+    box-shadow: 0 0 15px currentColor;
+}
+
+.c4-cell.player.winner {
+    box-shadow: 0 0 20px #e74c3c;
+}
+
+.c4-cell.ai.winner {
+    box-shadow: 0 0 20px #f1c40f;
+}
+
+@keyframes pulse-win {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.c4-cell.filled {
+    cursor: not-allowed;
+}
+
+/* 落下動畫 */
+.c4-cell.dropping {
+    animation: drop 0.3s ease-out;
+}
+
+@keyframes drop {
+    0% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== 欄位懸停提示 ===== */
+.c4-board.hovering-0 .c4-cell[data-col="0"]:not(.filled),
+.c4-board.hovering-1 .c4-cell[data-col="1"]:not(.filled),
+.c4-board.hovering-2 .c4-cell[data-col="2"]:not(.filled),
+.c4-board.hovering-3 .c4-cell[data-col="3"]:not(.filled),
+.c4-board.hovering-4 .c4-cell[data-col="4"]:not(.filled),
+.c4-board.hovering-5 .c4-cell[data-col="5"]:not(.filled),
+.c4-board.hovering-6 .c4-cell[data-col="6"]:not(.filled) {
+    background-color: #d5dbdb;
+}
+
+/* ===== 遊戲控制 ===== */
+.game-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== 結果訊息 ===== */
+.result-msg {
+    color: var(--text-secondary);
+    margin: 15px 0 25px;
+    font-size: 1.1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 難度按鈕 ===== */
+.difficulty-buttons {
+    margin-bottom: 20px;
+}
+
+/* ===== IDE 模式 ===== */
+body.ide-mode .c4-board {
+    background-color: #1a365d;
+}
+
+body.ide-mode .c4-cell {
+    background-color: #2d3748;
+}
+
+body.ide-mode .c4-cell:hover:not(.filled) {
+    background-color: #4a5568;
+}
+
+body.ide-mode .c4-cell.player {
+    background-color: #fc8181;
+}
+
+body.ide-mode .c4-cell.ai {
+    background-color: #68d391;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 500px) {
+    .c4-board {
+        gap: 4px;
+        padding: 8px;
+        max-width: 320px;
+    }
+
+    .c4-cell {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 360px) {
+    .c4-board {
+        gap: 3px;
+        padding: 6px;
+        max-width: 280px;
+    }
+
+    .c4-cell {
+        width: 35px;
+        height: 35px;
+    }
+}
