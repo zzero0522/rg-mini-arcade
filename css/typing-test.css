@@ -20,9 +20,15 @@
     letter-spacing: 1px;
     overflow-y: auto;
     overflow-x: hidden;
-    word-wrap: break-word;
-    word-break: break-word;
+    overflow-wrap: normal;
+    word-break: keep-all;
     scroll-behavior: smooth;
+}
+
+/* 單字容器 - 確保單字不會被截斷換行 */
+.word {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 /* 自訂滾動條 */

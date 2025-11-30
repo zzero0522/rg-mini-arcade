@@ -114,28 +114,55 @@
 
     // 渲染文字顯示
     function renderText() {
-        const chars = currentText.split('');
         const typedChars = typedText.split('');
 
+        // 將文字按單字分割
+        const words = currentText.split(' ');
+        let charIndex = 0;
         let html = '';
 
-        for (let i = 0; i < chars.length; i++) {
-            let className = 'char';
+        words.forEach((word, wordIndex) => {
+            // 開始一個單字容器
+            html += '<span class="word">';
 
-            if (i < typedChars.length) {
-                if (typedChars[i] === chars[i]) {
-                    className += ' correct typed';
-                } else {
-                    className += ' incorrect typed';
+            // 處理單字中的每個字符
+            for (let i = 0; i < word.length; i++) {
+                let className = 'char';
+
+                if (charIndex < typedChars.length) {
+                    if (typedChars[charIndex] === word[i]) {
+                        className += ' correct typed';
+                    } else {
+                        className += ' incorrect typed';
+                    }
+                } else if (charIndex === typedChars.length) {
+                    className += ' current';
                 }
-            } else if (i === typedChars.length) {
-                className += ' current';
+
+                html += `<span class="${className}">${word[i]}</span>`;
+                charIndex++;
             }
 
-            // 處理空格顯示
-            const displayChar = chars[i] === ' ' ? '&nbsp;' : chars[i];
-            html += `<span class="${className}">${displayChar}</span>`;
-        }
+            html += '</span>';
+
+            // 處理單字後的空格（最後一個單字不加）
+            if (wordIndex < words.length - 1) {
+                let spaceClassName = 'char';
+
+                if (charIndex < typedChars.length) {
+                    if (typedChars[charIndex] === ' ') {
+                        spaceClassName += ' correct typed';
+                    } else {
+                        spaceClassName += ' incorrect typed';
+                    }
+                } else if (charIndex === typedChars.length) {
+                    spaceClassName += ' current';
+                }
+
+                html += `<span class="${spaceClassName}">&nbsp;</span>`;
+                charIndex++;
+            }
+        });
 
         textDisplay.innerHTML = html;
 
