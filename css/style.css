@@ -231,8 +231,31 @@ body.ide-mode .theme-btn .normal-mode {
     font-size: 0.7rem;
 }
 
+.new-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
 body.ide-mode .coming-soon {
     background-color: #4ec9b0;
+}
+
+body.ide-mode .new-tag {
+    background-color: #4ec9b0;
+    animation: none;
 }
 
 /* ===== Footer ===== */
@@ -242,6 +265,35 @@ footer {
     margin-top: 30px;
     border-top: 1px solid var(--text-secondary);
     color: var(--text-secondary);
+}
+
+.changelog-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.changelog-link:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+body.ide-mode .changelog-link {
+    border-color: #4ec9b0;
+    color: #4ec9b0;
+}
+
+body.ide-mode .changelog-link:hover {
+    background-color: #4ec9b0;
+    color: #1e1e1e;
 }
 
 /* ===== 響應式設計 ===== */

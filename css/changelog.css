@@ -1,0 +1,152 @@
+/* ===== 版本歷程頁面樣式 ===== */
+
+.changelog-area {
+    flex: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.changelog-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== 版本卡片 ===== */
+.version-card {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.version-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.version-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--accent);
+    color: white;
+}
+
+.version-tag {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.version-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.version-content {
+    padding: 20px;
+}
+
+/* ===== 更新項目 ===== */
+.update-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.update-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.update-item.new .update-icon {
+    color: #27ae60;
+}
+
+.update-item.improve .update-icon {
+    color: #f39c12;
+}
+
+.update-item.fix .update-icon {
+    color: #3498db;
+}
+
+/* ===== 遊戲列表 ===== */
+.game-list {
+    margin: 10px 0 10px 35px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.game-list li {
+    padding: 4px 0;
+}
+
+/* ===== IDE 模式 ===== */
+body.ide-mode .version-card {
+    border: 1px solid var(--accent);
+}
+
+body.ide-mode .version-header {
+    background-color: #2d2d2d;
+    border-bottom: 2px solid var(--accent);
+}
+
+body.ide-mode .version-tag {
+    color: #4ec9b0;
+}
+
+body.ide-mode .version-date {
+    color: #808080;
+}
+
+body.ide-mode .update-item {
+    font-family: 'Consolas', monospace;
+}
+
+body.ide-mode .update-item::before {
+    content: '>';
+    color: var(--accent);
+    margin-right: 5px;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 600px) {
+    .changelog-area {
+        padding: 0 10px;
+    }
+
+    .version-header {
+        padding: 12px 15px;
+    }
+
+    .version-tag {
+        font-size: 1.1rem;
+    }
+
+    .version-content {
+        padding: 15px;
+    }
+
+    .update-item {
+        font-size: 0.95rem;
+    }
+
+    .game-list {
+        margin-left: 30px;
+        font-size: 0.9rem;
+    }
+}

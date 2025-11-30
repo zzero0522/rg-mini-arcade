@@ -1,0 +1,234 @@
+/* ===== 採地雷遊戲樣式 ===== */
+
+.select-label {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.difficulty-buttons {
+    margin-top: 20px;
+}
+
+.difficulty-btn {
+    min-width: 120px;
+    padding: 15px 20px;
+}
+
+.difficulty-btn small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* ===== 遊戲板 ===== */
+.game-board {
+    display: grid;
+    gap: 0;
+    background-color: #6b839b;
+    padding: 4px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin: 20px auto;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+/* 根據難度調整格子大小 */
+.game-board.size-9 {
+    grid-template-columns: repeat(9, 1fr);
+    max-width: 360px;
+}
+
+.game-board.size-16 {
+    grid-template-columns: repeat(16, 1fr);
+    max-width: 520px;
+}
+
+/* ===== 格子 ===== */
+.cell {
+    width: 100%;
+    aspect-ratio: 1;
+    min-width: 28px;
+    max-width: 40px;
+    background-color: #8fa4b8;
+    border: none;
+    border-top: 2px solid #a8c0d4;
+    border-left: 2px solid #a8c0d4;
+    border-right: 2px solid #5a7089;
+    border-bottom: 2px solid #5a7089;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.1s ease;
+    position: relative;
+}
+
+.cell:hover:not(.revealed):not(.flagged) {
+    background-color: #9bb4c8;
+}
+
+.cell.revealed {
+    background-color: #d4dde6;
+    border: 1px solid #b0bcc8;
+    cursor: default;
+}
+
+.cell.flagged {
+    background-color: #8fa4b8;
+}
+
+.cell.flagged::after {
+    content: '🚩';
+    font-size: 1rem;
+}
+
+.cell.mine {
+    background-color: #ff6b6b;
+    border: 1px solid #cc5555;
+}
+
+.cell.mine::after {
+    content: '💣';
+    font-size: 1rem;
+}
+
+.cell.exploded {
+    background-color: #ff4444;
+    animation: explode 0.3s ease;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ===== 數字顏色 ===== */
+.cell[data-number="1"] { color: #3498db; }
+.cell[data-number="2"] { color: #27ae60; }
+.cell[data-number="3"] { color: #e74c3c; }
+.cell[data-number="4"] { color: #9b59b6; }
+.cell[data-number="5"] { color: #e67e22; }
+.cell[data-number="6"] { color: #1abc9c; }
+.cell[data-number="7"] { color: #34495e; }
+.cell[data-number="8"] { color: #7f8c8d; }
+
+/* ===== 遊戲控制按鈕 ===== */
+.game-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ===== 結果訊息 ===== */
+.result-msg {
+    color: var(--text-secondary);
+    margin: 15px 0 25px;
+    font-size: 1.1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 統計區調整 ===== */
+#game-stats {
+    margin-bottom: 10px;
+}
+
+/* ===== IDE 模式 ===== */
+body.ide-mode .cell {
+    background-color: #3a4a5a;
+    border-top: 2px solid #4a5a6a;
+    border-left: 2px solid #4a5a6a;
+    border-right: 2px solid #2a3a4a;
+    border-bottom: 2px solid #2a3a4a;
+    font-family: 'Consolas', monospace;
+}
+
+body.ide-mode .cell.revealed {
+    background-color: #1e2a36;
+    border: 1px solid #3a4a5a;
+}
+
+body.ide-mode .cell:hover:not(.revealed):not(.flagged) {
+    background-color: #4a5a6a;
+}
+
+body.ide-mode .game-board {
+    background-color: #2a3a4a;
+    border: 1px solid var(--accent);
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 600px) {
+    .game-board.size-9 {
+        max-width: 300px;
+    }
+
+    .game-board.size-16 {
+        max-width: 100%;
+        padding: 2px;
+    }
+
+    .cell {
+        min-width: 20px;
+        font-size: 0.8rem;
+    }
+
+    .cell.flagged::after,
+    .cell.mine::after {
+        font-size: 0.8rem;
+    }
+
+    .difficulty-btn {
+        min-width: 100px;
+        padding: 12px 15px;
+    }
+
+    .difficulty-btn small {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-board.size-16 {
+        gap: 1px;
+        padding: 2px;
+    }
+
+    .cell {
+        min-width: 18px;
+        font-size: 0.7rem;
+    }
+
+    .cell.flagged::after,
+    .cell.mine::after {
+        font-size: 0.7rem;
+    }
+}
+
+/* ===== 禁用文字選取 ===== */
+.game-board,
+.cell {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ===== 長按提示（行動裝置） ===== */
+@media (hover: none) and (pointer: coarse) {
+    .cell:active:not(.revealed) {
+        transform: scale(0.95);
+    }
+}

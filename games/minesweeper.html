@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採地雷 - RG's Mini Arcade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/minesweeper.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">💣 採地雷</span>
+                <span class="ide-title">// minesweeper.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE 模式</span>
+                    <span class="ide-mode">🎮 一般模式</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">💣 採地雷</span>
+                    <span class="ide-title">// minesweeper()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        點擊格子揭開地圖，避開所有地雷！<br>
+                        數字代表周圍8格有幾顆地雷<br>
+                        右鍵或長按可標記旗幟
+                    </span>
+                    <span class="ide-title">
+                        // Click to reveal, avoid mines<br>
+                        // Numbers show adjacent mines<br>
+                        // Right-click to flag
+                    </span>
+                </p>
+                <p class="select-label">
+                    <span class="normal-title">選擇難度</span>
+                    <span class="ide-title">// Select difficulty</span>
+                </p>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn" data-size="9" data-mines="10">
+                        <span class="normal-title">簡單<br><small>9×9 · 10 顆</small></span>
+                        <span class="ide-title">easy<br><small>9×9 · 10</small></span>
+                    </button>
+                    <button class="difficulty-btn" data-size="16" data-mines="40">
+                        <span class="normal-title">中等<br><small>16×16 · 40 顆</small></span>
+                        <span class="ide-title">medium<br><small>16×16 · 40</small></span>
+                    </button>
+                    <button class="difficulty-btn" data-size="16" data-mines="60">
+                        <span class="normal-title">困難<br><small>16×16 · 60 顆</small></span>
+                        <span class="ide-title">hard<br><small>16×16 · 60</small></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 遊戲統計 -->
+            <div id="game-stats" class="game-stats hidden">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">💣 地雷</span>
+                        <span class="ide-title">mines</span>
+                    </span>
+                    <span id="mine-count" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">🚩 標記</span>
+                        <span class="ide-title">flags</span>
+                    </span>
+                    <span id="flag-count" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">⏱️ 時間</span>
+                        <span class="ide-title">time</span>
+                    </span>
+                    <span id="timer" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <!-- 遊戲板 -->
+            <div id="game-board" class="game-board hidden"></div>
+
+            <!-- 遊戲按鈕 -->
+            <div id="game-controls" class="game-controls hidden">
+                <button id="restart-btn" class="restart-btn">
+                    <span class="normal-title">🔄 重新開始</span>
+                    <span class="ide-title">restart()</span>
+                </button>
+            </div>
+
+            <!-- 遊戲結束畫面 -->
+            <div id="game-over" class="game-over hidden">
+                <h2>
+                    <span class="normal-title">💥 踩到地雷了！</span>
+                    <span class="ide-title">// BOOM! Game Over</span>
+                </h2>
+                <p id="game-over-msg" class="result-msg"></p>
+                <div class="button-group">
+                    <button id="retry-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再試一次</span>
+                        <span class="ide-title">retry()</span>
+                    </button>
+                    <button id="back-btn" class="back-menu-btn">
+                        <span class="normal-title">🏠 返回選單</span>
+                        <span class="ide-title">← return;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 勝利畫面 -->
+            <div id="win-screen" class="win-screen hidden">
+                <h2>
+                    <span class="normal-title">🎉 恭喜過關！</span>
+                    <span class="ide-title">// You Win!</span>
+                </h2>
+                <p id="win-msg" class="result-msg"></p>
+                <div class="button-group">
+                    <button id="play-again-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">playAgain()</span>
+                    </button>
+                    <button id="back-win-btn" class="back-menu-btn">
+                        <span class="normal-title">🏠 返回選單</span>
+                        <span class="ide-title">← return;</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- 主題選擇器 -->
+    <div class="theme-picker">
+        <button class="theme-picker-toggle">🎨</button>
+        <div class="theme-options">
+            <button class="theme-option" data-theme="dusty-blue">
+                <span class="color-dot dusty-blue"></span>
+                藍灰
+            </button>
+            <button class="theme-option" data-theme="dusty-rose">
+                <span class="color-dot dusty-rose"></span>
+                玫瑰
+            </button>
+            <button class="theme-option" data-theme="sage-green">
+                <span class="color-dot sage-green"></span>
+                草綠
+            </button>
+            <button class="theme-option" data-theme="lavender">
+                <span class="color-dot lavender"></span>
+                薰衣草
+            </button>
+            <button class="theme-option" data-theme="warm-taupe">
+                <span class="color-dot warm-taupe"></span>
+                暖褐
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/minesweeper.js"></script>
+</body>
+</html>
