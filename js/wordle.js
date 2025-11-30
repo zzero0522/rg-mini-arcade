@@ -15,7 +15,7 @@
                 './data/wordle-words.json',
                 '/data/wordle-words.json'
             ];
-            
+
             let data = null;
             for (const path of paths) {
                 try {
@@ -28,11 +28,11 @@
                     continue;
                 }
             }
-            
+
             if (!data) {
                 throw new Error('Failed to load word list from all paths');
             }
-            
+
             WORDS = data.answers;
             // 有效猜測 = 答案單字 + 額外猜測單字
             VALID_GUESSES = new Set([...data.answers, ...data.extraGuesses]);

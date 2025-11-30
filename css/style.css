@@ -274,21 +274,6 @@ body.ide-mode .game-card:not(.disabled):hover {
     border-left-color: #4ec9b0;
 }
 
-body.ide-mode::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: #3c3c3c;
-    z-index: 1000;
-}
-
-body.ide-mode .container {
-    padding-top: 50px;
-}
-
 /* ===== 返回按鈕 ===== */
 .back-btn {
     padding: 10px 20px;
