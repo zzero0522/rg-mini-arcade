@@ -121,7 +121,8 @@ function handleTileClick(row, col) {
 // ===== 打亂拼圖 =====
 function shufflePuzzle() {
     const size = gameState.size;
-    const moves = size === 3 ? 50 : size === 4 ? 100 : size === 5 ? 150 : 200;
+    const shuffleMoves = { 3: 50, 4: 100, 5: 150, 6: 200, 7: 250, 8: 300, 9: 350 };
+    const moves = shuffleMoves[size] || 200;
 
     // 使用隨機移動來打亂，確保可解
     for (let i = 0; i < moves; i++) {
@@ -255,7 +256,8 @@ function endGame() {
     const seconds = elapsed % 60;
     const timeStr = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
-    const difficultyText = gameState.size === 3 ? '簡單' : gameState.size === 4 ? '中等' : gameState.size === 5 ? '困難' : '專家';
+    const difficultyNames = { 3: '簡單', 4: '中等', 5: '困難', 6: '專家', 7: '大師', 8: '傳說', 9: '地獄' };
+    const difficultyText = difficultyNames[gameState.size] || '未知';
 
     winStatsDisplay.innerHTML = `
         <span class="normal-title">
