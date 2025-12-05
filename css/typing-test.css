@@ -1,13 +1,13 @@
-/* ===== 打字測試專屬樣式 ===== */
+/* ===== ?��?測試專屬�?? ===== */
 
-/* ===== 遊戲內容區 ===== */
+/* ===== ?�戲?�容?� ===== */
 .game-content {
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* ===== 文字顯示區 ===== */
+/* ===== ?��?顯示?� ===== */
 .text-display {
     background-color: var(--bg-secondary);
     padding: 25px;
@@ -25,13 +25,13 @@
     scroll-behavior: smooth;
 }
 
-/* 單字容器 - 確保單字不會被截斷換行 */
+/* ?��?容器 - 確�??��?不�?被截?��?�?*/
 .word {
     display: inline-block;
     white-space: nowrap;
 }
 
-/* 自訂滾動條 */
+/* ?��?滾�?�?*/
 .text-display::-webkit-scrollbar {
     width: 8px;
 }
@@ -74,15 +74,15 @@
     opacity: 0.6;
 }
 
-body.ide-mode .char.correct {
+html.ide-mode .char.correct {
     color: #4ec9b0;
 }
 
-body.ide-mode .char.incorrect {
+html.ide-mode .char.incorrect {
     color: #f14c4c;
 }
 
-/* ===== 輸入區 ===== */
+/* ===== 輸入?� ===== */
 .typing-input {
     width: 100%;
     padding: 20px;
@@ -106,11 +106,11 @@ body.ide-mode .char.incorrect {
     color: var(--text-secondary);
 }
 
-body.ide-mode .typing-input {
+html.ide-mode .typing-input {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-/* ===== 即時統計 ===== */
+/* ===== ?��?統�? ===== */
 .live-stats {
     display: flex;
     justify-content: center;
@@ -123,7 +123,7 @@ body.ide-mode .typing-input {
     color: var(--accent);
 }
 
-/* ===== 結果畫面 ===== */
+/* ===== 結�??�面 ===== */
 .result-screen {
     position: absolute;
     top: 50%;
@@ -186,7 +186,7 @@ body.ide-mode .typing-input {
     flex-wrap: wrap;
 }
 
-/* ===== 時間選擇 ===== */
+/* ===== ?��??��? ===== */
 .time-selection,
 .mode-selection {
     margin: 25px 0;
@@ -232,7 +232,7 @@ body.ide-mode .typing-input {
     color: white;
 }
 
-/* ===== 自訂文章區 ===== */
+/* ===== ?��??��??� ===== */
 .custom-text-section {
     margin: 20px 0;
     padding: 20px;
@@ -278,11 +278,11 @@ body.ide-mode .typing-input {
     text-align: center;
 }
 
-body.ide-mode .custom-text-input {
+html.ide-mode .custom-text-input {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-/* ===== 精選文章區 ===== */
+/* ===== 精選?��??� ===== */
 .article-section {
     margin: 20px 0;
 }
@@ -337,7 +337,7 @@ body.ide-mode .custom-text-input {
     opacity: 0.7;
 }
 
-/* 文章列表滾動條 */
+/* ?��??�表滾�?�?*/
 .article-list::-webkit-scrollbar {
     width: 6px;
 }
@@ -363,7 +363,7 @@ body.ide-mode .custom-text-input {
     }
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .text-display {
         font-size: 1.1rem;
@@ -403,13 +403,13 @@ body.ide-mode .custom-text-input {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .text-display {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .text-display {
     font-family: 'Consolas', 'Courier New', monospace;
     border: 1px solid #3c3c3c;
 }
 
-body.ide-mode .start-screen,
-body.ide-mode .result-screen {
+html.ide-mode .start-screen,
+html.ide-mode .result-screen {
     border: 1px solid var(--accent);
 }

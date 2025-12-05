@@ -1,4 +1,4 @@
-/* ===== 輸入區 ===== */
+/* ===== 輸入?� ===== */
 .input-section {
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
     transform: none;
 }
 
-/* ===== 訊息區 ===== */
+/* ===== 訊息?� ===== */
 .message {
     text-align: center;
     padding: 10px;
@@ -83,7 +83,7 @@
     color: var(--accent);
 }
 
-/* ===== 歷史紀錄 ===== */
+/* ===== 歷史紀??===== */
 .history-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -145,7 +145,7 @@
     font-weight: bold;
 }
 
-/* ===== 難度選擇 ===== */
+/* ===== ??��?��? ===== */
 .difficulty-selection {
     margin: 25px 0;
 }
@@ -190,7 +190,7 @@
     opacity: 0.8;
 }
 
-/* ===== 勝利畫面 ===== */
+/* ===== ?�利?�面 ===== */
 .win-screen {
     position: absolute;
     top: 50%;
@@ -210,7 +210,7 @@
     font-size: 1.8rem;
 }
 
-body.ide-mode .win-screen h2 {
+html.ide-mode .win-screen h2 {
     color: #4ec9b0;
 }
 
@@ -228,9 +228,9 @@ body.ide-mode .win-screen h2 {
     flex-wrap: wrap;
 }
 
-/* ===== 遊戲內容區 ===== */
+/* ===== ?�戲?�容?� ===== */
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .digit-input {
         width: 40px;
@@ -257,25 +257,25 @@ body.ide-mode .win-screen h2 {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .digit-input {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .digit-input {
     font-family: 'Consolas', 'Courier New', monospace;
     border-radius: 2px;
 }
 
-body.ide-mode .history-item {
+html.ide-mode .history-item {
     border-left-color: #569cd6;
 }
 
-body.ide-mode .result-a {
+html.ide-mode .result-a {
     color: #4ec9b0;
 }
 
-body.ide-mode .result-b {
+html.ide-mode .result-b {
     color: #dcdcaa;
 }
 
-/* ===== 動畫 ===== */
+/* ===== ?�畫 ===== */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -292,7 +292,7 @@ body.ide-mode .result-b {
     animation: pop 0.3s ease;
 }
 
-body.ide-mode .start-screen,
-body.ide-mode .win-screen {
+html.ide-mode .start-screen,
+html.ide-mode .win-screen {
     border: 1px solid var(--accent);
 }

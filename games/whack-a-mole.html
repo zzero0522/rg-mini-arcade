@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="icon" type="image/png" href="../img/icon.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/whack-a-mole.css">
+    <script src="../js/init-theme.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -21,8 +24,8 @@
                     <span class="ide-title">← return;</span>
                 </a>
                 <button id="theme-toggle" class="theme-btn">
-                    <span class="normal-mode">💻 IDE 模式</span>
-                    <span class="ide-mode">🎮 一般模式</span>
+                    <span class="normal-mode">💻 IDE風格</span>
+                    <span class="ide-mode">🎮 一般風格</span>
                 </button>
             </div>
         </header>
@@ -61,15 +64,33 @@
 
             <!-- 遊戲板 -->
             <div id="game-board" class="game-board hidden">
-                <div class="hole" data-index="0"><div class="mole"></div></div>
-                <div class="hole" data-index="1"><div class="mole"></div></div>
-                <div class="hole" data-index="2"><div class="mole"></div></div>
-                <div class="hole" data-index="3"><div class="mole"></div></div>
-                <div class="hole" data-index="4"><div class="mole"></div></div>
-                <div class="hole" data-index="5"><div class="mole"></div></div>
-                <div class="hole" data-index="6"><div class="mole"></div></div>
-                <div class="hole" data-index="7"><div class="mole"></div></div>
-                <div class="hole" data-index="8"><div class="mole"></div></div>
+                <div class="hole" data-index="0">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="1">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="2">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="3">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="4">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="5">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="6">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="7">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole" data-index="8">
+                    <div class="mole"></div>
+                </div>
             </div>
 
             <!-- 連擊顯示 -->
@@ -159,6 +180,9 @@
     </div>
 
     <script src="../js/theme.js"></script>
+    <script src="../js/game-utils.js"></script>
+
     <script src="../js/whack-a-mole.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
-/* ===== 基礎變數 ===== */
+/* ===== ?��?變數 ===== */
 :root {
-    /* 一般模式 - 莫蘭迪藍灰（預設） */
+    /* 一?�模�?- ?�蘭迪�??��??�設�?*/
     --bg-primary: #f0f4f8;
     --bg-secondary: #ffffff;
     --text-primary: #2d3748;
@@ -11,55 +11,157 @@
     --border-radius: 12px;
 }
 
-/* 莫蘭迪色系主題 - 背景 + 強調色 */
-body.theme-dusty-rose {
+/* 深色模�?變數 */
+html.dark-mode {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #edf2f7;
+    --text-secondary: #a0aec0;
+    --accent: #8e9eb6;
+    --accent-hover: #a4b5cf;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ?�蘭迪色系主�?- ?�景 + 強調??*/
+html.theme-dusty-rose {
     --bg-primary: #f5eded;
     --bg-secondary: #faf6f6;
     --accent: #c4a4a4;
     --accent-hover: #b08f8f;
 }
 
-body.theme-sage-green {
+html.dark-mode.theme-dusty-rose {
+    --bg-primary: #2d2020;
+    --bg-secondary: #3d2e2e;
+    --accent: #d4b4b4;
+    --accent-hover: #e6c6c6;
+}
+
+html.theme-sage-green {
     --bg-primary: #eef2ee;
     --bg-secondary: #f6f9f6;
     --accent: #9cac9c;
     --accent-hover: #8a9a8a;
 }
 
-body.theme-dusty-blue {
+html.dark-mode.theme-sage-green {
+    --bg-primary: #1e261e;
+    --bg-secondary: #2a362a;
+    --accent: #acc4ac;
+    --accent-hover: #bed8be;
+}
+
+html.theme-dusty-blue {
     --bg-primary: #edf1f5;
     --bg-secondary: #f5f8fb;
     --accent: #7d8fa9;
     --accent-hover: #6b7d94;
 }
 
-body.theme-lavender {
+html.dark-mode.theme-dusty-blue {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --accent: #8e9eb6;
+    --accent-hover: #a4b5cf;
+}
+
+html.theme-lavender {
     --bg-primary: #f0eef5;
     --bg-secondary: #f8f6fb;
     --accent: #a9a4c4;
     --accent-hover: #938db0;
 }
 
-body.theme-warm-taupe {
+html.dark-mode.theme-lavender {
+    --bg-primary: #222029;
+    --bg-secondary: #2f2d3b;
+    --accent: #b9b4d4;
+    --accent-hover: #cdc8e8;
+}
+
+html.theme-warm-taupe {
     --bg-primary: #f3f0ed;
     --bg-secondary: #faf8f6;
     --accent: #b5a89a;
     --accent-hover: #a69888;
 }
 
-/* IDE 模式變數 */
-body.ide-mode {
+html.dark-mode.theme-warm-taupe {
+    --bg-primary: #292522;
+    --bg-secondary: #38322e;
+    --accent: #c5b8aa;
+    --accent-hover: #d9ccbe;
+}
+
+/* ===== IDE 模�?變數 ===== */
+html.ide-mode {
+    --bg-primary: #ffffff;
+    /* IDE Light Default */
+    --bg-secondary: #f3f3f3;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --accent: #007acc;
+    /* VS Code Blue */
+    --accent-hover: #0062a3;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 4px;
+    /* Square corners for IDE */
+}
+
+html.ide-mode.dark-mode {
     --bg-primary: #1e1e1e;
+    /* IDE Dark Default */
     --bg-secondary: #252526;
     --text-primary: #d4d4d4;
     --text-secondary: #808080;
     --accent: #569cd6;
+    /* VS Code Light Blue */
     --accent-hover: #4fc1ff;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --border-radius: 4px;
 }
 
-/* ===== 全域樣式 ===== */
+/* IDE 模�? + ?�蘭迪色�?(覆�? Accent) */
+html.ide-mode.theme-dusty-blue {
+    --accent: #7d8fa9;
+}
+
+html.ide-mode.dark-mode.theme-dusty-blue {
+    --accent: #8e9eb6;
+}
+
+html.ide-mode.theme-dusty-rose {
+    --accent: #c4a4a4;
+}
+
+html.ide-mode.dark-mode.theme-dusty-rose {
+    --accent: #d4b4b4;
+}
+
+html.ide-mode.theme-sage-green {
+    --accent: #9cac9c;
+}
+
+html.ide-mode.dark-mode.theme-sage-green {
+    --accent: #acc4ac;
+}
+
+html.ide-mode.theme-lavender {
+    --accent: #a9a4c4;
+}
+
+html.ide-mode.dark-mode.theme-lavender {
+    --accent: #b9b4d4;
+}
+
+html.ide-mode.theme-warm-taupe {
+    --accent: #b5a89a;
+}
+
+html.ide-mode.dark-mode.theme-warm-taupe {
+    --accent: #c5b8aa;
+}
+
+/* ===== ?��?�?? ===== */
 * {
     margin: 0;
     padding: 0;
@@ -74,7 +176,7 @@ body {
     transition: all 0.3s ease;
 }
 
-body.ide-mode {
+html.ide-mode {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
@@ -95,6 +197,12 @@ header {
     padding: 20px 0;
     border-bottom: 2px solid var(--accent);
     margin-bottom: 30px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .title {
@@ -118,7 +226,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* ===== 主題切換顯示控制 ===== */
+/* ===== 主�??��?顯示?�制 ===== */
 .ide-title,
 .ide-mode-text {
     display: none;
@@ -129,13 +237,13 @@ header {
     display: inline;
 }
 
-body.ide-mode .ide-title,
-body.ide-mode .ide-mode-text {
+html.ide-mode .ide-title,
+html.ide-mode .ide-mode-text {
     display: inline;
 }
 
-body.ide-mode .normal-title,
-body.ide-mode .normal-mode-text {
+html.ide-mode .normal-title,
+html.ide-mode .normal-mode-text {
     display: none;
 }
 
@@ -147,15 +255,15 @@ body.ide-mode .normal-mode-text {
     display: inline;
 }
 
-body.ide-mode .theme-btn .ide-mode {
+html.ide-mode .theme-btn .ide-mode {
     display: inline;
 }
 
-body.ide-mode .theme-btn .normal-mode {
+html.ide-mode .theme-btn .normal-mode {
     display: none;
 }
 
-/* ===== 遊戲選單 ===== */
+/* ===== ?�戲?�單 ===== */
 .game-menu {
     flex: 1;
 }
@@ -245,15 +353,22 @@ body.ide-mode .theme-btn .normal-mode {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
-body.ide-mode .coming-soon {
+html.ide-mode .coming-soon {
     background-color: #4ec9b0;
 }
 
-body.ide-mode .new-tag {
+html.ide-mode .new-tag {
     background-color: #4ec9b0;
     animation: none;
 }
@@ -286,17 +401,17 @@ footer {
     transform: translateY(-2px);
 }
 
-body.ide-mode .changelog-link {
+html.ide-mode .changelog-link {
     border-color: #4ec9b0;
     color: #4ec9b0;
 }
 
-body.ide-mode .changelog-link:hover {
+html.ide-mode .changelog-link:hover {
     background-color: #4ec9b0;
     color: #1e1e1e;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .title {
         font-size: 1.3rem;
@@ -317,16 +432,16 @@ body.ide-mode .changelog-link:hover {
     }
 }
 
-/* ===== IDE 模式特殊效果 ===== */
-body.ide-mode .game-card {
+/* ===== IDE 模�??��??��? ===== */
+html.ide-mode .game-card {
     border-left: 3px solid var(--accent);
 }
 
-body.ide-mode .game-card:not(.disabled):hover {
+html.ide-mode .game-card:not(.disabled):hover {
     border-left-color: #4ec9b0;
 }
 
-/* ===== 返回按鈕 ===== */
+/* ===== 返�??��? ===== */
 .back-btn {
     padding: 10px 20px;
     background-color: transparent;
@@ -347,65 +462,55 @@ body.ide-mode .game-card:not(.disabled):hover {
     transform: translateY(-2px);
 }
 
-/* IDE 模式返回按鈕加強 */
-body.ide-mode .back-btn {
+/* IDE 模�?返�??��??�強 */
+html.ide-mode .back-btn {
     border-color: #4ec9b0;
     color: #4ec9b0;
     background-color: rgba(78, 201, 176, 0.1);
     font-family: 'Consolas', monospace;
 }
 
-body.ide-mode .back-btn:hover {
+html.ide-mode .back-btn:hover {
     background-color: #4ec9b0;
     color: #1e1e1e;
 }
 
-/* ===== Header 按鈕群組 ===== */
-.header-buttons {
+/* ===== Header ?��?群�? ===== */
+.header-controls {
     display: flex;
+    align-items: center;
     gap: 10px;
-    align-items: center;
+    position: relative;
+    /* For dropdown positioning */
 }
 
-/* ===== 主題色選擇器 ===== */
+/* ===== 主�??�選?�器 ===== */
 .theme-picker {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* Align to the right of header-controls */
+    z-index: 1000;
+    margin-top: 10px;
 }
 
+/* ?��??��? toggle */
 .theme-picker-toggle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    border: 3px solid var(--bg-secondary);
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.theme-picker-toggle:hover {
-    transform: scale(1.1);
+    display: none;
 }
 
 .theme-options {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
+    position: static;
+    /* Reset absolute positioning */
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     display: none;
     flex-direction: column;
-    gap: 10px;
-    min-width: 150px;
+    gap: 5px;
+    min-width: 160px;
+    border: 1px solid var(--text-secondary);
 }
 
 .theme-picker.open .theme-options {
@@ -420,10 +525,12 @@ body.ide-mode .back-btn:hover {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.2s ease;
     color: var(--text-primary);
     font-size: 0.9rem;
+    width: 100%;
+    text-align: left;
 }
 
 .theme-option:hover {
@@ -433,53 +540,56 @@ body.ide-mode .back-btn:hover {
 .theme-option.active {
     background-color: var(--bg-primary);
     font-weight: bold;
+    border-left: 3px solid var(--accent);
 }
 
 .color-dot {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.color-dot.dusty-blue { background-color: #7d8fa9; }
-.color-dot.dusty-rose { background-color: #c4a4a4; }
-.color-dot.sage-green { background-color: #9cac9c; }
-.color-dot.lavender { background-color: #a9a4c4; }
-.color-dot.warm-taupe { background-color: #b5a89a; }
-
-/* IDE 模式隱藏主題選擇器 */
-body.ide-mode .theme-picker {
-    display: none;
+.color-dot.dusty-blue {
+    background-color: #7d8fa9;
 }
+
+.color-dot.dusty-rose {
+    background-color: #c4a4a4;
+}
+
+.color-dot.sage-green {
+    background-color: #9cac9c;
+}
+
+.color-dot.lavender {
+    background-color: #a9a4c4;
+}
+
+.color-dot.warm-taupe {
+    background-color: #b5a89a;
+}
+
+/* IDE 模�?不�??��?主�??��???*/
+/* html.ide-mode .theme-picker { display: none; } */
 
 @media (max-width: 600px) {
+    .header-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
     .theme-picker {
-        bottom: 15px;
-        right: 15px;
-    }
-
-    .theme-picker-toggle {
-        width: 45px;
-        height: 45px;
-    }
-
-    .header-buttons {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .back-btn {
-        padding: 8px 15px;
-        font-size: 0.8rem;
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
 /* ========================================
-   共用遊戲元件樣式
+   ?�用?�戲?�件�??
    ======================================== */
 
-/* ===== 遊戲區域 ===== */
+/* ===== ?�戲?�??===== */
 .game-area {
     flex: 1;
     display: flex;
@@ -488,7 +598,7 @@ body.ide-mode .theme-picker {
     position: relative;
 }
 
-/* ===== 遊戲統計區 ===== */
+/* ===== ?�戲統�??� ===== */
 .game-stats {
     display: flex;
     justify-content: center;
@@ -515,7 +625,7 @@ body.ide-mode .theme-picker {
     font-size: 1.2rem;
 }
 
-/* ===== 開始/結束畫面 ===== */
+/* ===== ?��?/結�??�面 ===== */
 .start-screen,
 .game-over,
 .win-screen,
@@ -548,7 +658,7 @@ body.ide-mode .theme-picker {
     line-height: 1.6;
 }
 
-/* ===== 共用按鈕 ===== */
+/* ===== ?�用?��? ===== */
 .start-btn,
 .restart-btn {
     padding: 15px 40px;
@@ -583,7 +693,7 @@ body.ide-mode .theme-picker {
     color: white;
 }
 
-/* ===== 難度/時間/選項按鈕群組 ===== */
+/* ===== ??��/?��?/?��??��?群�? ===== */
 .difficulty-buttons,
 .time-buttons,
 .size-buttons,
@@ -625,20 +735,20 @@ body.ide-mode .theme-picker {
     color: white;
 }
 
-/* ===== 隱藏類別 ===== */
+/* ===== ?��?類別 ===== */
 .hidden {
     display: none !important;
 }
 
-/* ===== IDE 模式共用特效 ===== */
-body.ide-mode .start-screen,
-body.ide-mode .game-over,
-body.ide-mode .win-screen,
-body.ide-mode .game-message {
+/* ===== IDE 模�??�用?��? ===== */
+html.ide-mode .start-screen,
+html.ide-mode .game-over,
+html.ide-mode .win-screen,
+html.ide-mode .game-message {
     border: 1px solid var(--accent);
 }
 
-/* ===== 響應式：極小螢幕 (320px) ===== */
+/* ===== ?��?式�?極�??��? (320px) ===== */
 @media (max-width: 360px) {
     .game-stats {
         gap: 8px;
@@ -674,7 +784,7 @@ body.ide-mode .game-message {
     }
 }
 
-/* ===== 響應式：小螢幕 (600px) ===== */
+/* ===== ?��?式�?小螢�?(600px) ===== */
 @media (max-width: 600px) {
     .game-stats {
         gap: 10px;
@@ -693,7 +803,7 @@ body.ide-mode .game-message {
     }
 }
 
-/* ===== 響應式：平板 (768px - 1024px) ===== */
+/* ===== ?��?式�?平板 (768px - 1024px) ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .container {
         max-width: 900px;

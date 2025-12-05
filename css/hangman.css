@@ -1,4 +1,4 @@
-/* ===== Hangman 猜單字遊戲樣式 ===== */
+/* ===== Hangman ?�單字�??�樣�?===== */
 
 .game-content {
     display: flex;
@@ -7,7 +7,7 @@
     gap: 20px;
 }
 
-/* ===== 吊人圖 ===== */
+/* ===== ?�人??===== */
 .hangman-drawing {
     width: 200px;
     height: 250px;
@@ -37,7 +37,7 @@
     opacity: 1;
 }
 
-/* ===== 單字顯示 ===== */
+/* ===== ?��?顯示 ===== */
 .word-display {
     display: flex;
     gap: 10px;
@@ -59,14 +59,14 @@
     text-transform: uppercase;
 }
 
-/* ===== 提示 ===== */
+/* ===== ?�示 ===== */
 .hint {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 10px;
 }
 
-/* ===== 虛擬鍵盤 ===== */
+/* ===== ?�擬?�盤 ===== */
 .keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -112,7 +112,7 @@
     color: white;
 }
 
-/* ===== 結果訊息 ===== */
+/* ===== 結�?訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -126,26 +126,26 @@
     flex-wrap: wrap;
 }
 
-/* ===== IDE 模式 ===== */
-body.ide-mode .hangman-svg .scaffold {
+/* ===== IDE 模�? ===== */
+html.ide-mode .hangman-svg .scaffold {
     stroke: #4a4a4a;
 }
 
-body.ide-mode .hangman-svg .body-part {
+html.ide-mode .hangman-svg .body-part {
     stroke: #4ec9b0;
 }
 
-body.ide-mode .key-btn {
+html.ide-mode .key-btn {
     border-color: #4ec9b0;
     font-family: 'Consolas', monospace;
 }
 
-body.ide-mode .letter-box {
+html.ide-mode .letter-box {
     border-color: #4ec9b0;
     font-family: 'Consolas', monospace;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 500px) {
     .key-btn {
         width: 32px;

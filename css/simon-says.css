@@ -1,4 +1,4 @@
-/* ===== 順序記憶遊戲樣式 ===== */
+/* ===== ?��?記憶?�戲�?? ===== */
 
 .game-hint {
     text-align: center;
@@ -8,7 +8,7 @@
     min-height: 30px;
 }
 
-/* ===== 遊戲板 ===== */
+/* ===== ?�戲??===== */
 .simon-board {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -65,7 +65,7 @@
     color: #f1c40f;
 }
 
-/* 亮起效果 */
+/* 亮起?��? */
 .simon-btn[data-color="0"].active {
     background-color: #ff6b6b;
 }
@@ -82,7 +82,7 @@
     background-color: #f7dc6f;
 }
 
-/* ===== 結果訊息 ===== */
+/* ===== 結�?訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -96,28 +96,28 @@
     flex-wrap: wrap;
 }
 
-/* ===== IDE 模式 ===== */
-body.ide-mode .simon-btn {
+/* ===== IDE 模�? ===== */
+html.ide-mode .simon-btn {
     border-radius: 8px;
 }
 
-body.ide-mode .simon-btn[data-color="0"] {
+html.ide-mode .simon-btn[data-color="0"] {
     background-color: #d63031;
 }
 
-body.ide-mode .simon-btn[data-color="1"] {
+html.ide-mode .simon-btn[data-color="1"] {
     background-color: #0984e3;
 }
 
-body.ide-mode .simon-btn[data-color="2"] {
+html.ide-mode .simon-btn[data-color="2"] {
     background-color: #00b894;
 }
 
-body.ide-mode .simon-btn[data-color="3"] {
+html.ide-mode .simon-btn[data-color="3"] {
     background-color: #fdcb6e;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 400px) {
     .simon-btn {
         width: 120px;

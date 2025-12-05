@@ -1,6 +1,6 @@
-/* ===== PAC-MAN 遊戲樣式 ===== */
+/* ===== PAC-MAN ?�戲�?? ===== */
 
-/* 遊戲內容容器 */
+/* ?�戲?�容容器 */
 .game-content {
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@
     gap: 15px;
 }
 
-/* 遊戲版面 */
+/* ?�戲?�面 */
 .game-board {
     display: grid;
     gap: 0;
@@ -20,7 +20,7 @@
     box-shadow: 0 0 20px rgba(33, 33, 222, 0.5);
 }
 
-/* 格子 */
+/* ?��? */
 .cell {
     width: 28px;
     height: 28px;
@@ -30,7 +30,7 @@
     position: relative;
 }
 
-/* PAC-MAN 容器 - 用於定位動畫 */
+/* PAC-MAN 容器 - ?�於定�??�畫 */
 .pacman-container {
     position: absolute;
     width: 28px;
@@ -42,7 +42,7 @@
     z-index: 10;
 }
 
-/* 鬼魂容器 - 用於定位動畫 */
+/* 鬼�?容器 - ?�於定�??�畫 */
 .ghost-container {
     position: absolute;
     width: 28px;
@@ -54,7 +54,7 @@
     z-index: 5;
 }
 
-/* 牆壁 */
+/* ?��? */
 .cell.wall {
     background-color: #2121de;
     border-radius: 3px;
@@ -65,7 +65,7 @@
     background-color: #000;
 }
 
-/* 豆子 */
+/* 豆�? */
 .cell.dot::after {
     content: '';
     width: 6px;
@@ -74,7 +74,7 @@
     border-radius: 50%;
 }
 
-/* 大力丸 */
+/* 大�?�?*/
 .cell.power-pellet::after {
     content: '';
     width: 16px;
@@ -114,7 +114,7 @@
     animation: chompDown 0.15s linear infinite;
 }
 
-/* 向右吃 - 嘴巴在右邊 */
+/* ?�右??- ?�巴?�右??*/
 @keyframes chompRight {
     0%, 100% {
         clip-path: polygon(0 0, 100% 0, 100% 35%, 50% 50%, 100% 65%, 100% 100%, 0 100%);
@@ -124,7 +124,7 @@
     }
 }
 
-/* 向左吃 - 嘴巴在左邊 */
+/* ?�左??- ?�巴?�左??*/
 @keyframes chompLeft {
     0%, 100% {
         clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 65%, 50% 50%, 0 35%, 0 0);
@@ -134,7 +134,7 @@
     }
 }
 
-/* 向上吃 - 嘴巴在上面 */
+/* ?��???- ?�巴?��???*/
 @keyframes chompUp {
     0%, 100% {
         clip-path: polygon(0 0, 35% 0, 50% 50%, 65% 0, 100% 0, 100% 100%, 0 100%);
@@ -144,7 +144,7 @@
     }
 }
 
-/* 向下吃 - 嘴巴在下面 */
+/* ?��???- ?�巴?��???*/
 @keyframes chompDown {
     0%, 100% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 100%, 50% 50%, 35% 100%, 0 100%);
@@ -154,7 +154,7 @@
     }
 }
 
-/* 鬼魂 */
+/* 鬼�? */
 .ghost {
     width: 24px;
     height: 24px;
@@ -174,7 +174,7 @@
     clip-path: polygon(0% 0%, 16% 100%, 33% 0%, 50% 100%, 66% 0%, 83% 100%, 100% 0%);
 }
 
-/* 鬼魂眼睛 */
+/* 鬼�??��? */
 .ghost::before {
     content: '';
     position: absolute;
@@ -187,13 +187,13 @@
     box-shadow: 10px 0 0 white;
 }
 
-/* 各個鬼魂顏色 */
+/* ?�個鬼魂�???*/
 .ghost.blinky { background-color: #ff0000; }
 .ghost.pinky { background-color: #ffb8ff; }
 .ghost.inky { background-color: #00ffff; }
 .ghost.clyde { background-color: #ffb852; }
 
-/* 驚嚇模式鬼魂 */
+/* 驚�?模�?鬼�? */
 .ghost.scared {
     background-color: #2121de !important;
     animation: ghostScared 0.2s ease-in-out infinite;
@@ -204,7 +204,7 @@
     box-shadow: 8px 0 0 white;
 }
 
-/* 驚嚇結束閃爍 */
+/* 驚�?結�??��? */
 .ghost.scared.ending {
     animation: ghostFlash 0.2s ease-in-out infinite;
 }
@@ -224,7 +224,7 @@
     51%, 100% { background-color: #ffffff !important; }
 }
 
-/* 手機控制按鈕 */
+/* ?��??�制?��? */
 .mobile-controls {
     display: none;
     flex-direction: column;
@@ -258,7 +258,7 @@
     transform: scale(0.95);
 }
 
-/* 過關畫面 */
+/* ?��??�面 */
 .level-complete {
     position: absolute;
     top: 50%;
@@ -292,30 +292,30 @@
     margin-top: 20px;
 }
 
-/* IDE 模式特殊樣式 */
-body.ide-mode .game-board {
+/* IDE 模�??��?�?? */
+html.ide-mode .game-board {
     border-color: #569cd6;
     box-shadow: 0 0 20px rgba(86, 156, 214, 0.5);
 }
 
-body.ide-mode .cell.wall {
+html.ide-mode .cell.wall {
     background-color: #264f78;
 }
 
-body.ide-mode .cell.dot::after,
-body.ide-mode .cell.power-pellet::after {
+html.ide-mode .cell.dot::after,
+html.ide-mode .cell.power-pellet::after {
     background-color: #4ec9b0;
 }
 
-body.ide-mode .pacman {
+html.ide-mode .pacman {
     background-color: #dcdcaa;
 }
 
-body.ide-mode .ghost.scared {
+html.ide-mode .ghost.scared {
     background-color: #569cd6 !important;
 }
 
-/* 響應式設計 */
+/* ?��?式設�?*/
 @media (max-width: 600px) {
     .cell {
         width: 16px;

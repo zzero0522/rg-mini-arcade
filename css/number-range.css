@@ -1,12 +1,12 @@
-/* ===== 終極密碼專屬樣式 ===== */
+/* ===== 終極密碼專屬�?? ===== */
 
-/* 開始畫面覆蓋調整 */
+/* ?��??�面覆�?調整 */
 .start-screen {
     max-width: 450px;
     width: 90%;
 }
 
-/* ===== 範圍選擇 ===== */
+/* ===== 範�??��? ===== */
 .range-selection {
     margin: 25px 0;
 }
@@ -44,7 +44,7 @@
     color: white;
 }
 
-/* ===== 遊戲區 ===== */
+/* ===== ?�戲?� ===== */
 .game-board {
     background-color: var(--bg-secondary);
     padding: 30px;
@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-/* ===== 範圍顯示 ===== */
+/* ===== 範�?顯示 ===== */
 .range-display {
     display: flex;
     justify-content: center;
@@ -89,7 +89,7 @@
     color: var(--text-secondary);
 }
 
-/* ===== 猜測區 ===== */
+/* ===== ?�測?� ===== */
 .guess-section {
     display: flex;
     gap: 10px;
@@ -138,7 +138,7 @@
     cursor: not-allowed;
 }
 
-/* ===== 提示 ===== */
+/* ===== ?�示 ===== */
 .hint {
     font-size: 1.3rem;
     font-weight: bold;
@@ -161,19 +161,19 @@
     color: #27ae60;
 }
 
-body.ide-mode .hint.too-low {
+html.ide-mode .hint.too-low {
     color: #f14c4c;
 }
 
-body.ide-mode .hint.too-high {
+html.ide-mode .hint.too-high {
     color: #569cd6;
 }
 
-body.ide-mode .hint.correct {
+html.ide-mode .hint.correct {
     color: #4ec9b0;
 }
 
-/* ===== 統計 ===== */
+/* ===== 統�? ===== */
 .stats {
     display: flex;
     justify-content: center;
@@ -184,7 +184,7 @@ body.ide-mode .hint.correct {
     border-radius: var(--border-radius);
 }
 
-/* ===== 歷史紀錄 ===== */
+/* ===== 歷史紀??===== */
 .history {
     margin-top: 20px;
     text-align: left;
@@ -221,17 +221,17 @@ body.ide-mode .hint.correct {
     color: #3498db;
 }
 
-body.ide-mode .history-item.low {
+html.ide-mode .history-item.low {
     background-color: rgba(241, 76, 76, 0.2);
     color: #f14c4c;
 }
 
-body.ide-mode .history-item.high {
+html.ide-mode .history-item.high {
     background-color: rgba(86, 156, 214, 0.2);
     color: #569cd6;
 }
 
-/* ===== 遊戲結束畫面 ===== */
+/* ===== ?�戲結�??�面 ===== */
 .game-over {
     min-width: 300px;
 }
@@ -260,7 +260,7 @@ body.ide-mode .history-item.high {
     50% { transform: scale(1.1); }
 }
 
-body.ide-mode .new-record {
+html.ide-mode .new-record {
     color: #dcdcaa;
 }
 
@@ -272,7 +272,7 @@ body.ide-mode .new-record {
     margin-top: 20px;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 500px) {
     .range-display {
         gap: 15px;
@@ -319,13 +319,13 @@ body.ide-mode .new-record {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .start-screen,
-body.ide-mode .game-board,
-body.ide-mode .game-over {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .start-screen,
+html.ide-mode .game-board,
+html.ide-mode .game-over {
     border: 1px solid var(--accent);
 }
 
-body.ide-mode .guess-input {
+html.ide-mode .guess-input {
     font-family: 'Consolas', monospace;
 }

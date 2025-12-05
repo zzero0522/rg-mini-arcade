@@ -186,7 +186,7 @@
             combo.forEach(i => cells[i].classList.add('winner'));
         }
 
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
 
         setTimeout(() => {
             if (winner === PLAYER) {

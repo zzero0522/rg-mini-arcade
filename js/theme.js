@@ -1,8 +1,11 @@
 // 主題管理
-(function() {
+(function () {
     const THEME_KEY = 'rg-arcade-theme';
     const COLOR_KEY = 'rg-arcade-color';
+    const DARK_MODE_KEY = 'rg-arcade-dark-mode';
+
     const themeToggle = document.getElementById('theme-toggle');
+    const darkModeToggle = document.getElementById('dark-mode-toggle'); // 之前漏掉了這個
 
     const colorThemes = [
         { id: 'dusty-blue', name: '霧霾藍', class: 'theme-dusty-blue' },
@@ -14,10 +17,12 @@
 
     // 創建主題選擇器
     function createThemePicker() {
+        const headerControls = document.querySelector('.header-controls');
+        const pickerBtn = document.getElementById('theme-picker-btn');
+
         const picker = document.createElement('div');
         picker.className = 'theme-picker';
         picker.innerHTML = `
-            <button class="theme-picker-toggle" title="選擇主題色">🎨</button>
             <div class="theme-options">
                 ${colorThemes.map(theme => `
                     <button class="theme-option" data-theme="${theme.id}">
@@ -27,13 +32,19 @@
                 `).join('')}
             </div>
         `;
-        document.body.appendChild(picker);
 
-        // 切換面板
-        const toggle = picker.querySelector('.theme-picker-toggle');
-        toggle.addEventListener('click', () => {
-            picker.classList.toggle('open');
-        });
+        // 將 picker 放入 header-controls (而不是 body)
+        if (headerControls) {
+            headerControls.appendChild(picker);
+        }
+
+        // 切換面板 (綁定到現有的按鈕)
+        if (pickerBtn) {
+            pickerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                picker.classList.toggle('open');
+            });
+        }
 
         // 選擇主題色
         const options = picker.querySelectorAll('.theme-option');
@@ -48,7 +59,7 @@
 
         // 點擊外部關閉
         document.addEventListener('click', (e) => {
-            if (!picker.contains(e.target)) {
+            if (!picker.contains(e.target) && e.target !== pickerBtn) {
                 picker.classList.remove('open');
             }
         });
@@ -60,13 +71,13 @@
     function setColorTheme(themeId) {
         // 移除所有主題色
         colorThemes.forEach(t => {
-            document.body.classList.remove(t.class);
+            document.documentElement.classList.remove(t.class);
         });
 
         // 加入新主題色
         const theme = colorThemes.find(t => t.id === themeId);
         if (theme) {
-            document.body.classList.add(theme.class);
+            document.documentElement.classList.add(theme.class);
             localStorage.setItem(COLOR_KEY, themeId);
         }
     }
@@ -79,11 +90,31 @@
         });
     }
 
+    // 更新深色模式按鈕圖示
+    function updateDarkModeIcon(isDark) {
+        if (!darkModeToggle) return;
+        const lightIcon = darkModeToggle.querySelector('.light-icon');
+        const darkIcon = darkModeToggle.querySelector('.dark-icon');
+        if (lightIcon && darkIcon) {
+            lightIcon.style.display = isDark ? 'none' : 'inline';
+            darkIcon.style.display = isDark ? 'inline' : 'none';
+        }
+    }
+
     // 載入儲存的主題
     function loadTheme() {
         const savedTheme = localStorage.getItem(THEME_KEY);
         if (savedTheme === 'ide') {
-            document.body.classList.add('ide-mode');
+            document.documentElement.classList.add('ide-mode');
+        }
+
+        // 載入深色模式
+        const savedDarkMode = localStorage.getItem(DARK_MODE_KEY);
+        if (savedDarkMode === 'true') {
+            document.documentElement.classList.add('dark-mode');
+            updateDarkModeIcon(true);
+        } else {
+            updateDarkModeIcon(false);
         }
 
         // 載入主題色
@@ -91,11 +122,19 @@
         setColorTheme(savedColor);
     }
 
-    // 切換主題
+    // 切換主題 (IDE/Normal)
     function toggleTheme() {
-        document.body.classList.toggle('ide-mode');
-        const isIDE = document.body.classList.contains('ide-mode');
+        document.documentElement.classList.toggle('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
         localStorage.setItem(THEME_KEY, isIDE ? 'ide' : 'normal');
+    }
+
+    // 切換深色模式
+    function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark-mode');
+        const isDark = document.documentElement.classList.contains('dark-mode');
+        localStorage.setItem(DARK_MODE_KEY, isDark);
+        updateDarkModeIcon(isDark);
     }
 
     // 初始化
@@ -106,7 +145,12 @@
     const savedColor = localStorage.getItem(COLOR_KEY) || 'dusty-blue';
     setTimeout(() => updateActiveOption(savedColor), 0);
 
+    // 綁定事件監聽器
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
     }
 })();

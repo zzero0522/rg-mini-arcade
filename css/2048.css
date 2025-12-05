@@ -1,6 +1,6 @@
-/* ===== 2048 專屬樣式 ===== */
+/* ===== 2048 專屬�?? ===== */
 
-/* ===== 遊戲標題區 ===== */
+/* ===== ?�戲標�??� ===== */
 .game-header {
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== 遊戲說明 ===== */
+/* ===== ?�戲說�? ===== */
 .game-instruction {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -62,7 +62,7 @@
     text-align: center;
 }
 
-/* ===== 遊戲容器 ===== */
+/* ===== ?�戲容器 ===== */
 .game-container {
     position: relative;
     width: 400px;
@@ -73,11 +73,11 @@
     touch-action: none;
 }
 
-body.ide-mode .game-container {
+html.ide-mode .game-container {
     background-color: #2d333b;
 }
 
-/* ===== 網格背景 ===== */
+/* ===== 網格?�景 ===== */
 .grid-background {
     position: absolute;
     display: grid;
@@ -95,11 +95,11 @@ body.ide-mode .game-container {
     border-radius: 4px;
 }
 
-body.ide-mode .grid-cell {
+html.ide-mode .grid-cell {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== 方塊容器 ===== */
+/* ===== ?��?容器 ===== */
 .tile-container {
     position: absolute;
     top: 10px;
@@ -108,7 +108,7 @@ body.ide-mode .grid-cell {
     bottom: 10px;
 }
 
-/* ===== 方塊 ===== */
+/* ===== ?��? ===== */
 .tile {
     position: absolute;
     width: calc((100% - 30px) / 4);
@@ -155,7 +155,7 @@ body.ide-mode .grid-cell {
     }
 }
 
-/* ===== 方塊顏色 ===== */
+/* ===== ?��?顏色 ===== */
 .tile-2 { background: #eee4da; color: #776e65; }
 .tile-4 { background: #ede0c8; color: #776e65; }
 .tile-8 { background: #f2b179; color: #f9f6f2; }
@@ -169,21 +169,21 @@ body.ide-mode .grid-cell {
 .tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 1.5rem; }
 .tile-super { background: #3c3a32; color: #f9f6f2; font-size: 1.3rem; }
 
-/* ===== IDE 模式方塊顏色 ===== */
-body.ide-mode .tile-2 { background: #264f78; color: #d4d4d4; }
-body.ide-mode .tile-4 { background: #2d5a87; color: #d4d4d4; }
-body.ide-mode .tile-8 { background: #569cd6; color: #1e1e1e; }
-body.ide-mode .tile-16 { background: #4ec9b0; color: #1e1e1e; }
-body.ide-mode .tile-32 { background: #4fc1ff; color: #1e1e1e; }
-body.ide-mode .tile-64 { background: #c586c0; color: #1e1e1e; }
-body.ide-mode .tile-128 { background: #dcdcaa; color: #1e1e1e; }
-body.ide-mode .tile-256 { background: #ce9178; color: #1e1e1e; }
-body.ide-mode .tile-512 { background: #d7ba7d; color: #1e1e1e; }
-body.ide-mode .tile-1024 { background: #b5cea8; color: #1e1e1e; }
-body.ide-mode .tile-2048 { background: #608b4e; color: #f9f6f2; }
-body.ide-mode .tile-super { background: #f14c4c; color: #f9f6f2; }
+/* ===== IDE 模�??��?顏色 ===== */
+html.ide-mode .tile-2 { background: #264f78; color: #d4d4d4; }
+html.ide-mode .tile-4 { background: #2d5a87; color: #d4d4d4; }
+html.ide-mode .tile-8 { background: #569cd6; color: #1e1e1e; }
+html.ide-mode .tile-16 { background: #4ec9b0; color: #1e1e1e; }
+html.ide-mode .tile-32 { background: #4fc1ff; color: #1e1e1e; }
+html.ide-mode .tile-64 { background: #c586c0; color: #1e1e1e; }
+html.ide-mode .tile-128 { background: #dcdcaa; color: #1e1e1e; }
+html.ide-mode .tile-256 { background: #ce9178; color: #1e1e1e; }
+html.ide-mode .tile-512 { background: #d7ba7d; color: #1e1e1e; }
+html.ide-mode .tile-1024 { background: #b5cea8; color: #1e1e1e; }
+html.ide-mode .tile-2048 { background: #608b4e; color: #f9f6f2; }
+html.ide-mode .tile-super { background: #f14c4c; color: #f9f6f2; }
 
-/* ===== 遊戲訊息覆蓋層 ===== */
+/* ===== ?�戲訊息覆�?�?===== */
 .game-message {
     position: absolute;
     top: 50%;
@@ -198,7 +198,7 @@ body.ide-mode .tile-super { background: #f14c4c; color: #f9f6f2; }
     min-width: 280px;
 }
 
-body.ide-mode .game-message {
+html.ide-mode .game-message {
     background-color: rgba(37, 37, 38, 0.98);
     border: 1px solid var(--accent);
 }
@@ -251,7 +251,7 @@ body.ide-mode .game-message {
     flex-wrap: wrap;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 450px) {
     .game-container {
         width: 320px;
@@ -305,7 +305,7 @@ body.ide-mode .game-message {
     }
 }
 
-/* ===== 分數增加動畫 ===== */
+/* ===== ?�數增�??�畫 ===== */
 .score-add {
     position: absolute;
     font-size: 1.2rem;

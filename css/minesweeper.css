@@ -1,4 +1,4 @@
-/* ===== 採地雷遊戲樣式 ===== */
+/* ===== ?�地?��??�樣�?===== */
 
 .select-label {
     color: var(--text-secondary);
@@ -20,7 +20,7 @@
     opacity: 0.8;
 }
 
-/* ===== 遊戲板 ===== */
+/* ===== ?�戲??===== */
 .game-board {
     display: grid;
     gap: 0;
@@ -34,7 +34,7 @@
     touch-action: manipulation;
 }
 
-/* 根據難度調整格子大小 */
+/* ?��???��調整?��?大�? */
 .game-board.size-9 {
     grid-template-columns: repeat(9, 1fr);
     max-width: 360px;
@@ -45,7 +45,7 @@
     max-width: 520px;
 }
 
-/* ===== 格子 ===== */
+/* ===== ?��? ===== */
 .cell {
     width: 100%;
     aspect-ratio: 1;
@@ -82,7 +82,7 @@
 }
 
 .cell.flagged::after {
-    content: '🚩';
+    content: '?��';
     font-size: 1rem;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .cell.mine::after {
-    content: '💣';
+    content: '?��';
     font-size: 1rem;
 }
 
@@ -107,7 +107,7 @@
     100% { transform: scale(1); }
 }
 
-/* ===== 數字顏色 ===== */
+/* ===== ?��?顏色 ===== */
 .cell[data-number="1"] { color: #3498db; }
 .cell[data-number="2"] { color: #27ae60; }
 .cell[data-number="3"] { color: #e74c3c; }
@@ -117,7 +117,7 @@
 .cell[data-number="7"] { color: #34495e; }
 .cell[data-number="8"] { color: #7f8c8d; }
 
-/* ===== 遊戲控制按鈕 ===== */
+/* ===== ?�戲?�制?��? ===== */
 .game-controls {
     margin-top: 20px;
     display: flex;
@@ -125,7 +125,7 @@
     gap: 15px;
 }
 
-/* ===== 結果訊息 ===== */
+/* ===== 結�?訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -139,13 +139,13 @@
     flex-wrap: wrap;
 }
 
-/* ===== 統計區調整 ===== */
+/* ===== 統�??�調整 ===== */
 #game-stats {
     margin-bottom: 10px;
 }
 
-/* ===== IDE 模式 ===== */
-body.ide-mode .cell {
+/* ===== IDE 模�? ===== */
+html.ide-mode .cell {
     background-color: #3a4a5a;
     border-top: 2px solid #4a5a6a;
     border-left: 2px solid #4a5a6a;
@@ -154,21 +154,21 @@ body.ide-mode .cell {
     font-family: 'Consolas', monospace;
 }
 
-body.ide-mode .cell.revealed {
+html.ide-mode .cell.revealed {
     background-color: #1e2a36;
     border: 1px solid #3a4a5a;
 }
 
-body.ide-mode .cell:hover:not(.revealed):not(.flagged) {
+html.ide-mode .cell:hover:not(.revealed):not(.flagged) {
     background-color: #4a5a6a;
 }
 
-body.ide-mode .game-board {
+html.ide-mode .game-board {
     background-color: #2a3a4a;
     border: 1px solid var(--accent);
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .game-board.size-9 {
         max-width: 300px;
@@ -216,7 +216,7 @@ body.ide-mode .game-board {
     }
 }
 
-/* ===== 禁用文字選取 ===== */
+/* ===== 禁用?��??��? ===== */
 .game-board,
 .cell {
     -webkit-touch-callout: none;
@@ -226,7 +226,7 @@ body.ide-mode .game-board {
     user-select: none;
 }
 
-/* ===== 長按提示（行動裝置） ===== */
+/* ===== ?��??�示（�??��?置�? ===== */
 @media (hover: none) and (pointer: coarse) {
     .cell:active:not(.revealed) {
         transform: scale(0.95);

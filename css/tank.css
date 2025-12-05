@@ -1,6 +1,6 @@
-/* ===== 坦克大戰遊戲樣式 ===== */
+/* ===== ?��?大戰?�戲�?? ===== */
 
-/* 遊戲內容容器 */
+/* ?�戲?�容容器 */
 .game-content {
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@
     gap: 15px;
 }
 
-/* 遊戲版面 */
+/* ?�戲?�面 */
 .game-board {
     background-color: #2d2d2d;
     border: 4px solid var(--accent);
@@ -22,7 +22,7 @@
     display: block;
 }
 
-/* 手機控制按鈕 */
+/* ?��??�制?��? */
 .mobile-controls {
     display: none;
     justify-content: center;
@@ -79,7 +79,7 @@
     background: linear-gradient(145deg, #c0392b, #a93226);
 }
 
-/* 過關畫面 */
+/* ?��??�面 */
 .level-complete {
     position: absolute;
     top: 50%;
@@ -113,18 +113,18 @@
     margin-top: 20px;
 }
 
-/* IDE 模式特殊樣式 */
-body.ide-mode .game-board {
+/* IDE 模�??��?�?? */
+html.ide-mode .game-board {
     border-color: #569cd6;
     box-shadow: 0 0 20px rgba(86, 156, 214, 0.5);
 }
 
-body.ide-mode .fire-btn {
+html.ide-mode .fire-btn {
     background: linear-gradient(145deg, #569cd6, #4a8bc2);
     border-color: #569cd6;
 }
 
-/* 響應式設計 */
+/* ?��?式設�?*/
 @media (max-width: 600px) {
     .mobile-controls {
         display: flex;

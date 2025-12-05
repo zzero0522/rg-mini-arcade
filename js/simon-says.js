@@ -156,7 +156,7 @@
         saveBestScore();
 
         const finalLevel = level - 1;
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
 
         if (isIDE) {
             gameOverMsg.innerHTML = `<span class="ide-title">// Reached level ${finalLevel}</span>`;

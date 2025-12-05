@@ -1,4 +1,4 @@
-/* ===== 井字遊戲樣式 ===== */
+/* ===== 井�??�戲�?? ===== */
 
 .select-label {
     color: var(--text-secondary);
@@ -6,7 +6,7 @@
     font-size: 1rem;
 }
 
-/* ===== 遊戲狀態提示 ===== */
+/* ===== ?�戲?�?��?�?===== */
 .game-status {
     text-align: center;
     font-size: 1.2rem;
@@ -15,7 +15,7 @@
     min-height: 30px;
 }
 
-/* ===== 遊戲板 ===== */
+/* ===== ?�戲??===== */
 .ttt-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,22 +49,48 @@
 
 .ttt-cell.winner {
     background-color: var(--accent);
+    color: white;
     animation: pulse-win 0.5s ease;
 }
 
-@keyframes pulse-win {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+/* Normal Style X/O Colors */
+.ttt-cell.x {
+    color: #e53e3e;
 }
 
-/* ===== 遊戲控制 ===== */
+.ttt-cell.o {
+    color: #3182ce;
+}
+
+/* Dark Mode X/O Colors */
+html.dark-mode .ttt-cell.x {
+    color: #f14c4c;
+}
+
+html.dark-mode .ttt-cell.o {
+    color: #4299e1;
+}
+
+@keyframes pulse-win {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ===== ?�戲?�制 ===== */
 .game-controls {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-/* ===== 結果訊息 ===== */
+/* ===== 結�?訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -78,32 +104,32 @@
     flex-wrap: wrap;
 }
 
-/* ===== 難度按鈕 ===== */
+/* ===== ??��?��? ===== */
 .difficulty-buttons {
     margin-bottom: 20px;
 }
 
-/* ===== IDE 模式 ===== */
-body.ide-mode .ttt-cell {
+/* ===== IDE 模�? ===== */
+html.ide-mode .ttt-cell {
     border-color: #4ec9b0;
     font-family: 'Consolas', monospace;
     color: #d4d4d4;
 }
 
-body.ide-mode .ttt-cell.x {
+html.ide-mode .ttt-cell.x {
     color: #569cd6;
 }
 
-body.ide-mode .ttt-cell.o {
+html.ide-mode .ttt-cell.o {
     color: #ce9178;
 }
 
-body.ide-mode .ttt-cell.winner {
+html.ide-mode .ttt-cell.winner {
     background-color: #4ec9b0;
     color: #1e1e1e;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 400px) {
     .ttt-board {
         gap: 8px;

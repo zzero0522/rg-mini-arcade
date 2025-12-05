@@ -81,7 +81,7 @@
 
     // 取得顏色
     function getColors() {
-        const isIDEMode = document.body.classList.contains('ide-mode');
+        const isIDEMode = document.documentElement.classList.contains('ide-mode');
         return {
             background: isIDEMode ? '#0d1117' : '#1a1a2e',
             snake: isIDEMode ? '#4ec9b0' : '#38a169',

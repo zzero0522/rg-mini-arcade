@@ -216,7 +216,7 @@
         streak = 0;
         streakDisplay.textContent = streak;
 
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
         if (isIDE) {
             gameOverMsg.innerHTML = `<span class="ide-title">// Answer: "${currentWord}"</span>`;
         } else {
@@ -233,7 +233,7 @@
         streak++;
         streakDisplay.textContent = streak;
 
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
         if (isIDE) {
             winMsg.innerHTML = `<span class="ide-title">// Streak: ${streak}</span>`;
         } else {

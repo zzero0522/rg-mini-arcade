@@ -372,7 +372,7 @@ class Minesweeper {
     }
 
     showGameOverScreen() {
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
         if (isIDE) {
             this.gameOverMsg.innerHTML = `<span class="ide-title">// Time: ${this.timer}s</span>`;
         } else {
@@ -382,7 +382,7 @@ class Minesweeper {
     }
 
     showWinScreen() {
-        const isIDE = document.body.classList.contains('ide-mode');
+        const isIDE = document.documentElement.classList.contains('ide-mode');
         if (isIDE) {
             this.winMsg.innerHTML = `<span class="ide-title">// Cleared in ${this.timer}s</span>`;
         } else {

@@ -2,9 +2,9 @@
 
 純前端迷你小遊戲合集，支援一般模式與 IDE 偽裝模式。
 
-**Demo**: https://zzero0522.github.io/rg-mini-arcade/
+**Demo**: https://rgleedev.github.io/rg-mini-arcade/
 
-**目前版本**: v1.7.0
+**目前版本**: v1.7.1
 
 ## 遊戲列表
 

@@ -1,4 +1,4 @@
-/* ===== 反應區域 ===== */
+/* ===== ?��??�??===== */
 .reaction-area {
     width: 100%;
     max-width: 500px;
@@ -31,15 +31,15 @@
     background-color: var(--accent);
 }
 
-body.ide-mode .reaction-area.waiting {
+html.ide-mode .reaction-area.waiting {
     background-color: #f14c4c;
 }
 
-body.ide-mode .reaction-area.ready {
+html.ide-mode .reaction-area.ready {
     background-color: #4ec9b0;
 }
 
-body.ide-mode .reaction-area.too-early {
+html.ide-mode .reaction-area.too-early {
     background-color: #dcdcaa;
 }
 
@@ -66,11 +66,11 @@ body.ide-mode .reaction-area.too-early {
     font-weight: bold;
 }
 
-body.ide-mode .green-text {
+html.ide-mode .green-text {
     color: #4ec9b0;
 }
 
-/* ===== 結果紀錄 ===== */
+/* ===== 結�?紀??===== */
 .results-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -138,31 +138,31 @@ body.ide-mode .green-text {
     color: #e53e3e;
 }
 
-body.ide-mode .result-item.fast {
+html.ide-mode .result-item.fast {
     border-left-color: #4ec9b0;
 }
 
-body.ide-mode .result-item.fast .result-time {
+html.ide-mode .result-item.fast .result-time {
     color: #4ec9b0;
 }
 
-body.ide-mode .result-item.medium {
+html.ide-mode .result-item.medium {
     border-left-color: #dcdcaa;
 }
 
-body.ide-mode .result-item.medium .result-time {
+html.ide-mode .result-item.medium .result-time {
     color: #dcdcaa;
 }
 
-body.ide-mode .result-item.slow {
+html.ide-mode .result-item.slow {
     border-left-color: #f14c4c;
 }
 
-body.ide-mode .result-item.slow .result-time {
+html.ide-mode .result-item.slow .result-time {
     color: #f14c4c;
 }
 
-/* ===== 回合選擇 ===== */
+/* ===== ?��??��? ===== */
 .rounds-selection {
     margin: 25px 0;
 }
@@ -201,7 +201,7 @@ body.ide-mode .result-item.slow .result-time {
     color: white;
 }
 
-/* ===== 評分 ===== */
+/* ===== 評�? ===== */
 .rating {
     margin-top: 20px;
     padding: 15px;
@@ -237,23 +237,23 @@ body.ide-mode .result-item.slow .result-time {
     color: #e53e3e;
 }
 
-body.ide-mode .rating.excellent .rating-value {
+html.ide-mode .rating.excellent .rating-value {
     color: #4ec9b0;
 }
 
-body.ide-mode .rating.good .rating-value {
+html.ide-mode .rating.good .rating-value {
     color: #569cd6;
 }
 
-body.ide-mode .rating.average .rating-value {
+html.ide-mode .rating.average .rating-value {
     color: #dcdcaa;
 }
 
-body.ide-mode .rating.slow .rating-value {
+html.ide-mode .rating.slow .rating-value {
     color: #f14c4c;
 }
 
-/* ===== 遊戲結束畫面 ===== */
+/* ===== ?�戲結�??�面 ===== */
 .game-over-stats {
     margin-bottom: 25px;
 }
@@ -275,7 +275,7 @@ body.ide-mode .rating.slow .rating-value {
     flex-wrap: wrap;
 }
 
-/* ===== 動畫 ===== */
+/* ===== ?�畫 ===== */
 @keyframes pop {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
@@ -294,7 +294,7 @@ body.ide-mode .rating.slow .rating-value {
     animation: none;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .reaction-area {
         height: 250px;
@@ -318,17 +318,17 @@ body.ide-mode .rating.slow .rating-value {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .reaction-area {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .reaction-area {
     border-radius: 4px;
     border: 1px solid var(--accent);
 }
 
-body.ide-mode .result-item {
+html.ide-mode .result-item {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-body.ide-mode .start-screen,
-body.ide-mode .game-over {
+html.ide-mode .start-screen,
+html.ide-mode .game-over {
     border: 1px solid var(--accent);
 }

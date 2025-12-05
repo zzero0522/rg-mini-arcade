@@ -1,4 +1,4 @@
-/* ===== 遊戲板 ===== */
+/* ===== ?�戲??===== */
 .game-board {
     display: flex;
     flex-direction: column;
@@ -68,25 +68,25 @@
     50% { transform: translateY(-15px); }
 }
 
-body.ide-mode .tile.correct {
+html.ide-mode .tile.correct {
     background-color: #4ec9b0;
     border-color: #4ec9b0;
     color: #1e1e1e;
 }
 
-body.ide-mode .tile.present {
+html.ide-mode .tile.present {
     background-color: #dcdcaa;
     border-color: #dcdcaa;
     color: #1e1e1e;
 }
 
-body.ide-mode .tile.absent {
+html.ide-mode .tile.absent {
     background-color: #4a4a4a;
     border-color: #4a4a4a;
     color: #808080;
 }
 
-/* ===== 虛擬鍵盤 ===== */
+/* ===== ?�擬?�盤 ===== */
 .keyboard {
     display: flex;
     flex-direction: column;
@@ -145,22 +145,22 @@ body.ide-mode .tile.absent {
     opacity: 0.7;
 }
 
-body.ide-mode .key.correct {
+html.ide-mode .key.correct {
     background-color: #4ec9b0;
     color: #1e1e1e;
 }
 
-body.ide-mode .key.present {
+html.ide-mode .key.present {
     background-color: #dcdcaa;
     color: #1e1e1e;
 }
 
-body.ide-mode .key.absent {
+html.ide-mode .key.absent {
     background-color: #4a4a4a;
     color: #808080;
 }
 
-/* ===== 訊息提示 ===== */
+/* ===== 訊息?�示 ===== */
 .message {
     position: fixed;
     top: 100px;
@@ -175,12 +175,12 @@ body.ide-mode .key.absent {
     animation: fadeIn 0.2s ease;
 }
 
-body.ide-mode .message {
+html.ide-mode .message {
     background-color: var(--accent);
     color: white;
 }
 
-/* ===== 提示顏色 ===== */
+/* ===== ?�示顏色 ===== */
 .green-hint {
     color: #38a169;
     font-weight: bold;
@@ -191,15 +191,15 @@ body.ide-mode .message {
     font-weight: bold;
 }
 
-body.ide-mode .green-hint {
+html.ide-mode .green-hint {
     color: #4ec9b0;
 }
 
-body.ide-mode .yellow-hint {
+html.ide-mode .yellow-hint {
     color: #dcdcaa;
 }
 
-/* ===== 遊戲結束畫面 ===== */
+/* ===== ?�戲結�??�面 ===== */
 .answer-reveal {
     font-size: 1.3rem;
     margin-bottom: 15px;
@@ -232,11 +232,11 @@ body.ide-mode .yellow-hint {
     color: #e53e3e;
 }
 
-body.ide-mode #game-over-title.lose .ide-title {
+html.ide-mode #game-over-title.lose .ide-title {
     color: #f14c4c;
 }
 
-/* ===== 動畫 ===== */
+/* ===== ?�畫 ===== */
 @keyframes pop {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -266,7 +266,7 @@ body.ide-mode #game-over-title.lose .ide-title {
     animation: shake 0.3s ease;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .tile {
         width: 50px;
@@ -317,18 +317,18 @@ body.ide-mode #game-over-title.lose .ide-title {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .tile {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .tile {
     border-radius: 2px;
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-body.ide-mode .key {
+html.ide-mode .key {
     border-radius: 4px;
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-body.ide-mode .start-screen,
-body.ide-mode .game-over {
+html.ide-mode .start-screen,
+html.ide-mode .game-over {
     border: 1px solid var(--accent);
 }

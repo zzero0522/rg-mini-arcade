@@ -1,6 +1,6 @@
-/* ===== 猜拳專屬樣式 ===== */
+/* ===== ?�拳專屬�?? ===== */
 
-/* 統計區顔色覆寫 */
+/* 統�??�顔色覆寫 */
 .win-stat .stat-value {
     color: #38a169;
 }
@@ -13,17 +13,17 @@
     color: #e53e3e;
 }
 
-body.ide-mode .win-stat .stat-value {
+html.ide-mode .win-stat .stat-value {
     color: #4ec9b0;
 }
 
-body.ide-mode .lose-stat .stat-value {
+html.ide-mode .lose-stat .stat-value {
     color: #f14c4c;
 }
 
-/* ===== 遊戲內容區 ===== */
+/* ===== ?�戲?�容?� ===== */
 
-/* ===== 對戰區域 ===== */
+/* ===== 對戰?�??===== */
 .battle-area {
     display: flex;
     justify-content: space-between;
@@ -107,7 +107,7 @@ body.ide-mode .lose-stat .stat-value {
     color: #d69e2e;
 }
 
-/* ===== 選擇按鈕 ===== */
+/* ===== ?��??��? ===== */
 .choice-buttons {
     display: flex;
     justify-content: center;
@@ -160,7 +160,7 @@ body.ide-mode .lose-stat .stat-value {
     color: white;
 }
 
-/* ===== 提示文字 ===== */
+/* ===== ?�示?��? ===== */
 .hint {
     text-align: center;
     color: var(--text-secondary);
@@ -168,7 +168,7 @@ body.ide-mode .lose-stat .stat-value {
     font-size: 1rem;
 }
 
-/* ===== 歷史紀錄 ===== */
+/* ===== 歷史紀??===== */
 .history-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -219,14 +219,14 @@ body.ide-mode .lose-stat .stat-value {
     font-size: 0.7rem;
 }
 
-/* ===== 開始畫面標題 ===== */
+/* ===== ?��??�面標�? ===== */
 .start-screen h2 {
     color: var(--accent);
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .battle-area {
         padding: 20px 10px;
@@ -267,24 +267,24 @@ body.ide-mode .lose-stat .stat-value {
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .battle-area {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .battle-area {
     border: 1px solid #3c3c3c;
 }
 
-body.ide-mode .start-screen {
+html.ide-mode .start-screen {
     border: 1px solid var(--accent);
 }
 
-body.ide-mode .result-text.win {
+html.ide-mode .result-text.win {
     color: #4ec9b0;
 }
 
-body.ide-mode .result-text.lose {
+html.ide-mode .result-text.lose {
     color: #f14c4c;
 }
 
-/* ===== 動畫 ===== */
+/* ===== ?�畫 ===== */
 @keyframes shake {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-10deg); }

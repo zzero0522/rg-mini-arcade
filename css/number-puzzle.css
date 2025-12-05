@@ -1,6 +1,6 @@
-/* ===== æ•¸å­—æ‹¼åœ–éŠæˆ²æ¨£å¼ ===== */
+/* ===== ?¸å??¼å??Šæˆ²æ¨?? ===== */
 
-/* éŠæˆ²å…§å®¹å®¹å™¨ */
+/* ?Šæˆ²?§å®¹å®¹å™¨ */
 .game-content {
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@
     gap: 20px;
 }
 
-/* æ‹¼åœ–å®¹å™¨ */
+/* ?¼å?å®¹å™¨ */
 .puzzle-container {
     display: grid;
     gap: 8px;
@@ -20,25 +20,25 @@
     margin: 20px 0;
 }
 
-/* 3x3 æ ¼å­ */
+/* 3x3 ?¼å? */
 .puzzle-container.size-3 {
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
 }
 
-/* 4x4 æ ¼å­ */
+/* 4x4 ?¼å? */
 .puzzle-container.size-4 {
     grid-template-columns: repeat(4, 85px);
     grid-template-rows: repeat(4, 85px);
 }
 
-/* 5x5 æ ¼å­ */
+/* 5x5 ?¼å? */
 .puzzle-container.size-5 {
     grid-template-columns: repeat(5, 70px);
     grid-template-rows: repeat(5, 70px);
 }
 
-/* æ‹¼åœ–æ–¹å¡Š */
+/* ?¼å??¹å? */
 .puzzle-tile {
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@
     filter: none;
 }
 
-/* æç¤ºæ•ˆæœ - æ­£ç¢ºä½ç½®çš„æ–¹å¡Š */
+/* ?ç¤º?ˆæ? - æ­?¢ºä½ç½®?„æ–¹å¡?*/
 .puzzle-tile.correct {
     background: linear-gradient(135deg, #4CAF50, #45a049);
     animation: correctPulse 0.5s ease;
@@ -91,7 +91,7 @@
     50% { transform: scale(1.1); }
 }
 
-/* æç¤ºæ•ˆæœ - é«˜äº®å¯ç§»å‹•æ–¹å¡Š */
+/* ?ç¤º?ˆæ? - é«˜äº®?¯ç§»?•æ–¹å¡?*/
 .puzzle-tile.hint-highlight {
     animation: hintGlow 1s ease-in-out 3;
 }
@@ -106,12 +106,12 @@
     }
 }
 
-/* ç§»å‹•å‹•ç•« */
+/* ç§»å??•ç•« */
 .puzzle-tile.moving {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* éŠæˆ²æ§åˆ¶æŒ‰éˆ• */
+/* ?Šæˆ²?§åˆ¶?‰é? */
 .game-controls {
     display: flex;
     gap: 15px;
@@ -141,7 +141,7 @@
     transform: translateY(0);
 }
 
-/* é›£åº¦é¸æ“‡ */
+/* ??º¦?¸æ? */
 .size-selection {
     margin: 25px 0;
     text-align: center;
@@ -153,7 +153,7 @@
     font-size: 1.1rem;
 }
 
-/* å‹åˆ©çµ±è¨ˆ */
+/* ?åˆ©çµ±è? */
 .win-stats {
     font-size: 1.1rem;
     color: var(--text-primary);
@@ -169,28 +169,28 @@
     margin-top: 20px;
 }
 
-/* IDE æ¨¡å¼ç‰¹æ®Šæ¨£å¼ */
-body.ide-mode .puzzle-tile {
+/* IDE æ¨¡å??¹æ?æ¨?? */
+html.ide-mode .puzzle-tile {
     font-family: 'Consolas', 'Courier New', monospace;
     background: linear-gradient(135deg, #569cd6, #4fc1ff);
 }
 
-body.ide-mode .puzzle-tile.correct {
+html.ide-mode .puzzle-tile.correct {
     background: linear-gradient(135deg, #4ec9b0, #3ea592);
 }
 
-body.ide-mode .puzzle-tile.empty {
+html.ide-mode .puzzle-tile.empty {
     box-shadow: inset 0 0 0 2px #808080;
 }
 
-body.ide-mode .control-btn {
+html.ide-mode .control-btn {
     border: 1px solid var(--accent);
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-/* éŸ¿æ‡‰å¼è¨­è¨ˆ */
+/* ?¿æ?å¼è¨­è¨?*/
 @media (max-width: 600px) {
-    /* 3x3 æ ¼å­ */
+    /* 3x3 ?¼å? */
     .puzzle-container.size-3 {
         grid-template-columns: repeat(3, 85px);
         grid-template-rows: repeat(3, 85px);
@@ -198,7 +198,7 @@ body.ide-mode .control-btn {
         padding: 12px;
     }
 
-    /* 4x4 æ ¼å­ */
+    /* 4x4 ?¼å? */
     .puzzle-container.size-4 {
         grid-template-columns: repeat(4, 70px);
         grid-template-rows: repeat(4, 70px);
@@ -206,7 +206,7 @@ body.ide-mode .control-btn {
         padding: 10px;
     }
 
-    /* 5x5 æ ¼å­ */
+    /* 5x5 ?¼å? */
     .puzzle-container.size-5 {
         grid-template-columns: repeat(5, 55px);
         grid-template-rows: repeat(5, 55px);
@@ -225,19 +225,19 @@ body.ide-mode .control-btn {
 }
 
 @media (max-width: 360px) {
-    /* 3x3 æ ¼å­ */
+    /* 3x3 ?¼å? */
     .puzzle-container.size-3 {
         grid-template-columns: repeat(3, 75px);
         grid-template-rows: repeat(3, 75px);
     }
 
-    /* 4x4 æ ¼å­ */
+    /* 4x4 ?¼å? */
     .puzzle-container.size-4 {
         grid-template-columns: repeat(4, 60px);
         grid-template-rows: repeat(4, 60px);
     }
 
-    /* 5x5 æ ¼å­ */
+    /* 5x5 ?¼å? */
     .puzzle-container.size-5 {
         grid-template-columns: repeat(5, 48px);
         grid-template-rows: repeat(5, 48px);

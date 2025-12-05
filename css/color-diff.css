@@ -1,6 +1,6 @@
-/* ===== Color Diff 專屬樣式 ===== */
+/* ===== Color Diff 專屬�?? ===== */
 
-/* 遊戲板 */
+/* ?�戲??*/
 .game-board {
     display: grid;
     gap: 8px;
@@ -15,7 +15,7 @@
     display: none;
 }
 
-/* 色塊 - 使用 clamp 自適應大小 */
+/* ?��? - 使用 clamp ?�適?�大�?*/
 .color-block {
     width: clamp(40px, 10vw, 60px);
     height: clamp(40px, 10vw, 60px);
@@ -32,7 +32,7 @@
     transform: scale(0.95);
 }
 
-/* ===== 模式選擇 ===== */
+/* ===== 模�??��? ===== */
 .mode-selection {
     margin-top: 25px;
 }
@@ -94,7 +94,7 @@
     line-height: 1.8;
 }
 
-/* ===== 響應式設計 ===== */
+/* ===== ?��?式設�?===== */
 @media (max-width: 600px) {
     .mode-btn {
         width: 100%;
@@ -109,16 +109,16 @@
     }
 }
 
-/* ===== IDE 模式特效 ===== */
-body.ide-mode .game-board {
+/* ===== IDE 模�??��? ===== */
+html.ide-mode .game-board {
     border: 1px solid #3c3c3c;
 }
 
-body.ide-mode .color-block {
+html.ide-mode .color-block {
     border-radius: 2px;
 }
 
-/* ===== 動畫效果 ===== */
+/* ===== ?�畫?��? ===== */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }

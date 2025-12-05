@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RG's Mini Arcade</title>
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/init-theme.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -14,10 +17,17 @@
                 <span class="normal-title">🎮 RG's Mini Arcade</span>
                 <span class="ide-title">// RG_MiniArcade.exe</span>
             </h1>
-            <button id="theme-toggle" class="theme-btn">
-                <span class="normal-mode">💻 IDE 模式</span>
-                <span class="ide-mode">🎮 一般模式</span>
-            </button>
+            <div class="header-controls">
+                <button id="theme-picker-btn" class="theme-btn" title="選擇主題色">🎨</button>
+                <button id="dark-mode-toggle" class="theme-btn" title="切換深色模式">
+                    <span class="light-icon">🌙</span>
+                    <span class="dark-icon" style="display: none;">☀️</span>
+                </button>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE風格</span>
+                    <span class="ide-mode">🎮 一般風格</span>
+                </button>
+            </div>
         </header>
 
         <main class="game-menu">
@@ -263,4 +273,5 @@
 
     <script src="js/theme.js"></script>
 </body>
+
 </html>
