@@ -4,7 +4,7 @@
 
 **Demo**: https://rgleedev.github.io/rg-mini-arcade/
 
-**目前版本**: v1.8.1
+**目前版本**: v1.9.0
 
 ## 遊戲列表
 
@@ -31,6 +31,7 @@
 | 坦克大戰 | 保衛基地消滅敵人，含盾牌道具（WASD / 方向鍵 / 空白鍵射擊） |
 | 打磚塊 | 經典 Breakout 彈球消磚塊遊戲 |
 | 太空射擊 | 射擊遊戲，含道具系統（護盾、三連發、快速射擊、額外生命） |
+| Dino Runner | 經典恐龍跑酷，支援二段跳（空白鍵 / 上方向鍵） |
 
 ---
 
@@ -129,7 +130,7 @@ rg-mini-arcade/
 
 ### Scope
 
-遊戲：`color-diff`、`1a2b`、`typing-test`、`memory-cards`、`rps`、`snake`、`whack-a-mole`、`2048`、`number-range`、`reaction-test`、`wordle`、`minesweeper`、`simon`、`hangman`、`tic-tac-toe`、`connect-four`、`number-puzzle`、`pacman`、`tank`、`breakout`、`shmup`
+遊戲：`color-diff`、`1a2b`、`typing-test`、`memory-cards`、`rps`、`snake`、`whack-a-mole`、`2048`、`number-range`、`reaction-test`、`wordle`、`minesweeper`、`simon`、`hangman`、`tic-tac-toe`、`connect-four`、`number-puzzle`、`pacman`、`tank`、`breakout`、`shmup`、`dino-runner`
 
 模組：`theme`、`menu`、`css`
 

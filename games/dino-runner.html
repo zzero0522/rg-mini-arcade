@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Runner - RG's Mini Arcade</title>
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Game specific overrides */
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background-color: var(--bg-primary);
+            border: 2px solid var(--text-secondary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+            /* Essential for pixel art */
+        }
+
+        /* IDE Mode specific styles */
+        html.ide-mode .game-container {
+            border-color: var(--accent);
+            border-radius: 0;
+        }
+    </style>
+    <script src="../js/init-theme.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🦖 Dino Runner</span>
+                <span class="ide-title">// dinoRunner.exe</span>
+            </h1>
+            <div class="header-controls">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-picker-btn" class="theme-btn" title="選擇主題色">🎨</button>
+                <button id="dark-mode-toggle" class="theme-btn" title="切換深色模式">
+                    <span class="light-icon">🌙</span>
+                    <span class="dark-icon" style="display: none;">☀️</span>
+                </button>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE風格</span>
+                    <span class="ide-mode">🎮 一般風格</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">分數</span>
+                        <span class="ide-title">score:</span>
+                    </span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高分</span>
+                        <span class="ide-title">highScore:</span>
+                    </span>
+                    <span id="high-score" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div id="game-container" class="game-container">
+                <canvas id="gameCanvas"></canvas>
+
+                <!-- Start Screen -->
+                <div id="start-screen" class="start-screen">
+                    <h2>
+                        <span class="normal-title">🦖 Dino Runner</span>
+                        <span class="ide-title">function dinoRunner() {</span>
+                    </h2>
+                    <p class="game-desc">
+                        <span class="normal-title">
+                            奔跑、跳躍、躲避障礙！<br>
+                            支援二段跳躍來跨越更高障礙。
+                        </span>
+                        <span class="ide-title">
+                            // Run, jump, avoid obstacles<br>
+                            // Support double jump
+                        </span>
+                    </p>
+                    <div class="controls-hint">
+                        <h3>
+                            <span class="normal-title">操作說明</span>
+                            <span class="ide-title">// Controls</span>
+                        </h3>
+                        <p>
+                            <span class="key">Space</span> / <span class="key">↑</span> : 跳躍 (Jump)<br>
+                            <span class="key">Double Tap</span> : 二段跳 (Double Jump)
+                        </p>
+                    </div>
+                    <button id="start-btn" class="start-btn">
+                        <span class="normal-title">🚀 開始遊戲</span>
+                        <span class="ide-title">init();</span>
+                    </button>
+                </div>
+
+                <!-- Game Over Screen -->
+                <div id="game-over-screen" class="game-over hidden">
+                    <h2>
+                        <span class="normal-title">💀 遊戲結束</span>
+                        <span class="ide-title">// System.exit(1)</span>
+                    </h2>
+                    <p class="game-desc">
+                        <span class="normal-title">最終分數: <span id="final-score">0</span></span>
+                        <span class="ide-title">finalScore: <span id="final-score-ide">0</span>;</span>
+                    </p>
+                    <button id="restart-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">retry();</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/dino-runner.js"></script>
+</body>
+
+</html>
