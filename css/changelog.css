@@ -1,4 +1,4 @@
-/* ===== ?�本歷�??�面�?? ===== */
+/* ===== 版本歷程頁面樣式 ===== */
 
 .changelog-area {
     flex: 1;
@@ -20,7 +20,7 @@
     gap: 20px;
 }
 
-/* ===== ?�本?��? ===== */
+/* ===== 版本卡片 ===== */
 .version-card {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -57,7 +57,7 @@
     padding: 20px;
 }
 
-/* ===== ?�新?�目 ===== */
+/* ===== 更新項目 ===== */
 .update-item {
     display: flex;
     align-items: flex-start;
@@ -84,7 +84,7 @@
     color: #3498db;
 }
 
-/* ===== ?�戲?�表 ===== */
+/* ===== 遊戲列表 ===== */
 .game-list {
     margin: 10px 0 10px 35px;
     color: var(--text-secondary);
@@ -95,7 +95,7 @@
     padding: 4px 0;
 }
 
-/* ===== IDE 模�? ===== */
+/* ===== IDE 模式 ===== */
 html.ide-mode .version-card {
     border: 1px solid var(--accent);
 }
@@ -123,7 +123,7 @@ html.ide-mode .update-item::before {
     margin-right: 5px;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .changelog-area {
         padding: 0 10px;

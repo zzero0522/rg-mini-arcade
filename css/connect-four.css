@@ -1,4 +1,4 @@
-/* ===== ?��?棋�??�樣�?===== */
+/* ===== 四子棋遊戲樣式 ===== */
 
 .select-label {
     color: var(--text-secondary);
@@ -6,7 +6,7 @@
     font-size: 1rem;
 }
 
-/* ===== ?�戲?�?��?�?===== */
+/* ===== 遊戲狀態提示 ===== */
 .game-status {
     text-align: center;
     font-size: 1.2rem;
@@ -15,7 +15,7 @@
     min-height: 30px;
 }
 
-/* ===== ?�戲??===== */
+/* ===== 遊戲板 ===== */
 .c4-board {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -76,7 +76,7 @@
     cursor: not-allowed;
 }
 
-/* ?��??�畫 */
+/* 落下動畫 */
 .c4-cell.dropping {
     animation: drop 0.3s ease-out;
 }
@@ -86,7 +86,7 @@
     100% { transform: translateY(0); }
 }
 
-/* ===== 欄�??��??�示 ===== */
+/* ===== 欄位懸停提示 ===== */
 .c4-board.hovering-0 .c4-cell[data-col="0"]:not(.filled),
 .c4-board.hovering-1 .c4-cell[data-col="1"]:not(.filled),
 .c4-board.hovering-2 .c4-cell[data-col="2"]:not(.filled),
@@ -97,14 +97,14 @@
     background-color: #d5dbdb;
 }
 
-/* ===== ?�戲?�制 ===== */
+/* ===== 遊戲控制 ===== */
 .game-controls {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-/* ===== 結�?訊息 ===== */
+/* ===== 結果訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -118,12 +118,12 @@
     flex-wrap: wrap;
 }
 
-/* ===== ??��?��? ===== */
+/* ===== 難度按鈕 ===== */
 .difficulty-buttons {
     margin-bottom: 20px;
 }
 
-/* ===== IDE 模�? ===== */
+/* ===== IDE 模式 ===== */
 html.ide-mode .c4-board {
     background-color: #1a365d;
 }
@@ -144,7 +144,7 @@ html.ide-mode .c4-cell.ai {
     background-color: #68d391;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 500px) {
     .c4-board {
         gap: 4px;

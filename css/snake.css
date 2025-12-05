@@ -1,6 +1,6 @@
-/* ===== 貪�??��?屬樣�?===== */
+/* ===== 貪吃蛇專屬樣式 ===== */
 
-/* ===== ?�戲?��?容器 ===== */
+/* ===== 遊戲畫布容器 ===== */
 .game-container {
     position: relative;
     background-color: var(--bg-secondary);
@@ -20,7 +20,7 @@ html.ide-mode #game-canvas {
     border: 1px solid #30363d;
 }
 
-/* ===== ?��?覆�?�?===== */
+/* ===== 暫停覆蓋層 ===== */
 .pause-overlay {
     position: absolute;
     top: 0;
@@ -46,7 +46,7 @@ html.ide-mode #game-canvas {
     opacity: 0.8;
 }
 
-/* ===== ?��??�制?��? ===== */
+/* ===== 手機控制按鈕 ===== */
 .mobile-controls {
     margin-top: 20px;
     display: flex;
@@ -85,14 +85,14 @@ html.ide-mode #game-canvas {
     font-size: 1.2rem;
 }
 
-/* ===== ?��??�面標�? ===== */
+/* ===== 開始畫面標題 ===== */
 .start-screen h2 {
     color: var(--accent);
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
 
-/* ===== ?��?說�? ===== */
+/* ===== 操作說明 ===== */
 .controls-hint {
     margin: 20px 0;
     padding: 15px;
@@ -135,7 +135,7 @@ html.ide-mode #game-canvas {
     color: var(--text-secondary);
 }
 
-/* ===== ?�戲結�??�面 ===== */
+/* ===== 遊戲結束畫面 ===== */
 .game-over {
     position: absolute;
     top: 50%;
@@ -173,7 +173,7 @@ html.ide-mode .game-over h2 {
     flex-wrap: wrap;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .controls-hint {
         padding: 10px;
@@ -198,7 +198,7 @@ html.ide-mode .game-over h2 {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .start-screen,
 html.ide-mode .game-over {
     border: 1px solid var(--accent);

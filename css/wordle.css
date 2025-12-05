@@ -1,4 +1,4 @@
-/* ===== ?�戲??===== */
+/* ===== 遊戲板 ===== */
 .game-board {
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@ html.ide-mode .tile.absent {
     color: #808080;
 }
 
-/* ===== ?�擬?�盤 ===== */
+/* ===== 虛擬鍵盤 ===== */
 .keyboard {
     display: flex;
     flex-direction: column;
@@ -160,7 +160,7 @@ html.ide-mode .key.absent {
     color: #808080;
 }
 
-/* ===== 訊息?�示 ===== */
+/* ===== 訊息顯示 ===== */
 .message {
     position: fixed;
     top: 100px;
@@ -180,7 +180,7 @@ html.ide-mode .message {
     color: white;
 }
 
-/* ===== ?�示顏色 ===== */
+/* ===== 提示顏色 ===== */
 .green-hint {
     color: #38a169;
     font-weight: bold;
@@ -199,7 +199,7 @@ html.ide-mode .yellow-hint {
     color: #dcdcaa;
 }
 
-/* ===== ?�戲結�??�面 ===== */
+/* ===== 遊戲結束畫面 ===== */
 .answer-reveal {
     font-size: 1.3rem;
     margin-bottom: 15px;
@@ -236,7 +236,7 @@ html.ide-mode #game-over-title.lose .ide-title {
     color: #f14c4c;
 }
 
-/* ===== ?�畫 ===== */
+/* ===== 動畫 ===== */
 @keyframes pop {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -266,7 +266,7 @@ html.ide-mode #game-over-title.lose .ide-title {
     animation: shake 0.3s ease;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .tile {
         width: 50px;
@@ -317,7 +317,7 @@ html.ide-mode #game-over-title.lose .ide-title {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .tile {
     border-radius: 2px;
     font-family: 'Consolas', 'Courier New', monospace;

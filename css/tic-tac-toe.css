@@ -1,4 +1,4 @@
-/* ===== 井�??�戲�?? ===== */
+/* ===== 井字遊戲樣式 ===== */
 
 .select-label {
     color: var(--text-secondary);
@@ -6,7 +6,7 @@
     font-size: 1rem;
 }
 
-/* ===== ?�戲?�?��?�?===== */
+/* ===== 遊戲狀態提示 ===== */
 .game-status {
     text-align: center;
     font-size: 1.2rem;
@@ -15,7 +15,7 @@
     min-height: 30px;
 }
 
-/* ===== ?�戲??===== */
+/* ===== 遊戲板 ===== */
 .ttt-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -83,14 +83,14 @@ html.dark-mode .ttt-cell.o {
     }
 }
 
-/* ===== ?�戲?�制 ===== */
+/* ===== 遊戲控制 ===== */
 .game-controls {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-/* ===== 結�?訊息 ===== */
+/* ===== 結果訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -104,12 +104,12 @@ html.dark-mode .ttt-cell.o {
     flex-wrap: wrap;
 }
 
-/* ===== ??��?��? ===== */
+/* ===== 難度按鈕 ===== */
 .difficulty-buttons {
     margin-bottom: 20px;
 }
 
-/* ===== IDE 模�? ===== */
+/* ===== IDE 模式 ===== */
 html.ide-mode .ttt-cell {
     border-color: #4ec9b0;
     font-family: 'Consolas', monospace;
@@ -129,7 +129,7 @@ html.ide-mode .ttt-cell.winner {
     color: #1e1e1e;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 400px) {
     .ttt-board {
         gap: 8px;

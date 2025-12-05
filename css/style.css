@@ -1,6 +1,6 @@
-/* ===== ?��?變數 ===== */
+/* ===== 全域變數 ===== */
 :root {
-    /* 一?�模�?- ?�蘭迪�??��??�設�?*/
+    /* 一般模式 - 莫蘭迪色系預設 */
     --bg-primary: #f0f4f8;
     --bg-secondary: #ffffff;
     --text-primary: #2d3748;
@@ -11,7 +11,7 @@
     --border-radius: 12px;
 }
 
-/* 深色模�?變數 */
+/* 深色模式變數 */
 html.dark-mode {
     --bg-primary: #1a202c;
     --bg-secondary: #2d3748;
@@ -22,7 +22,7 @@ html.dark-mode {
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* ?�蘭迪色系主�?- ?�景 + 強調??*/
+/* 莫蘭迪色系主題 - 背景 + 強調色 */
 html.theme-dusty-rose {
     --bg-primary: #f5eded;
     --bg-secondary: #faf6f6;
@@ -93,7 +93,7 @@ html.dark-mode.theme-warm-taupe {
     --accent-hover: #d9ccbe;
 }
 
-/* ===== IDE 模�?變數 ===== */
+/* ===== IDE 模式變數 ===== */
 html.ide-mode {
     --bg-primary: #ffffff;
     /* IDE Light Default */
@@ -120,7 +120,7 @@ html.ide-mode.dark-mode {
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* IDE 模�? + ?�蘭迪色�?(覆�? Accent) */
+/* IDE 模式 + 莫蘭迪色系 (覆蓋 Accent) */
 html.ide-mode.theme-dusty-blue {
     --accent: #7d8fa9;
 }
@@ -161,7 +161,7 @@ html.ide-mode.dark-mode.theme-warm-taupe {
     --accent: #c5b8aa;
 }
 
-/* ===== ?��?�?? ===== */
+/* ===== 重設樣式 ===== */
 * {
     margin: 0;
     padding: 0;
@@ -226,7 +226,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* ===== 主�??��?顯示?�制 ===== */
+/* ===== 主題標題顯示控制 ===== */
 .ide-title,
 .ide-mode-text {
     display: none;
@@ -263,7 +263,7 @@ html.ide-mode .theme-btn .normal-mode {
     display: none;
 }
 
-/* ===== ?�戲?�單 ===== */
+/* ===== 遊戲選單 ===== */
 .game-menu {
     flex: 1;
 }
@@ -411,7 +411,7 @@ html.ide-mode .changelog-link:hover {
     color: #1e1e1e;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .title {
         font-size: 1.3rem;
@@ -432,7 +432,7 @@ html.ide-mode .changelog-link:hover {
     }
 }
 
-/* ===== IDE 模�??��??��? ===== */
+/* ===== IDE 模式遊戲卡片 ===== */
 html.ide-mode .game-card {
     border-left: 3px solid var(--accent);
 }
@@ -441,7 +441,7 @@ html.ide-mode .game-card:not(.disabled):hover {
     border-left-color: #4ec9b0;
 }
 
-/* ===== 返�??��? ===== */
+/* ===== 返回按鈕 ===== */
 .back-btn {
     padding: 10px 20px;
     background-color: transparent;
@@ -462,7 +462,7 @@ html.ide-mode .game-card:not(.disabled):hover {
     transform: translateY(-2px);
 }
 
-/* IDE 模�?返�??��??�強 */
+/* IDE 模式返回按鈕增強 */
 html.ide-mode .back-btn {
     border-color: #4ec9b0;
     color: #4ec9b0;
@@ -475,7 +475,7 @@ html.ide-mode .back-btn:hover {
     color: #1e1e1e;
 }
 
-/* ===== Header ?��?群�? ===== */
+/* ===== Header 控制群組 ===== */
 .header-controls {
     display: flex;
     align-items: center;
@@ -484,7 +484,7 @@ html.ide-mode .back-btn:hover {
     /* For dropdown positioning */
 }
 
-/* ===== 主�??�選?�器 ===== */
+/* ===== 主題色選擇器 ===== */
 .theme-picker {
     position: absolute;
     top: 100%;
@@ -494,7 +494,7 @@ html.ide-mode .back-btn:hover {
     margin-top: 10px;
 }
 
-/* ?��??��? toggle */
+/* 隱藏原始 toggle */
 .theme-picker-toggle {
     display: none;
 }
@@ -570,7 +570,7 @@ html.ide-mode .back-btn:hover {
     background-color: #b5a89a;
 }
 
-/* IDE 模�?不�??��?主�??��???*/
+/* IDE 模式不隱藏主題選擇器 */
 /* html.ide-mode .theme-picker { display: none; } */
 
 @media (max-width: 600px) {
@@ -586,10 +586,10 @@ html.ide-mode .back-btn:hover {
 }
 
 /* ========================================
-   ?�用?�戲?�件�??
+   通用遊戲元件樣式
    ======================================== */
 
-/* ===== ?�戲?�??===== */
+/* ===== 遊戲區域 ===== */
 .game-area {
     flex: 1;
     display: flex;
@@ -598,7 +598,7 @@ html.ide-mode .back-btn:hover {
     position: relative;
 }
 
-/* ===== ?�戲統�??� ===== */
+/* ===== 遊戲統計區 ===== */
 .game-stats {
     display: flex;
     justify-content: center;
@@ -625,7 +625,7 @@ html.ide-mode .back-btn:hover {
     font-size: 1.2rem;
 }
 
-/* ===== ?��?/結�??�面 ===== */
+/* ===== 開始/結束畫面 ===== */
 .start-screen,
 .game-over,
 .win-screen,
@@ -658,7 +658,7 @@ html.ide-mode .back-btn:hover {
     line-height: 1.6;
 }
 
-/* ===== ?�用?��? ===== */
+/* ===== 通用按鈕 ===== */
 .start-btn,
 .restart-btn {
     padding: 15px 40px;
@@ -693,7 +693,7 @@ html.ide-mode .back-btn:hover {
     color: white;
 }
 
-/* ===== ??��/?��?/?��??��?群�? ===== */
+/* ===== 難度/時間/尺寸按鈕群組 ===== */
 .difficulty-buttons,
 .time-buttons,
 .size-buttons,
@@ -735,12 +735,12 @@ html.ide-mode .back-btn:hover {
     color: white;
 }
 
-/* ===== ?��?類別 ===== */
+/* ===== 隱藏類別 ===== */
 .hidden {
     display: none !important;
 }
 
-/* ===== IDE 模�??�用?��? ===== */
+/* ===== IDE 模式通用樣式 ===== */
 html.ide-mode .start-screen,
 html.ide-mode .game-over,
 html.ide-mode .win-screen,
@@ -748,7 +748,7 @@ html.ide-mode .game-message {
     border: 1px solid var(--accent);
 }
 
-/* ===== ?��?式�?極�??��? (320px) ===== */
+/* ===== 響應式極端小螢幕 (320px) ===== */
 @media (max-width: 360px) {
     .game-stats {
         gap: 8px;
@@ -784,7 +784,7 @@ html.ide-mode .game-message {
     }
 }
 
-/* ===== ?��?式�?小螢�?(600px) ===== */
+/* ===== 響應式小螢幕 (600px) ===== */
 @media (max-width: 600px) {
     .game-stats {
         gap: 10px;
@@ -803,7 +803,7 @@ html.ide-mode .game-message {
     }
 }
 
-/* ===== ?��?式�?平板 (768px - 1024px) ===== */
+/* ===== 響應式平板 (768px - 1024px) ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .container {
         max-width: 900px;

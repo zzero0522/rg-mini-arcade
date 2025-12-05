@@ -1,6 +1,6 @@
-/* ===== ?�拳專屬�?? ===== */
+/* ===== 猜拳專屬樣式 ===== */
 
-/* 統�??�顔色覆寫 */
+/* 統計區顏色覆寫 */
 .win-stat .stat-value {
     color: #38a169;
 }
@@ -21,9 +21,9 @@ html.ide-mode .lose-stat .stat-value {
     color: #f14c4c;
 }
 
-/* ===== ?�戲?�容?� ===== */
+/* ===== 遊戲內容區 ===== */
 
-/* ===== 對戰?�??===== */
+/* ===== 對戰區域 ===== */
 .battle-area {
     display: flex;
     justify-content: space-between;
@@ -107,7 +107,7 @@ html.ide-mode .lose-stat .stat-value {
     color: #d69e2e;
 }
 
-/* ===== ?��??��? ===== */
+/* ===== 選擇按鈕 ===== */
 .choice-buttons {
     display: flex;
     justify-content: center;
@@ -160,7 +160,7 @@ html.ide-mode .lose-stat .stat-value {
     color: white;
 }
 
-/* ===== ?�示?��? ===== */
+/* ===== 提示訊息 ===== */
 .hint {
     text-align: center;
     color: var(--text-secondary);
@@ -168,7 +168,7 @@ html.ide-mode .lose-stat .stat-value {
     font-size: 1rem;
 }
 
-/* ===== 歷史紀??===== */
+/* ===== 歷史紀錄 ===== */
 .history-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -219,14 +219,14 @@ html.ide-mode .lose-stat .stat-value {
     font-size: 0.7rem;
 }
 
-/* ===== ?��??�面標�? ===== */
+/* ===== 開始畫面標題 ===== */
 .start-screen h2 {
     color: var(--accent);
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .battle-area {
         padding: 20px 10px;
@@ -267,7 +267,7 @@ html.ide-mode .lose-stat .stat-value {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .battle-area {
     border: 1px solid #3c3c3c;
 }
@@ -284,7 +284,7 @@ html.ide-mode .result-text.lose {
     color: #f14c4c;
 }
 
-/* ===== ?�畫 ===== */
+/* ===== 動畫 ===== */
 @keyframes shake {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-10deg); }

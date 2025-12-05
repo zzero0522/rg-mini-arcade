@@ -1,4 +1,4 @@
-/* ===== ?��??�??===== */
+/* ===== 反應測試 ===== */
 .reaction-area {
     width: 100%;
     max-width: 500px;
@@ -70,7 +70,7 @@ html.ide-mode .green-text {
     color: #4ec9b0;
 }
 
-/* ===== 結�?紀??===== */
+/* ===== 結果紀錄 ===== */
 .results-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -162,7 +162,7 @@ html.ide-mode .result-item.slow .result-time {
     color: #f14c4c;
 }
 
-/* ===== ?��??��? ===== */
+/* ===== 回合選擇 ===== */
 .rounds-selection {
     margin: 25px 0;
 }
@@ -201,7 +201,7 @@ html.ide-mode .result-item.slow .result-time {
     color: white;
 }
 
-/* ===== 評�? ===== */
+/* ===== 評價 ===== */
 .rating {
     margin-top: 20px;
     padding: 15px;
@@ -253,7 +253,7 @@ html.ide-mode .rating.slow .rating-value {
     color: #f14c4c;
 }
 
-/* ===== ?�戲結�??�面 ===== */
+/* ===== 遊戲結束畫面 ===== */
 .game-over-stats {
     margin-bottom: 25px;
 }
@@ -275,7 +275,7 @@ html.ide-mode .rating.slow .rating-value {
     flex-wrap: wrap;
 }
 
-/* ===== ?�畫 ===== */
+/* ===== 動畫 ===== */
 @keyframes pop {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
@@ -294,7 +294,7 @@ html.ide-mode .rating.slow .rating-value {
     animation: none;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .reaction-area {
         height: 250px;
@@ -318,7 +318,7 @@ html.ide-mode .rating.slow .rating-value {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .reaction-area {
     border-radius: 4px;
     border: 1px solid var(--accent);

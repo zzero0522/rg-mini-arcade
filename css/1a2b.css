@@ -1,4 +1,4 @@
-/* ===== 輸入?� ===== */
+/* ===== 輸入區 ===== */
 .input-section {
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
     transform: none;
 }
 
-/* ===== 訊息?� ===== */
+/* ===== 訊息區 ===== */
 .message {
     text-align: center;
     padding: 10px;
@@ -83,7 +83,7 @@
     color: var(--accent);
 }
 
-/* ===== 歷史紀??===== */
+/* ===== 歷史紀錄 ===== */
 .history-section {
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
@@ -145,7 +145,7 @@
     font-weight: bold;
 }
 
-/* ===== ??��?��? ===== */
+/* ===== 難度選擇 ===== */
 .difficulty-selection {
     margin: 25px 0;
 }
@@ -190,7 +190,7 @@
     opacity: 0.8;
 }
 
-/* ===== ?�利?�面 ===== */
+/* ===== 勝利畫面 ===== */
 .win-screen {
     position: absolute;
     top: 50%;
@@ -228,9 +228,9 @@ html.ide-mode .win-screen h2 {
     flex-wrap: wrap;
 }
 
-/* ===== ?�戲?�容?� ===== */
+/* ===== 遊戲內容區 ===== */
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .digit-input {
         width: 40px;
@@ -257,7 +257,7 @@ html.ide-mode .win-screen h2 {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .digit-input {
     font-family: 'Consolas', 'Courier New', monospace;
     border-radius: 2px;
@@ -275,7 +275,7 @@ html.ide-mode .result-b {
     color: #dcdcaa;
 }
 
-/* ===== ?�畫 ===== */
+/* ===== 動畫 ===== */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }

@@ -1,13 +1,13 @@
-/* ===== ?��?測試專屬�?? ===== */
+/* ===== 打字測試專屬樣式 ===== */
 
-/* ===== ?�戲?�容?� ===== */
+/* ===== 遊戲內容區 ===== */
 .game-content {
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* ===== ?��?顯示?� ===== */
+/* ===== 文字顯示區 ===== */
 .text-display {
     background-color: var(--bg-secondary);
     padding: 25px;
@@ -25,13 +25,13 @@
     scroll-behavior: smooth;
 }
 
-/* ?��?容器 - 確�??��?不�?被截?��?�?*/
+/* 單字容器 - 確保單字不會被截斷換行 */
 .word {
     display: inline-block;
     white-space: nowrap;
 }
 
-/* ?��?滾�?�?*/
+/* 自訂滾動條 */
 .text-display::-webkit-scrollbar {
     width: 8px;
 }
@@ -82,7 +82,7 @@ html.ide-mode .char.incorrect {
     color: #f14c4c;
 }
 
-/* ===== 輸入?� ===== */
+/* ===== 輸入區 ===== */
 .typing-input {
     width: 100%;
     padding: 20px;
@@ -110,7 +110,7 @@ html.ide-mode .typing-input {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-/* ===== ?��?統�? ===== */
+/* ===== 即時統計 ===== */
 .live-stats {
     display: flex;
     justify-content: center;
@@ -123,7 +123,7 @@ html.ide-mode .typing-input {
     color: var(--accent);
 }
 
-/* ===== 結�??�面 ===== */
+/* ===== 結果畫面 ===== */
 .result-screen {
     position: absolute;
     top: 50%;
@@ -186,7 +186,7 @@ html.ide-mode .typing-input {
     flex-wrap: wrap;
 }
 
-/* ===== ?��??��? ===== */
+/* ===== 時間選擇 ===== */
 .time-selection,
 .mode-selection {
     margin: 25px 0;
@@ -232,7 +232,7 @@ html.ide-mode .typing-input {
     color: white;
 }
 
-/* ===== ?��??��??� ===== */
+/* ===== 自訂文章區 ===== */
 .custom-text-section {
     margin: 20px 0;
     padding: 20px;
@@ -282,7 +282,7 @@ html.ide-mode .custom-text-input {
     font-family: 'Consolas', 'Courier New', monospace;
 }
 
-/* ===== 精選?��??� ===== */
+/* ===== 精選文章區 ===== */
 .article-section {
     margin: 20px 0;
 }
@@ -337,7 +337,7 @@ html.ide-mode .custom-text-input {
     opacity: 0.7;
 }
 
-/* ?��??�表滾�?�?*/
+/* 文章列表滾動條 */
 .article-list::-webkit-scrollbar {
     width: 6px;
 }
@@ -363,7 +363,7 @@ html.ide-mode .custom-text-input {
     }
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .text-display {
         font-size: 1.1rem;
@@ -403,7 +403,7 @@ html.ide-mode .custom-text-input {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .text-display {
     font-family: 'Consolas', 'Courier New', monospace;
     border: 1px solid #3c3c3c;

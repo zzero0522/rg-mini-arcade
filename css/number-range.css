@@ -1,12 +1,12 @@
-/* ===== 終極密碼專屬�?? ===== */
+/* ===== 終極密碼專屬樣式 ===== */
 
-/* ?��??�面覆�?調整 */
+/* 開始畫面覆蓋調整 */
 .start-screen {
     max-width: 450px;
     width: 90%;
 }
 
-/* ===== 範�??��? ===== */
+/* ===== 範圍選擇 ===== */
 .range-selection {
     margin: 25px 0;
 }
@@ -44,7 +44,7 @@
     color: white;
 }
 
-/* ===== ?�戲?� ===== */
+/* ===== 遊戲板 ===== */
 .game-board {
     background-color: var(--bg-secondary);
     padding: 30px;
@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-/* ===== 範�?顯示 ===== */
+/* ===== 範圍顯示 ===== */
 .range-display {
     display: flex;
     justify-content: center;
@@ -89,7 +89,7 @@
     color: var(--text-secondary);
 }
 
-/* ===== ?�測?� ===== */
+/* ===== 猜測區 ===== */
 .guess-section {
     display: flex;
     gap: 10px;
@@ -138,7 +138,7 @@
     cursor: not-allowed;
 }
 
-/* ===== ?�示 ===== */
+/* ===== 提示 ===== */
 .hint {
     font-size: 1.3rem;
     font-weight: bold;
@@ -173,7 +173,7 @@ html.ide-mode .hint.correct {
     color: #4ec9b0;
 }
 
-/* ===== 統�? ===== */
+/* ===== 統計 ===== */
 .stats {
     display: flex;
     justify-content: center;
@@ -184,7 +184,7 @@ html.ide-mode .hint.correct {
     border-radius: var(--border-radius);
 }
 
-/* ===== 歷史紀??===== */
+/* ===== 歷史紀錄 ===== */
 .history {
     margin-top: 20px;
     text-align: left;
@@ -231,7 +231,7 @@ html.ide-mode .history-item.high {
     color: #569cd6;
 }
 
-/* ===== ?�戲結�??�面 ===== */
+/* ===== 遊戲結束畫面 ===== */
 .game-over {
     min-width: 300px;
 }
@@ -272,7 +272,7 @@ html.ide-mode .new-record {
     margin-top: 20px;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 500px) {
     .range-display {
         gap: 15px;
@@ -319,7 +319,7 @@ html.ide-mode .new-record {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .start-screen,
 html.ide-mode .game-board,
 html.ide-mode .game-over {

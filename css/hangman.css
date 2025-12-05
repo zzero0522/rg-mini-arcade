@@ -1,4 +1,4 @@
-/* ===== Hangman ?�單字�??�樣�?===== */
+/* ===== Hangman 猜單字遊戲樣式 ===== */
 
 .game-content {
     display: flex;
@@ -7,7 +7,7 @@
     gap: 20px;
 }
 
-/* ===== ?�人??===== */
+/* ===== 吊人圖 ===== */
 .hangman-drawing {
     width: 200px;
     height: 250px;
@@ -37,7 +37,7 @@
     opacity: 1;
 }
 
-/* ===== ?��?顯示 ===== */
+/* ===== 單字顯示 ===== */
 .word-display {
     display: flex;
     gap: 10px;
@@ -59,14 +59,14 @@
     text-transform: uppercase;
 }
 
-/* ===== ?�示 ===== */
+/* ===== 提示 ===== */
 .hint {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 10px;
 }
 
-/* ===== ?�擬?�盤 ===== */
+/* ===== 虛擬鍵盤 ===== */
 .keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -112,7 +112,7 @@
     color: white;
 }
 
-/* ===== 結�?訊息 ===== */
+/* ===== 結果訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -126,7 +126,7 @@
     flex-wrap: wrap;
 }
 
-/* ===== IDE 模�? ===== */
+/* ===== IDE 模式 ===== */
 html.ide-mode .hangman-svg .scaffold {
     stroke: #4a4a4a;
 }
@@ -145,7 +145,7 @@ html.ide-mode .letter-box {
     font-family: 'Consolas', monospace;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 500px) {
     .key-btn {
         width: 32px;

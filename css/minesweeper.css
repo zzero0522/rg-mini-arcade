@@ -1,4 +1,4 @@
-/* ===== ?�地?��??�樣�?===== */
+/* ===== 踩地雷專用樣式 ===== */
 
 .select-label {
     color: var(--text-secondary);
@@ -20,7 +20,7 @@
     opacity: 0.8;
 }
 
-/* ===== ?�戲??===== */
+/* ===== 遊戲板 ===== */
 .game-board {
     display: grid;
     gap: 0;
@@ -34,7 +34,7 @@
     touch-action: manipulation;
 }
 
-/* ?��???��調整?��?大�? */
+/* 根據難度調整網格大小 */
 .game-board.size-9 {
     grid-template-columns: repeat(9, 1fr);
     max-width: 360px;
@@ -45,7 +45,7 @@
     max-width: 520px;
 }
 
-/* ===== ?��? ===== */
+/* ===== 格子 ===== */
 .cell {
     width: 100%;
     aspect-ratio: 1;
@@ -82,7 +82,7 @@
 }
 
 .cell.flagged::after {
-    content: '?��';
+    content: '🚩';
     font-size: 1rem;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .cell.mine::after {
-    content: '?��';
+    content: '💣';
     font-size: 1rem;
 }
 
@@ -107,7 +107,7 @@
     100% { transform: scale(1); }
 }
 
-/* ===== ?��?顏色 ===== */
+/* ===== 數字顏色 ===== */
 .cell[data-number="1"] { color: #3498db; }
 .cell[data-number="2"] { color: #27ae60; }
 .cell[data-number="3"] { color: #e74c3c; }
@@ -117,7 +117,7 @@
 .cell[data-number="7"] { color: #34495e; }
 .cell[data-number="8"] { color: #7f8c8d; }
 
-/* ===== ?�戲?�制?��? ===== */
+/* ===== 遊戲控制按鈕 ===== */
 .game-controls {
     margin-top: 20px;
     display: flex;
@@ -125,7 +125,7 @@
     gap: 15px;
 }
 
-/* ===== 結�?訊息 ===== */
+/* ===== 結果訊息 ===== */
 .result-msg {
     color: var(--text-secondary);
     margin: 15px 0 25px;
@@ -139,12 +139,12 @@
     flex-wrap: wrap;
 }
 
-/* ===== 統�??�調整 ===== */
+/* ===== 統計區調整 ===== */
 #game-stats {
     margin-bottom: 10px;
 }
 
-/* ===== IDE 模�? ===== */
+/* ===== IDE 模式 ===== */
 html.ide-mode .cell {
     background-color: #3a4a5a;
     border-top: 2px solid #4a5a6a;
@@ -168,7 +168,7 @@ html.ide-mode .game-board {
     border: 1px solid var(--accent);
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .game-board.size-9 {
         max-width: 300px;
@@ -216,7 +216,7 @@ html.ide-mode .game-board {
     }
 }
 
-/* ===== 禁用?��??��? ===== */
+/* ===== 禁用選取功能 ===== */
 .game-board,
 .cell {
     -webkit-touch-callout: none;
@@ -226,7 +226,7 @@ html.ide-mode .game-board {
     user-select: none;
 }
 
-/* ===== ?��??�示（�??��?置�? ===== */
+/* ===== 觸控提示（手機置留） ===== */
 @media (hover: none) and (pointer: coarse) {
     .cell:active:not(.revealed) {
         transform: scale(0.95);

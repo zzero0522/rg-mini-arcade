@@ -1,13 +1,13 @@
-/* ===== Memory Cards 專屬�?? ===== */
+/* ===== Memory Cards 專屬樣式 ===== */
 
-/* ?�戲?�容?� */
+/* 遊戲內容區 */
 .game-content {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* ===== ?��?網格 ===== */
+/* ===== 卡片網格 ===== */
 .card-grid {
     display: grid;
     gap: 10px;
@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-/* 使用 auto-fit 讓網?�自?��? */
+/* 使用 auto-fit 讓網格自適應 */
 .card-grid.size-4 {
     grid-template-columns: repeat(4, minmax(60px, 80px));
     max-width: 400px;
@@ -34,7 +34,7 @@
     max-width: 550px;
 }
 
-/* ===== ?��?�?? ===== */
+/* ===== 卡片樣式 ===== */
 .card {
     aspect-ratio: 1;
     perspective: 1000px;
@@ -101,7 +101,7 @@ html.ide-mode .card.matched .card-back {
     border-color: #4ec9b0;
 }
 
-/* ===== ?�利?�面專屬 ===== */
+/* ===== 勝利畫面專屬 ===== */
 .win-stats {
     margin: 20px 0;
     line-height: 2;
@@ -115,7 +115,7 @@ html.ide-mode .card.matched .card-back {
     flex-wrap: wrap;
 }
 
-/* ===== ??��?��? ===== */
+/* ===== 難度選擇 ===== */
 .size-selection {
     margin: 25px 0;
 }
@@ -132,14 +132,14 @@ html.ide-mode .card.matched .card-back {
     opacity: 0.8;
 }
 
-/* ===== ?��?式設�?===== */
+/* ===== 響應式設計 ===== */
 @media (max-width: 600px) {
     .card-grid {
         gap: 6px;
         padding: 15px;
     }
 
-    /* 小螢幕�?調整欄數 */
+    /* 小螢幕時調整欄數 */
     .card-grid.size-4 {
         grid-template-columns: repeat(4, minmax(55px, 70px));
     }
@@ -174,7 +174,7 @@ html.ide-mode .card.matched .card-back {
     }
 }
 
-/* ===== IDE 模�??��? ===== */
+/* ===== IDE 模式特效 ===== */
 html.ide-mode .card-front {
     background: linear-gradient(135deg, #569cd6, #4fc1ff);
 }
@@ -187,7 +187,7 @@ html.ide-mode .card-grid {
     border: 1px solid #3c3c3c;
 }
 
-/* ===== ?�畫 ===== */
+/* ===== 動畫 ===== */
 @keyframes cardMatch {
     0%, 100% { transform: rotateY(180deg) scale(1); }
     50% { transform: rotateY(180deg) scale(1.1); }
