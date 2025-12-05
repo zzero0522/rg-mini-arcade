@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打磚塊 - RG's Mini Arcade</title>
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/breakout.css">
+    <script src="../js/init-theme.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="normal-title">🧱 打磚塊</span>
+                <span class="ide-title">// breakout.exe</span>
+            </h1>
+            <div class="header-buttons">
+                <a href="../index.html" class="back-btn">
+                    <span class="normal-title">🏠 返回選單</span>
+                    <span class="ide-title">← return;</span>
+                </a>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="normal-mode">💻 IDE風格</span>
+                    <span class="ide-mode">🎮 一般風格</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">分數</span>
+                        <span class="ide-title">score:</span>
+                    </span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">最高分</span>
+                        <span class="ide-title">best:</span>
+                    </span>
+                    <span id="best-score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">關卡</span>
+                        <span class="ide-title">level:</span>
+                    </span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">
+                        <span class="normal-title">生命</span>
+                        <span class="ide-title">lives:</span>
+                    </span>
+                    <span id="lives" class="stat-value">3</span>
+                </div>
+            </div>
+
+            <!-- 遊戲畫布 -->
+            <div id="game-container" class="game-container hidden">
+                <canvas id="game-canvas"></canvas>
+
+                <!-- 暫停提示 -->
+                <div id="pause-overlay" class="pause-overlay hidden">
+                    <div class="pause-content">
+                        <span class="normal-title">⏸️ 暫停中</span>
+                        <span class="ide-title">// PAUSED</span>
+                        <p>
+                            <span class="normal-title">按空白鍵繼續</span>
+                            <span class="ide-title">Press SPACE to resume</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 遊戲結束畫面 -->
+            <div id="game-over" class="game-over hidden">
+                <h2>
+                    <span class="normal-title">💀 遊戲結束</span>
+                    <span class="ide-title">// Game Over</span>
+                </h2>
+                <div class="game-over-stats">
+                    <p>
+                        <span class="normal-title">
+                            最終分數：<strong id="final-score">0</strong><br>
+                            到達關卡：<strong id="final-level">1</strong>
+                        </span>
+                        <span class="ide-title">
+                            score: <strong id="final-score-ide">0</strong>;<br>
+                            level: <strong id="final-level-ide">1</strong>;
+                        </span>
+                    </p>
+                </div>
+                <div class="game-over-buttons">
+                    <button id="restart-btn" class="restart-btn">
+                        <span class="normal-title">🔄 再玩一次</span>
+                        <span class="ide-title">restart()</span>
+                    </button>
+                    <button id="back-menu-btn" class="back-menu-btn">
+                        <span class="normal-title">📋 回主選單</span>
+                        <span class="ide-title">exit()</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 過關畫面 -->
+            <div id="level-clear" class="level-clear hidden">
+                <h2>
+                    <span class="normal-title">🎉 過關！</span>
+                    <span class="ide-title">// Level Clear!</span>
+                </h2>
+                <p>
+                    <span class="normal-title">準備進入下一關...</span>
+                    <span class="ide-title">Loading next level...</span>
+                </p>
+            </div>
+
+            <!-- 開始畫面 -->
+            <div id="start-screen" class="start-screen">
+                <h2>
+                    <span class="normal-title">🧱 打磚塊</span>
+                    <span class="ide-title">// breakout()</span>
+                </h2>
+                <p class="game-desc">
+                    <span class="normal-title">
+                        用板子反彈球<br>
+                        擊破所有磚塊過關！
+                    </span>
+                    <span class="ide-title">
+                        /* Bounce the ball with paddle<br>
+                        Break all bricks to win */
+                    </span>
+                </p>
+
+                <div class="controls-hint">
+                    <h3>
+                        <span class="normal-title">操作說明</span>
+                        <span class="ide-title">// Controls</span>
+                    </h3>
+                    <div class="hint-grid">
+                        <div class="hint-item">
+                            <span class="hint-key">← →</span>
+                            <span class="hint-desc">
+                                <span class="normal-title">移動板子</span>
+                                <span class="ide-title">move paddle</span>
+                            </span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key">滑鼠</span>
+                            <span class="hint-desc">
+                                <span class="normal-title">移動板子</span>
+                                <span class="ide-title">move paddle</span>
+                            </span>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-key">Space</span>
+                            <span class="hint-desc">
+                                <span class="normal-title">暫停</span>
+                                <span class="ide-title">pause</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="start-btn">
+                    <span class="normal-title">🚀 開始遊戲</span>
+                    <span class="ide-title">start()</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="normal-title">Made with ❤️ by RG</p>
+            <p class="ide-title">// Copyright © 2025 RG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/game-utils.js"></script>
+    <script src="../js/breakout.js"></script>
+</body>
+
+</html>

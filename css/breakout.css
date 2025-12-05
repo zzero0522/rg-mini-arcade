@@ -1,0 +1,200 @@
+﻿/* ===== 打磚塊專屬樣式 ===== */
+
+/* ===== 遊戲畫布容器 ===== */
+.game-container {
+    position: relative;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 10px;
+}
+
+#game-canvas {
+    display: block;
+    background-color: #1a1a2e;
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+html.ide-mode #game-canvas {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+}
+
+/* ===== 暫停覆蓋層 ===== */
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+}
+
+.pause-content {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.pause-content p {
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ===== 開始畫面標題 ===== */
+.start-screen h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* ===== 操作說明 ===== */
+.controls-hint {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+}
+
+.controls-hint h3 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.hint-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hint-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hint-key {
+    background-color: var(--bg-secondary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.hint-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ===== 遊戲結束畫面 ===== */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    min-width: 300px;
+}
+
+.game-over h2 {
+    color: #e53e3e;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+html.ide-mode .game-over h2 {
+    color: #f14c4c;
+}
+
+.game-over-stats {
+    margin: 20px 0;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+.game-over-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 過關畫面 ===== */
+.level-clear {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    min-width: 300px;
+    animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+.level-clear h2 {
+    color: #48bb78;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+html.ide-mode .level-clear h2 {
+    color: #4ec9b0;
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 600px) {
+    .controls-hint {
+        padding: 10px;
+    }
+
+    .hint-grid {
+        gap: 10px;
+    }
+
+    .game-over,
+    .level-clear {
+        padding: 25px;
+        min-width: 250px;
+    }
+}
+
+/* ===== IDE 模式特效 ===== */
+html.ide-mode .start-screen,
+html.ide-mode .game-over,
+html.ide-mode .level-clear {
+    border: 1px solid var(--accent);
+}
+
+html.ide-mode .game-container {
+    border: 1px solid #30363d;
+}

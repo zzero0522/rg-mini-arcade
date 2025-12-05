@@ -4,7 +4,7 @@
 
 **Demo**: https://rgleedev.github.io/rg-mini-arcade/
 
-**目前版本**: v1.7.2
+**目前版本**: v1.8.0
 
 ## 遊戲列表
 
@@ -29,6 +29,8 @@
 | 數字拼圖 | 滑動數字排列還原（3×3 / 4×4 / 5×5） |
 | PAC-MAN | 經典吃豆人遊戲，4隻鬼魂各有不同個性 |
 | 坦克大戰 | 保衛基地消滅敵人，含盾牌道具（WASD / 方向鍵 / 空白鍵射擊） |
+| 打磚塊 | 經典 Breakout 彈球消磚塊遊戲 |
+| 太空射擊 | 射擊遊戲，含道具系統（護盾、三連發、快速射擊、額外生命） |
 
 ---
 
@@ -53,7 +55,7 @@
 | **Flappy Bird** | 點擊控制小鳥穿越障礙 | ⭐⭐ |
 | **節奏大師** | 音樂節拍遊戲（純視覺版） | ⭐⭐⭐ |
 | **彈珠台** | 簡易彈珠台遊戲 | ⭐⭐⭐ |
-| **打磚塊** | 經典 Breakout 遊戲（Coming Soon） | ⭐⭐ |
+| ~~**打磚塊**~~ | ✅ 已完成 | ⭐⭐ |
 | **躲避球** | 控制角色閃避下落物體 | ⭐ |
 
 ### 🧠 記憶 / 文字類
@@ -127,7 +129,7 @@ rg-mini-arcade/
 
 ### Scope
 
-遊戲：`color-diff`、`1a2b`、`typing-test`、`memory-cards`、`rps`、`snake`、`whack-a-mole`、`2048`、`number-range`、`reaction-test`、`wordle`、`minesweeper`、`simon`、`hangman`、`tic-tac-toe`、`connect-four`、`number-puzzle`、`pacman`、`tank`
+遊戲：`color-diff`、`1a2b`、`typing-test`、`memory-cards`、`rps`、`snake`、`whack-a-mole`、`2048`、`number-range`、`reaction-test`、`wordle`、`minesweeper`、`simon`、`hangman`、`tic-tac-toe`、`connect-four`、`number-puzzle`、`pacman`、`tank`、`breakout`、`shmup`
 
 模組：`theme`、`menu`、`css`
 
