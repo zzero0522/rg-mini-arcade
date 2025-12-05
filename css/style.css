@@ -352,6 +352,18 @@ html.ide-mode .theme-btn .normal-mode {
     animation: pulse 2s infinite;
 }
 
+.updated-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
 @keyframes pulse {
 
     0%,
@@ -371,6 +383,10 @@ html.ide-mode .coming-soon {
 html.ide-mode .new-tag {
     background-color: #4ec9b0;
     animation: none;
+}
+
+html.ide-mode .updated-tag {
+    background-color: #569cd6;
 }
 
 /* ===== Footer ===== */
